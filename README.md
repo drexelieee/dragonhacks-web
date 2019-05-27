@@ -1,4 +1,4 @@
-# dragonhacks-frontend
+# dragonhacks-frontend [![Build Status](https://travis-ci.com/drexelieee/dragonhacks-frontend.svg?branch=develop)](https://travis-ci.com/drexelieee/dragonhacks-frontend)
 
 Frontend for the DragonHacks hackathon
 
