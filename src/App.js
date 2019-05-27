@@ -1,15 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import * as firebase from "firebase";
+import { firebaseConfig } from "./firebaseCreds";
 import './App.css';
+import AuthButton, { GoogleProvider, GitHubProvider } from './AuthButton';
 
+export const app = firebase.initializeApp(firebaseConfig);
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AuthButton provider={GoogleProvider}/>
+        <AuthButton provider={GitHubProvider}/>
         <a
           className="App-link"
           href="https://reactjs.org"
