@@ -26,20 +26,12 @@ export default class AuthButton extends Component {
         }
 
         this.auth_onClick = this.auth_onClick.bind(this);
-        this.getLogo = this.getLogo.bind(this);
     }
 
     auth_onClick() {
         app.auth().signInWithPopup(this.provider).then((result) => {
             console.log(result);
         });
-    }
-
-    async getLogo() {
-        return await import(
-            /* webpackMode: "lazy-once" */
-            this.props.provider.logo
-        ).default;
     }
 
     render() {
