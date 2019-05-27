@@ -1,6 +1,6 @@
 import React from 'react';
-import * as firebase from "firebase";
-import { firebaseConfig } from "./firebaseCreds";
+import firebase from "firebase";
+import { firebaseConfig } from "./firebaseCreds.secret";
 import './App.css';
 import AuthButton, { GoogleProvider, GitHubProvider } from './AuthButton';
 

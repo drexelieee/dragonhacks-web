@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as firebase from "firebase";
+import firebase from "firebase";
 import {app} from "./App";
 import styles from "./AuthButton.module.css";
 import Google from "./images/google.svg";
@@ -45,7 +45,7 @@ export default class AuthButton extends Component {
     render() {
         return (
             <button className={`${styles.authButton} ${styles[this.props.provider.name.toLowerCase()]}`} onClick={this.auth_onClick}>
-                <img className={styles.logo} src={logos[this.props.provider.name]} />
+                <img className={styles.logo} src={logos[this.props.provider.name]} alt="" />
                 <span className={styles.innerText}>Sign in with {this.props.provider.name}</span>
             </button>
         );
