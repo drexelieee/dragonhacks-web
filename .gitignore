@@ -3,6 +3,9 @@
 # IDE
 *.code-workspace
 
+# secret
+*.secret.*
+
 # dependencies
 /node_modules
 /.pnp
