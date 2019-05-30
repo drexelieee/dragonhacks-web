@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AuthButton provider={GoogleProvider}/>
-        <AuthButton provider={GitHubProvider}/>
+        <AuthButton provider={GoogleProvider} />
+        <AuthButton provider={GitHubProvider} />
         <a
           className="App-link"
           href="https://reactjs.org"
