@@ -4,3 +4,7 @@ node_js:
 cache: npm
 before_install:
   - npm i -g npm@6.9.0
+script:
+  - npx standard
+  - npm run build
+  - npm test
