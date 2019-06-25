@@ -25,7 +25,7 @@ export default class AuthButton extends Component {
         break
     }
 
-    this.auth_onClick = this.auth_onClick.bind(this)
+    this.authOnClick = this.authOnClick.bind(this)
   }
 
   authOnClick () {
@@ -36,7 +36,7 @@ export default class AuthButton extends Component {
 
   render () {
     return (
-      <button className={`${styles.authButton} ${styles[this.props.provider.name.toLowerCase()]}`} onClick={this.auth_onClick}>
+      <button className={`${styles.authButton} ${styles[this.props.provider.name.toLowerCase()]}`} onClick={this.authOnClick}>
         <img className={styles.logo} src={logos[this.props.provider.name]} alt='' />
         <span className={styles.innerText}>Sign in with {this.props.provider.name}</span>
       </button>
