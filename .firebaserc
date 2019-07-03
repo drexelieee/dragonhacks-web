@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "dragonhacks-web"
+    "default": "dragonhacks-web",
+    "dev": "dragonhacks-web-dev"
   }
 }
