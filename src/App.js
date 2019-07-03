@@ -1,5 +1,5 @@
 import React from 'react'
-import firebase from 'firebase'
+import firebase from 'firebase' // Importing the entire firebase sdk isn't recommended
 import firebaseConfig from './firebaseConfig'
 import './App.css'
 import AuthButton, { GoogleProvider, GitHubProvider } from './AuthButton'
