@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "12"
+  - '12'
 cache: npm
 branches:
   only:
@@ -12,3 +12,8 @@ script:
   - npx standard
   - npm run build
   - npm test
+deploy:
+  provider: firebase
+  token:
+    secure: 'jHZTssbC9vh6RhUpypsWUFRou51bWmmPQF+NFzPKXy8T8dr02IQ7K7jboUeBCPUaGj9n0Wuwcb7sS4CzyOR6uoDKU8jUJf4o2EQ4V96FDLtTQtdbvLLMEohlIgFLRZ1R9C038qOs9NIV7rAbqekUzFumXyfH/GOjmv5dZ4oflkx8OYnZPmiPjHuhJlbsjJFLeCG0+Ho7R/hLmHTnw4+C/5miSyeQUtGo0xgD8SZWGc3Zv5yu/a5keaunIeZJfzp5jb1yVXnMYkNWGptWRfQxAQSyeEp/ihAHlyCMyRdq3NNvGTXlobmtFXJOsjRZUlZp5CFr7kDl6UXaIsanu1K/2ZzbQZFRXOqwDGixM9CVJX+/SvQF06MwNB413YoKpuG0MvIiJlixfTFfOujsaLiQE3jHDxkG4lQ7LB5ksG+EqmDIhQFOc9t/cDw3rdvNuN1eUuoGIVKDeMzeQfErlqECmilLWjIVsI1Eyw6EtUE04pVDQOwirozm+x6hcSJNoX3xPQSlGzKdUoVSG3Cd2jC/ebAsmZh76dQBVzqO52v845TGrufUo8Jp5MulbNJeHDPx+dycCGDSN6dBBAf4prcVdzUvtIIEj3MACFmYSuivKh89tNNVGMnbxkixg5GDKiBdzPOMh8HTQpVTtvTQZC3n4w7Sz4XlsVerHGwPBNbf394='
+  project: 'dragonhacks-web'
