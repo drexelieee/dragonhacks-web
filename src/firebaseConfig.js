@@ -1,9 +1,9 @@
 export default {
-  apiKey: 'AIzaSyAQAzPzS7SQqbyO-Tjg4WrtjApd7SMAH9M',
-  authDomain: 'dragonhacks-web.firebaseapp.com',
-  databaseURL: 'https://dragonhacks-web.firebaseio.com',
-  projectId: 'dragonhacks-web',
-  storageBucket: 'dragonhacks-web.appspot.com',
-  messagingSenderId: '287317729268',
-  appId: '1:287317729268:web:f427de4cfd2ab971'
+  apiKey: 'AIzaSyAxS4fEOuTRiKbrQV7zd0B3_Zot0KZo_so',
+  authDomain: 'dragonhacks-web-dev.firebaseapp.com',
+  databaseURL: 'https://dragonhacks-web-dev.firebaseio.com',
+  projectId: 'dragonhacks-web-dev',
+  storageBucket: 'dragonhacks-web-dev.appspot.com',
+  messagingSenderId: '389172751187',
+  appId: '1:389172751187:web:d2a2090416fb608b'
 }
