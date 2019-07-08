@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - "12"
 cache: npm
+branches:
+  only:
+    - master
+    - develop
 before_install:
   - npm i -g npm@6.9.0
 script:
