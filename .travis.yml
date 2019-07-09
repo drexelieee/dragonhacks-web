@@ -8,6 +8,8 @@ branches:
     - develop
 before_install:
   - npm i -g npm@6.9.0
+  - npm i -g firebase-tools
+  - npm i -g firebase
 script:
   - npx standard
   - npm run build
