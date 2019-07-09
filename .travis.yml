@@ -9,7 +9,6 @@ branches:
 before_install:
   - npm i -g npm@6.9.0
   - npm i -g firebase-tools
-  - npm i -g firebase
 script:
   - npx standard
   - npm run build
@@ -17,5 +16,5 @@ script:
 deploy:
   provider: firebase
   token:
-    secure: 'Fayb/az+muClEDwnUU/+y+/uFe2ceBrVbRf5+f0ct3VA5IoulNsTBjJMAI5HbBrxlWmFaCuKojVfjzDb7IxmZ/7DD+l+szkRgHGtFdSINZAn1rB+2rIPejVz6bpW2T1VStefP6wFmqPqIzTdXN5M6HvgJjj3RmXVikjsN+TDmnZ6frA3WTa5B9OEAHGuOIDqi1UDT9RocTXqbaYOgNDEZg+kMdEzL1avArj8C/0Qr6UrOHaUsrz+dx0iNd50iWepEtKn71MhzxT/mpjS8Uni8PGTXCeRiQz2WQVOQOHwIUwj2cgwU193QpTESK1Ij3DNmlQtp9FOjH11nbHK4TWshl0v2xqhTHH5nj6XFZpJU8f26sgFjJUQiVO8VwEK0HxLfJW12obSJF/xk98EVbRkIe26kgvqOXzolXbkySJLO1MU4GUCpFuOdksfHtIBcgTHW2/Et/qAyDs22T6keX+dRxMiLk4C3ANfRpk+D2lg+fRORfGMg0l2BF9kX1v0gh+jTTPt/yCezdaqAeW3d1JqSZErBL/fc9cgsTz9f1aW5SzL234EuzHd0Dos+W88GRnk+gbW0/b817SWtswbGzdwayykshom93WlyI7o7VnW4ziuDYFhbJeCeDvfghUrORnfSFvc34+b2iAAWFamRIe4iPnhjS+3JPcaFSLbTqtN1PM='
+    secure: 'B6REbpIZR/j0KpTMURCsi28JRBtwPMkEvOcRrkA8SRkbuBAZ7RMcCRG2eyZlhmUurSXVltQMJJ5BXf+jfjejJR1PeFiWOa4EC3UL8HtTQ/DUimIoitCHhDm+K6QPRSRISyFJ2jJvTT+YeyK1bE2Dw+dZnHC+qDIy8w+7FBWlQk/fiWDgyf2C4z2TpwWOeB8JBBREGqplUbeC61lPlrlCQ5HB/FVM3HOfDOZf97QuK/DcnaZhb36rgu/DKrY6HMJ/Ma5+q/H/eX5cbmnzNjHLAIo89/vsUqHIfmAASYO3871c4k+dQ9WyS2GxvwKkaBqAcIV5ojKvYYh8632WbWN6AZnwB6D6e9nVSGb8/gzd8KY50Bhv8N9rseTTuRDeC74CbjMU/29jP6/AdS+boc0U4otuvuhw4vBlIjpIVnGRGTnxr1fRXHbx2ZNX1K9Z4d8xnZVoAfMdn9UNb7B97JBkA8vgIQkvjRqiZOzeCICwuCxIZoOMaMNqC6RhNAb8CxjaSCk1Xqu6bK94P/t+v4hOXBGH31nG18bh2oetfJV+aFyIE16Vqz/etpQaEP2XVm09LXjXP0arPAxKyCtxtV0R3+HfEup2duMmW3MzeZgZt0fWHvVZ4B60b1bj2FXqiRuN2yGTR9L6BlkbKl8JnqxNdUZS5flUUqr1cJt0i+Jt3pQ='
   project: 'dragonhacks-web'
