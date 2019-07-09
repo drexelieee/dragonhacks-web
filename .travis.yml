@@ -1,7 +1,6 @@
 language: node_js
 node_js:
   - '12'
-cache: 'npm'
 branches:
   only:
     - master
@@ -15,6 +14,7 @@ script:
   - npm test
 deploy:
   provider: firebase
+  skip_cleanup: true
   token:
     secure: 'kT4o3sgLH5qa6BgLtTTlA1Nt/ZaV9deOj96aYTPUjnngH40W6rKD+D7K4orwSqAfXBqil1pwYuaxo1RoC0oB9DcuBkkjNX8um1AaNuN1RUiNDD1pBf8XvEJT7HkVo8jOGSSImbPgqbDFxB3dEU+kDke6D0lbUj2/sdM1qvMmNO6t+oDkHpKZ9fcQLr/M0607uiijULPcbhTP4NFSXqeKTrZ57H5A4elSBLj4jb1phU9j8uF0GfPWPUm9M3wSxQD31Pi/G+/2BdbYZR8M4mmZ5tQOjf/icXpg0JZ4l3uBkKxgNoJjaM9adyFUpXESsFWkiiFu1IRilyvUY7ZYG7mTY5WQZtmK0R4AOdnEE/Ri1ewwTjvzgZW/peGV6DpKJ62OqfxvIXtPj7lFGTeDarkoigp2aylXdCBUfkNBKygsReiGYwqBrbdx29KsUW2O7gdUMvyHMSokqMvzSx9hV6FZXnKw9sh84YiDYQC1y0nq6aBh0td1MdJYZcZR84jBLn3RDaAAIOXgzm6t9vRZ4tauy46h9o914JVEJaKvzJKYDtOY+alKwAgFhkf6nOAGbccvZxord7LG0VhiSs+qHIgnmV0KuuLh3+JiAw/RtZvjJ/3Qr5pef4C/iyc+zkwsMRFqcZbNgRSqx8MuiIKGm8/5sluS9dceTv5FBydxlmDmehE='
   project: prod
