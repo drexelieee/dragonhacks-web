@@ -14,7 +14,9 @@ script:
   - npm run build
   - npm test
 after_success:
-  - firebase --token "${FIREBASE_TOKEN}" -P prod deploy
+  - firebase --token "${FIREBASE_TOKEN}" login
+  - firebase --token "${FIREBASE_TOKEN}" use prod
+  - firebase --token "${FIREBASE_TOKEN}" deploy
 env:
   global:
     secure: OBzihYa/al8gy+it3S8k53mPSxLWKB1YLkllm435Z0FjyHHEJvOCJAom+WjofYbN3nARMwnNcKGUVvrT5FFoJAtqhnVFAG+HB+uckOM4xpZ2rA4gHMu3zBmEP9QHj+W5tYRwnPeVv/DV2m7XtfVgqCOLQPyZuck7pPXNiDJYzoZFEGfs5DvOOmryePardCJ97f53tz3yrPW06YBURJESKfRTv+M3zUIXFoYyxN8nx4XXH62f1YPFcEj2/oTLBeWdTMEZ1CHep+xS2G849rr6Gw9GQQ22p+hg5cK5nINlEb3FZSy4nQDtt03NFJCnADcqbj+PY1jsTIW+hcDoePC2HWEoOC1HlmyNywOXXNyHdxVaEprnt/wCl08WnSZIMrAabccsbGfQy6ys1iQczhT1QMHj5MPq3g0wPFGx/snymYkoz+VSIZHoSrvVj+C95vz+oah4/wSrBBhMmL8Do/EwLQOVfKW86utztK2MbhySylNhOClAHBP0WVo73TCzifj7QF9i4VUmeFHPXtFqNhP7NIQCkG2QpFI0qmydP1skZeP8b7nkLRt3BMi4Rr7Lng8DTgG5wtgsLX2NQWjYgnTvERjjPO8ardw7GripidR8dKFEjZa1EiqxlfWlmr1URSfxDLzrR/z09hHZkoWagRBcP1siiI56ALHkwc1TvCfJbas=
