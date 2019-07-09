@@ -8,6 +8,7 @@ export const app = firebase.initializeApp(firebaseConfig)
 function App () {
   return (
     <div className='App'>
+      <h1>Dev site</h1>
       <header className='App-header'>
         <AuthButton provider={GoogleProvider} />
         <AuthButton provider={GitHubProvider} />
