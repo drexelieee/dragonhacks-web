@@ -22,6 +22,7 @@ deploy:
     on:
       branch: develop
       repo: drexelieee/dragonhacks-frontend
+      node: stable
   - provider: firebase
     skip_cleanup: true
     token:
@@ -30,3 +31,4 @@ deploy:
     on:
       branch: master
       repo: drexelieee/dragonhacks-frontend
+      node: stable
