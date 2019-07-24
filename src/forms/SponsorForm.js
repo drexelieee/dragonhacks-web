@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './SponsorForm.module.css'
+import './SponsorForm.css'
 
 export default class SponsorForm extends Component {
   constructor(props) {
