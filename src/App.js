@@ -9,7 +9,7 @@ function App () {
   return (
     <div>
       <h2>Sponsor Us</h2>
-      <SponsorForm/>
+      <SponsorForm />
     </div>
   )
 }
