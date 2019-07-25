@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import firebase from '../firebase'
+import 'firebase/functions'
 import './SponsorForm.css'
 
 export default class SponsorForm extends Component {
@@ -13,6 +15,7 @@ export default class SponsorForm extends Component {
       message: ''
     }
     this.handlerFor = this.handlerFor.bind(this)
+    this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
   handlerFor (valueName) {
@@ -24,9 +27,15 @@ export default class SponsorForm extends Component {
     return handler
   }
 
+  onFormSubmit (event) {
+    let submitFormData = firebase.functions().httpsCallable('submitFormData')
+    submitFormData(this.state)
+    event.preventDefault()
+  }
+
   render () {
     return (
-      <form>
+      <form onSubmit={this.onFormSubmit}>
         <label>
           Organization Name
           <input type='text' value={this.state.organization} onChange={this.handlerFor('organization')} required />
