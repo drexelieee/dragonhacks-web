@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - '12'
+  - stable
+  - '8'
 branches:
   only:
     - master
@@ -15,17 +16,15 @@ script:
 deploy:
   - provider: firebase
     skip_cleanup: true
-    token:
-      secure: 'm9qnE22yrb/fclh7DjPrLNtQmdBi76VmqxSK21uc9igD/S1COOcu4wo0Th0LLgLNtZ614JTVggq+4QkpheItRUierafgtbxWlXlYtI4GDXVMUDmaPPFtVxDgklRLRAlhzhtHlUMq7M+Mc2DbsbabynUQ6Wb9aJM5MBC+52qkhdfKeQ6KYFV+NZMjJH7bKixI76IF+c6q9ctX3B0yJGhd2zamOZENMUBRiSrJ/4p0emhS1MD6RIk9/+RwWa1CKYVteIbhY4b38tQjDza0CsITXHZlpn4Vy6OT8ouQdaAAdV5cYzYeVc468nN2EzGevhc01hX22Cdfu+FdhdeJ79qxFYjFUnqiPnGolOoO40BsvFFej0/ixJMJW2UBI7vWzr2e0kmzM0s4ykHBjJFpAym0Yge/NCKSHjVTNdIwZsQit/geiOmXuRiQQ5rEWn2+Mm3aZo7EZZVSBHEf6rfZfij5Vp31qOEwO9giWe9FpjDc4XjTS2yqvwIkH+VC9S6EM92YNRZsOJapwTcGZVuIZbRE/vyGy7rnFlhnrSyx9SVPicfRlWSG5AOECgh5OOWngfpDyAxm9vdG4X7v6KKqWlp+wl/QRcUbZsfxnoUbrx72jZiaBB1dHFzDzT10JhMXhOgLcM9hddvTE1+GBJ7CGCV4RILM7hKcLqjCKHb77PP1sa0='
     project: dev
     on:
       branch: develop
       repo: drexelieee/dragonhacks-frontend
+      node: stable
   - provider: firebase
     skip_cleanup: true
-    token:
-      secure: 'kT4o3sgLH5qa6BgLtTTlA1Nt/ZaV9deOj96aYTPUjnngH40W6rKD+D7K4orwSqAfXBqil1pwYuaxo1RoC0oB9DcuBkkjNX8um1AaNuN1RUiNDD1pBf8XvEJT7HkVo8jOGSSImbPgqbDFxB3dEU+kDke6D0lbUj2/sdM1qvMmNO6t+oDkHpKZ9fcQLr/M0607uiijULPcbhTP4NFSXqeKTrZ57H5A4elSBLj4jb1phU9j8uF0GfPWPUm9M3wSxQD31Pi/G+/2BdbYZR8M4mmZ5tQOjf/icXpg0JZ4l3uBkKxgNoJjaM9adyFUpXESsFWkiiFu1IRilyvUY7ZYG7mTY5WQZtmK0R4AOdnEE/Ri1ewwTjvzgZW/peGV6DpKJ62OqfxvIXtPj7lFGTeDarkoigp2aylXdCBUfkNBKygsReiGYwqBrbdx29KsUW2O7gdUMvyHMSokqMvzSx9hV6FZXnKw9sh84YiDYQC1y0nq6aBh0td1MdJYZcZR84jBLn3RDaAAIOXgzm6t9vRZ4tauy46h9o914JVEJaKvzJKYDtOY+alKwAgFhkf6nOAGbccvZxord7LG0VhiSs+qHIgnmV0KuuLh3+JiAw/RtZvjJ/3Qr5pef4C/iyc+zkwsMRFqcZbNgRSqx8MuiIKGm8/5sluS9dceTv5FBydxlmDmehE='
     project: prod
     on:
       branch: master
       repo: drexelieee/dragonhacks-frontend
+      node: stable
