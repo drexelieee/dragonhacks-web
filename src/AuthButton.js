@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import { app } from './App'
-import styles from './AuthButton.module.css'
+import styles from './AuthButton.css'
 import Google from './img/google.svg'
 import GitHub from './img/github.svg'
 
@@ -11,7 +11,7 @@ const logos = {
 }
 export default class AuthButton extends Component {
   constructor (props) {
-    super()
+    super(props)
 
     switch (props.provider.id) {
       case 1:
