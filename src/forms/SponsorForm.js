@@ -29,7 +29,7 @@ export default class SponsorForm extends Component {
 
   onFormSubmit (event) {
     let submitFormData = firebase.functions().httpsCallable('submitFormData')
-    submitFormData(this.state)
+    submitFormData({ data: this.state })
     event.preventDefault()
   }
 
