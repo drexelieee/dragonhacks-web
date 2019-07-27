@@ -1,7 +1,7 @@
-import React from 'react'
-import SponsorForm from './forms/SponsorForm'
+import * as React from "react"
+import SponsorForm from "./forms/SponsorForm"
 
-function App () {
+function App() {
   return (
     <div>
       <h2>Sponsor Us</h2>

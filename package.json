@@ -1,5 +1,5 @@
 {
-  "name": "dragonhacks-frontend",
+  "name": "dragonhacks-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,11 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preserve": "npm run build",
-    "serve": "firebase serve"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "tslint --project tsconfig.json"
   },
   "browserslist": {
     "production": [
@@ -33,7 +29,11 @@
     ]
   },
   "devDependencies": {
-    "standard": "^12.0.1",
-    "typescript": "^3.5.2"
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
   }
 }

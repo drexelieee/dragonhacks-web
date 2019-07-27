@@ -5,6 +5,15 @@
     "[javascript]": {
         "editor.tabSize": 2
     },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2
+    },
+    "[firerules]": {
+        "editor.tabSize": 2
+    },
     "[json]": {
         "editor.tabSize": 2
     },

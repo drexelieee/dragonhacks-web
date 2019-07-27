@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - stable
-  - '8'
+  - '8'  # Recommended deploy version
 branches:
   only:
     - master
@@ -9,22 +9,32 @@ branches:
 before_install:
   - npm i -g npm@6.9.0
   - npm i -g firebase-tools
+install:
+  - npm ci
+  - cd functions
+  - npm ci
+  - cd ..
 script:
-  - npx standard
   - npm run build
+  - npm run lint
   - npm test
+  - cd functions
+  - npm run build
+  - npm run lint
+  - npm test
+  - cd ..
 deploy:
   - provider: firebase
     skip_cleanup: true
     project: dev
     on:
       branch: develop
-      repo: drexelieee/dragonhacks-frontend
-      node: stable
+      repo: drexelieee/dragonhacks-web
+      node: '8'
   - provider: firebase
     skip_cleanup: true
     project: prod
     on:
       branch: master
-      repo: drexelieee/dragonhacks-frontend
-      node: stable
+      repo: drexelieee/dragonhacks-web
+      node: '8'
