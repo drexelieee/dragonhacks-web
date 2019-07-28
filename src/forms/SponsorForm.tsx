@@ -3,17 +3,17 @@ import * as React from "react"
 import firebase from "../firebase"
 import "./SponsorForm.css"
 
-interface SponsorFormState {
-  organization: string;
-  contactName: string;
-  contactEmail: string;
-  package: string;
-  donation: 0;
-  message: string;
-  [key: string]: any;
+interface ISponsorFormState {
+  organization: string
+  contactName: string
+  contactEmail: string
+  package: string
+  donation: 0
+  message: string
+  [key: string]: any
 }
 
-export default class SponsorForm extends React.Component<{}, SponsorFormState> {
+export default class SponsorForm extends React.Component<{}, ISponsorFormState> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -65,7 +65,9 @@ export default class SponsorForm extends React.Component<{}, SponsorFormState> {
           <option value="gold">Gold</option>
           <option value="platinum">Platinum</option>
         </select>
-        <label>Optional Donation<input type="number" value={this.state.donation} onChange={this.handlerFor("donation")} /></label>
+        <label>Optional Donation
+          <input type="number" value={this.state.donation} onChange={this.handlerFor("donation")} />
+        </label>
         <textarea value={this.state.message} onChange={this.handlerFor("message")} />
         <input type="submit" />
       </form>

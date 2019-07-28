@@ -1,9 +1,9 @@
+import { auth } from "firebase"
 import * as React from "react"
-import firebase from "./firebase"
-import { auth } from "firebase";
 import "./AuthButton.css"
-import './img/google.svg'
-import './img/github.svg'
+import firebase from "./firebase"
+import githubSignIn from "./img/github.svg"
+import googleSignIn from "./img/google.svg"
 
 // const logos = {
 //   Google,
@@ -15,25 +15,29 @@ export enum AuthProvider {
   GitHub = "GitHub"
 }
 
-interface AuthButtonProps {
+interface IAuthButtonProps {
   provider: AuthProvider
 }
 
-export default class AuthButton extends React.Component<AuthButtonProps> {
-  private provider!: auth.AuthProvider;
+export default class AuthButton extends React.Component<IAuthButtonProps> {
+  private provider!: auth.AuthProvider
+  private logo!: string
 
-  constructor(props: AuthButtonProps) {
+  constructor(props: IAuthButtonProps) {
     super(props)
 
     switch (props.provider) {
       case AuthProvider.Google:
         this.provider = new auth.GoogleAuthProvider()
+        this.logo = googleSignIn
         break
       case AuthProvider.GitHub:
         this.provider = new auth.GithubAuthProvider()
+        this.logo = githubSignIn
         break
 
       default:
+        // TODO default email provider
         break
     }
 
@@ -49,7 +53,7 @@ export default class AuthButton extends React.Component<AuthButtonProps> {
   public render() {
     return (
       <button className={`auth-button ${this.props.provider.toLowerCase()}`} onClick={this.authOnClick}>
-        <img className="logo" src={`img/${this.props.provider.toLowerCase()}.svg`} alt='' />
+        <img className="logo" src={this.logo} alt="" />
         <span className="inner-text">Sign in with {this.props.provider}</span>
       </button>
     )

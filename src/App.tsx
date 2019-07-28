@@ -1,6 +1,6 @@
 import * as React from "react"
+import AuthButton, { AuthProvider } from "./AuthButton"
 import SponsorForm from "./forms/SponsorForm"
-import AuthButton, { AuthProvider } from "./AuthButton";
 
 function App() {
   return (
