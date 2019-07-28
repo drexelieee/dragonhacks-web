@@ -3,7 +3,17 @@ import * as React from "react"
 import firebase from "../firebase"
 import "./SponsorForm.css"
 
-export default class SponsorForm extends React.Component {
+interface SponsorFormState {
+  organization: string;
+  contactName: string;
+  contactEmail: string;
+  package: string;
+  donation: 0;
+  message: string;
+  [key: string]: any;
+}
+
+export default class SponsorForm extends React.Component<{}, SponsorFormState> {
   constructor(props: any) {
     super(props)
     this.state = {
