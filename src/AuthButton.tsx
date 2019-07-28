@@ -1,23 +1,36 @@
 import * as React from "react"
-import "./AuthButton.css"
 import firebase from "./firebase"
-// import Google from './img/google.svg'
-// import GitHub from './img/github.svg'
+import { auth } from "firebase";
+import "./AuthButton.css"
+import './img/google.svg'
+import './img/github.svg'
 
 // const logos = {
 //   Google,
 //   GitHub
 // }
-export default class AuthButton extends React.Component {
-  constructor(props: any) {
+
+export enum AuthProvider {
+  Google = "Google",
+  GitHub = "GitHub"
+}
+
+interface AuthButtonProps {
+  provider: AuthProvider
+}
+
+export default class AuthButton extends React.Component<AuthButtonProps> {
+  private provider!: auth.AuthProvider;
+
+  constructor(props: AuthButtonProps) {
     super(props)
 
-    switch (props.provider.id) {
-      case 1:
-        this.provider = new firebase.auth.GoogleAuthProvider()
+    switch (props.provider) {
+      case AuthProvider.Google:
+        this.provider = new auth.GoogleAuthProvider()
         break
-      case 2:
-        this.provider = new firebase.auth.GithubAuthProvider()
+      case AuthProvider.GitHub:
+        this.provider = new auth.GithubAuthProvider()
         break
 
       default:
@@ -34,22 +47,11 @@ export default class AuthButton extends React.Component {
   }
 
   public render() {
-    // TODO Fix this styling issue
     return (
-      <div>FIXME</div>
-    //   <button className={`${styles.authButton} ${styles[this.props.provider.name.toLowerCase()]}`} onClick={this.authOnClick}>
-    //     <img className={styles.logo} src={logos[this.props.provider.name]} alt='' />
-    //     <span className={styles.innerText}>Sign in with {this.props.provider.name}</span>
-    //   </button>
+      <button className={`auth-button ${this.props.provider.toLowerCase()}`} onClick={this.authOnClick}>
+        <img className="logo" src={`img/${this.props.provider.toLowerCase()}.svg`} alt='' />
+        <span className="inner-text">Sign in with {this.props.provider}</span>
+      </button>
     )
   }
-}
-
-export const GoogleProvider = {
-  id: 1,
-  name: "Google"
-}
-export const GitHubProvider = {
-  id: 2,
-  name: "GitHub"
 }
