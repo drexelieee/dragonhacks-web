@@ -3,6 +3,8 @@
     // -- Strict errors --
     // These lint rules are likely always a good idea.
 
+    "no-floating-promises": false,
+
     // Force function overloads to be declared together. This ensures readers understand APIs.
     "adjacent-overload-signatures": true,
 
@@ -47,10 +49,6 @@
 
     // Empty blocks are almost never needed. Allow the one general exception: empty catch blocks.
     "no-empty": [true, "allow-empty-catch"],
-
-    // Functions must either be handled directly (e.g. with a catch() handler) or returned to another function.
-    // This is a major source of errors in Cloud Functions and the team strongly recommends leaving this rule on.
-    "no-floating-promises": true,
 
     // Do not allow any imports for modules that are not in package.json. These will almost certainly fail when
     // deployed.
