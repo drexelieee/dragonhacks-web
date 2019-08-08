@@ -2,7 +2,6 @@ import firebase from 'firebase/app';
 import 'firebase/functions'
 import 'firebase/auth'
 import 'firebase/firestore'
-// import * as process from "process"
 
 let app = firebase.initializeApp({
   apiKey: 'AIzaSyAxS4fEOuTRiKbrQV7zd0B3_Zot0KZo_so',
