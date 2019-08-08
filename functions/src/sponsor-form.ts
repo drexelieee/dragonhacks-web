@@ -29,7 +29,7 @@ export const submitSponsorForm = functions.https.onCall(async (data: ISponsorFor
 
   try {
     const db = admin.firestore();
-    const eventDoc = db.collection("dragonhacks").doc(functions.config().current.event_name);
+    const eventDoc = db.collection("events").doc(functions.config().current.event_name);
 
     db.runTransaction(async (t) => {
       const doc = await t.get(eventDoc);
