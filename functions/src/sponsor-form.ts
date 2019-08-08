@@ -1,4 +1,5 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 import * as nodemailer from "nodemailer";
 import { MailOptions } from 'nodemailer/lib/json-transport';
 
@@ -11,7 +12,7 @@ const transporter = nodemailer.createTransport({
  * Generates an email for a sponsorship request.
  * @returns {boolean} indicates success
  */
-export const submitSponsorForm = functions.https.onCall((data: ISponsorForm, context) => {
+export const submitSponsorForm = functions.https.onCall(async (data: ISponsorForm, context) => {
   let text  = data.contactName && `Contact Name: ${data.contactName}\n` || '';
       text += data.contactEmail && `Contact Email: ${data.contactEmail}\n` || '';
       text += data.organization && `Organization: ${data.organization}\n` || '';
@@ -26,12 +27,30 @@ export const submitSponsorForm = functions.https.onCall((data: ISponsorForm, con
     text: text
   };
 
-  return transporter.sendMail(mailOptions).then(() => {
-    return true;
-  }).catch((err) => {
-    console.log(err);
+  try {
+    const db = admin.firestore();
+    const eventDoc = db.collection("dragonhacks").doc(functions.config().currentEvent);
+
+    db.runTransaction(async (t) => {
+      const doc = await t.get(eventDoc);
+      const sponsors = doc.get("sponsors");
+      sponsors[data.organization] = data;
+
+      t.set(eventDoc, {sponsors});
+
+      return;
+    });
+  } catch (e) {
     return false;
-  });
+  }
+
+  try {
+    await transporter.sendMail(mailOptions);
+    return true;
+  }
+  catch (err) {
+    return false;
+  }
 });
 
 interface ISponsorForm {
