@@ -29,11 +29,14 @@ export default class AuthButton extends React.Component {
         provider = auth.GithubAuthProvider()
         break
       default:
-        // TODO email provider
+      // TODO email provider
     }
-    app.auth().signInWithPopup(provider).then((result) => {
-      console.log(result)
-    })
+    app
+      .auth()
+      .signInWithPopup(provider)
+      .then(result => {
+        console.log(result)
+      })
   }
 
   render() {
@@ -46,7 +49,7 @@ export default class AuthButton extends React.Component {
         logo = githubSignIn
         break
       default:
-        // TODO email provider
+      // TODO email provider
     }
     const btnClasses = classes(styles.authButton, {
       [styles.google]: this.props.provider === GOOGLE,
