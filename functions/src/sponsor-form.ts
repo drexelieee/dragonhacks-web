@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import * as nodemailer from "nodemailer";
+import * as nodemailer from 'nodemailer';
 import { MailOptions } from 'nodemailer/lib/json-transport';
 
 const transporter = nodemailer.createTransport({
