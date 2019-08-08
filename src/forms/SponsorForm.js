@@ -1,6 +1,5 @@
 import React from 'react'
 import app from '../firebaseApp'
-import styles from "./SponsorForm.module.css"
 
 export default class SponsorForm extends React.Component {
   constructor(props) {
