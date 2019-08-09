@@ -9,19 +9,32 @@
 	padding-top: 20px;
 }
 
-.colored {
-	background-color: pink;
-	color: white;
-}
-
-.normal {
-	background-color: white;
+.lobsterFont {
+	font-family: 'Lobster', cursive;
 }
 
 .about {
-	height: 300px;
+	padding-top: 16px;
+	padding-bottom: 32px;
+	height: auto;
+	background-color: grey;
 }
 
 .schedule {
+	padding-top: 16px;
 	height: 300px;
+	background-color: pink;
+}
+
+.faq {
+	padding-top: 16px;
+	padding-bottom: 32px;
+	height: auto;
+	background-color: grey;
+}
+
+.sponsors {
+	padding-top: 16px;
+	height: 300px;
+	background-color: pink;
 }
