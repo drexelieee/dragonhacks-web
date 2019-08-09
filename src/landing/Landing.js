@@ -17,13 +17,13 @@ export default class Landing extends React.Component {
 	  				<h3>WHERE: Bossone Research Enterprise Center</h3>
 	  				<h3>WHEN: February 22-23</h3>
 	  			</div>
-	  			<div className={styles.normal, styles.about}>
+	  			<div className={styles.normal}>
 	  				<h1>ABOUT</h1>
 	  				<p>DragonHacks is Drexel University's 24 hour hardware-focused hackathon event hosted by Drexel University IEEE in 2019 in the Bossone Research Enterprise Center. DragonHacks 2019 is bringing in the brightest minds of the world's best schools to spend 24 hours to create ground breaking new products from scratch!</p>
 	  				<p>We will have more than enough East coast exclusive food and caffeine to energize hungry and excited hackers. Your sleepless efforts will be rewarded with swag and other goodies!</p>
 	  				<p>Hacking begins at 2 PM on Saturday, April 20th right after the opening ceremony and ends at 2 PM on Sunday, April 21st. You must submit your project on Devpost. In order to be eligible for prizes, you also must demonstrate your project.</p>
 	  			</div>
-	  			<div className={styles.colored, styles.schedule}>
+	  			<div className={styles.colored}>
 	  				<h1>SCHEDULE</h1>
 	  			</div>
 	  			<div className={styles.normal}>
