@@ -25,7 +25,64 @@ export default class Landing extends React.Component {
 	  			</div>
 	  			<div className={styles.schedule}>
 	  				<h1 className={styles.lobsterFont}>SCHEDULE</h1>
-	  				<div></div>
+	  				<div className={styles.scheduleBlock}>
+	  				<h2>SATURDAY</h2>
+	  					<table>
+	  						<thead>
+		  						<tr className={styles.scheduleRowCell}>
+		  							<th>Time</th>
+		  							<th>Event</th>
+		  						</tr>
+	  						</thead>
+	  						<tbody>
+	  							<tr>
+	  								<td>9:00 AM</td>
+	  								<td>Registration</td>
+	  							</tr>
+	  							<tr>
+	  								<td>11:00 AM</td>
+	  								<td>Team Building 1</td>
+	  							</tr>
+	  							<tr>
+	  								<td>12:00 AM</td>
+	  								<td>Team Building 2</td>
+	  							</tr>
+	  							<tr>
+	  								<td>1:00 PM</td>
+	  								<td>Lunch and Network</td>
+	  							</tr>
+	  						</tbody>
+	  					</table>
+	  				</div>
+	  				<div className={styles.scheduleBlock}>
+	  				<h2>SUNDAY</h2>
+	  					<table>
+	  						<thead>
+		  						<tr>
+		  							<th>Time</th>
+		  							<th>Event</th>
+		  						</tr>
+	  						</thead>
+	  						<tbody>
+	  							<tr>
+	  								<td>12:00 AM</td>
+	  								<td>Entertainment</td>
+	  							</tr>
+	  							<tr>
+	  								<td>1:00 AM</td>
+	  								<td>Midnight Pizza</td>
+	  							</tr>
+	  							<tr>
+	  								<td>2:00 AM</td>
+	  								<td>FAQ Bot Workshop</td>
+	  							</tr>
+	  							<tr>
+	  								<td>9:00 AM</td>
+	  								<td>Breakfast</td>
+	  							</tr>
+	  						</tbody>
+	  					</table>
+	  				</div>
 	  			</div>
 	  			<div className={styles.faq}>
 	  				<h1 className={styles.lobsterFont}>FAQ</h1>

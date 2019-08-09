@@ -16,25 +16,37 @@
 .about {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	height: auto;
 	background-color: grey;
 }
 
 .schedule {
 	padding-top: 16px;
-	height: 300px;
+	padding-bottom: 32px;
 	background-color: pink;
 }
 
 .faq {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	height: auto;
 	background-color: grey;
 }
 
 .sponsors {
 	padding-top: 16px;
-	height: 300px;
+	padding-bottom: 32px;
 	background-color: pink;
+}
+
+.scheduleRowCell {
+	padding: 3px 40px;
+	border-bottom: 1px solid black;
+}
+
+.scheduleBlock {
+	margin: 10px 20px;
+	display: block;
+}
+
+th, td {
+	border-bottom: 1px solid black;
 }
