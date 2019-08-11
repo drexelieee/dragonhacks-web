@@ -15,7 +15,7 @@ export default class Landing extends React.Component {
 	  				<h1 className={styles.landingHeader}>DRAGONHACKS 2020</h1>
 	  				<h3>WHAT: Drexel's very own 24-hour hackathon!</h3>
 	  				<h3>WHERE: Bossone Research Enterprise Center</h3>
-	  				<h3>WHEN: February 22-23</h3>
+	  				<h3>WHEN: February 22<sup>nd</sup>-23<sup>rd</sup></h3>
 	  			</div>
 	  			<div className={styles.about}>
 	  				<h1 className={styles.lobsterFont}>ABOUT</h1>
