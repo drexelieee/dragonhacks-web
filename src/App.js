@@ -1,7 +1,9 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import SponsorForm from './forms/SponsorForm'
 // import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
+import Landing from './landing/Landing'
 
 // const theme = {
 //   palette: {
@@ -13,11 +15,11 @@ import { CssBaseline } from '@material-ui/core'
 function App() {
   return (
     // <ThemeProvider theme={theme}>
-    <React.Fragment>
+    <Router>
       <CssBaseline />
-      <h2>Sponsor Us</h2>
-      <SponsorForm />
-    </React.Fragment>
+      <Route exact path='/' component={Landing} />
+      <Route exact path='/sponsor' component={SponsorForm}></Route>
+    </Router>
     // </ThemeProvider>
   )
 }
