@@ -3,10 +3,16 @@
 .landing {
 	height: 100vh;
 	font-size: 38px;
-	background-color: pink;
-	color: white;
+	background: #FBD3E9;
+    background: -webkit-linear-gradient(to bottom, #BB377D, #FBD3E9);
+    background: linear-gradient(to bottom, #BB377D, #FBD3E9);
 	font-family: 'Lobster', cursive;
 	padding-top: 20px;
+	color: white;
+}
+
+.landingHeader {
+	font-size: 120px;
 }
 
 .lobsterFont {
@@ -16,25 +22,31 @@
 .about {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	background-color: grey;
+	background-color: #9370DB;
+	color: white;
 }
 
 .schedule {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	background-color: pink;
+	background: #FBD3E9;
+    background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
+    background: linear-gradient(to bottom, #FBD3E9, #BB377D);
 }
 
 .faq {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	background-color: grey;
+	background-color: #9370DB;
+	color: white;
 }
 
 .sponsors {
 	padding-top: 16px;
 	padding-bottom: 32px;
-	background-color: pink;
+	background: #FBD3E9;
+    background: -webkit-linear-gradient(to bottom, #BB377D, #FBD3E9);
+    background: linear-gradient(to bottom, #BB377D, #FBD3E9);
 }
 
 .scheduleRowCell {

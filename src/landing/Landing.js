@@ -12,7 +12,7 @@ export default class Landing extends React.Component {
   		<div>
   			<center>
 	  			<div className={styles.landing}>
-	  				<h1>DRAGONHACKS 2020</h1>
+	  				<h1 className={styles.landingHeader}>DRAGONHACKS 2020</h1>
 	  				<h3>WHAT: Drexel's very own 24-hour hackathon!</h3>
 	  				<h3>WHERE: Bossone Research Enterprise Center</h3>
 	  				<h3>WHEN: February 22-23</h3>
