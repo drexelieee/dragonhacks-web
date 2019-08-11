@@ -1,12 +1,8 @@
 import React from 'react'
-import app from '../firebaseApp'
+// import app from '../firebaseApp'
 import styles from './Landing.module.css'
 
 export default class Landing extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
   	return(
   		<div>

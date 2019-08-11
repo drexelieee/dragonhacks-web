@@ -1,15 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import App from './App'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import './theme.css'
 import Landing from './landing/Landing'
+import Sponsor from './forms/SponsorForm'
 
 const routing = (
 	<Router>
 		<div>
-			<Route path="/" component={ Landing } />
+			<Route exact path="/" component={ Landing } />
+			<Route exact path="/sponsor" component= { Sponsor } />
 		</div>
 	</Router>
 	)
