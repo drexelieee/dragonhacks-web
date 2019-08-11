@@ -30,8 +30,8 @@
 	padding-top: 16px;
 	padding-bottom: 32px;
 	background: #FBD3E9;
-    background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
-    background: linear-gradient(to bottom, #FBD3E9, #BB377D);
+    /*background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
+    background: linear-gradient(to bottom, #FBD3E9, #BB377D);*/
 }
 
 .faq {
@@ -44,9 +44,10 @@
 .sponsors {
 	padding-top: 16px;
 	padding-bottom: 32px;
+	height: 300px;
 	background: #FBD3E9;
-    background: -webkit-linear-gradient(to bottom, #BB377D, #FBD3E9);
-    background: linear-gradient(to bottom, #BB377D, #FBD3E9);
+    background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
+    background: linear-gradient(to bottom, #FBD3E9, #BB377D);
 }
 
 .scheduleRowCell {
