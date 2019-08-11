@@ -1,8 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
-// import app from '../firebaseApp'
->>>>>>> 23a70200839b571a11aaa724ba5a84b5a542cd47
 import styles from './Landing.module.css'
 
 export default class Landing extends React.Component {
