@@ -1,12 +1,26 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import SponsorForm from './forms/SponsorForm'
+// import { ThemeProvider } from '@material-ui/styles'
+import { CssBaseline } from '@material-ui/core'
+import Landing from './landing/Landing'
+
+// const theme = {
+//   palette: {
+
+//   },
+//   fontFamily: ['Roboto', 'sans-serif']
+// }
 
 function App() {
   return (
-    <div>
-      <h2>Sponsor Us</h2>
-      <SponsorForm />
-    </div>
+    // <ThemeProvider theme={theme}>
+    <Router>
+      <CssBaseline />
+      <Route exact path='/' component={Landing} />
+      <Route exact path='/sponsor' component={SponsorForm}></Route>
+    </Router>
+    // </ThemeProvider>
   )
 }
 
