@@ -11,10 +11,10 @@ let app = firebase.initializeApp({
   storageBucket: 'dragonhacks-web-dev.appspot.com',
   messagingSenderId: '389172751187',
   appId: '1:389172751187:web:d2a2090416fb608b'
-});
+})
 
-if (process.env.REACT_APP_ENV === "development") {
-  app.functions().useFunctionsEmulator("http://localhost:5001");
+if (process.env.REACT_APP_ENV === 'development') {
+  app.functions().useFunctionsEmulator('http://localhost:5001')
 }
 
-export default app;
+export default app
