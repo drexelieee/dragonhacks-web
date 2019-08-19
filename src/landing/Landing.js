@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Landing.module.css'
 
 export default class Landing extends React.Component {
@@ -13,13 +14,16 @@ export default class Landing extends React.Component {
             <h3>
               WHEN: February 22<sup>nd</sup>-23<sup>rd</sup>
             </h3>
+            <h3>
+              <Link to='/sponsor'>Sponsor Us</Link>
+            </h3>
           </div>
           <div className={styles.about}>
             <h1 className={styles.lobsterFont}>ABOUT</h1>
             <p>
               DragonHacks is Drexel University's 24 hour hardware-focused
-              hackathon event hosted by Drexel University IEEE in 2019 in the
-              Bossone Research Enterprise Center. DragonHacks 2019 is bringing
+              hackathon event hosted by Drexel University IEEE in 2020 in the
+              Bossone Research Enterprise Center. DragonHacks 2020 is bringing
               in the brightest minds of the world's best schools to spend 24
               hours to create ground breaking new products from scratch!
             </p>
@@ -120,7 +124,7 @@ export default class Landing extends React.Component {
               </h2>
               <p>
                 Yes! Here is the list of hardware MLH will be providing during
-                DragonHacks 2019: MLH Hardware. We will also be providing our
+                DragonHacks 2020: MLH Hardware. We will also be providing our
                 own hardware which can be found on the DragonHacks Hardware
                 List.
               </p>
@@ -128,7 +132,7 @@ export default class Landing extends React.Component {
             <div>
               <h2 className={styles.lobsterFont}>Are there prizes?</h2>
               <p>
-                There are plenty of prizes to be won at DragonHacks 2019! You
+                There are plenty of prizes to be won at DragonHacks 2020! You
                 will have the opportunity to compete in plenty of challenges for
                 a chance to win: Xbox Ones, PS4s, GoPros, Apple Watches, Samsung
                 LED TVs, Nintendo Switches, iPad Airs, and way more! First place
@@ -144,7 +148,7 @@ export default class Landing extends React.Component {
               </h2>
               <p>
                 All submissions will be due on Sunday at 2 PM on the DragonHacks
-                2019 Devpost site. We highly recommend you submit at 1:30 PM to
+                2020 Devpost site. We highly recommend you submit at 1:30 PM to
                 give yourself some wiggle room for any last-minute technical
                 issues. All projects must be submitted on Devpost in order to be
                 eligible for judging and prizes!
@@ -159,10 +163,10 @@ export default class Landing extends React.Component {
                 hackers come in without teams or ideas. There are two methods to
                 find teammates, and trust us, hacking with a team is a lot more
                 fun! Team sizes have to be 2–5 people. You should be invited to
-                the official DragonHacks 2019 Slack Group where we have a
+                the official DragonHacks 2020 Slack Group where we have a
                 #teamformation channel dedicated to team formations. We will
                 also be holding a team formation event before the kickoff and
-                opening ceremony. Also check out the DragonHacks 2019 Devpost
+                opening ceremony. Also check out the DragonHacks 2020 Devpost
                 challenges for inspiration on what problems to tackle.
               </p>
             </div>
@@ -175,7 +179,7 @@ export default class Landing extends React.Component {
                 technical! We also have sponsor challenges from JetBrains,
                 .tech, Wolfram, Lockheed Martin, Close School of
                 Entrepreneurship, GLOBO, and more! The full list of challenges
-                are listed in the Official DragonHacks 2019 Devpost.
+                are listed in the Official DragonHacks 2020 Devpost.
               </p>
             </div>
             <div>
