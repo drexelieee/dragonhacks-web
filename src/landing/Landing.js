@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Landing.module.css'
 
 export default class Landing extends React.Component {
@@ -12,6 +13,9 @@ export default class Landing extends React.Component {
             <h3>WHERE: Bossone Research Enterprise Center</h3>
             <h3>
               WHEN: February 22<sup>nd</sup>-23<sup>rd</sup>
+            </h3>
+            <h3>
+              <Link to='/sponsor'>Sponsor Us</Link>
             </h3>
           </div>
           <div className={styles.about}>
