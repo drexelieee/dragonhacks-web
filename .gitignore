@@ -32,3 +32,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 firebase-debug.log*
+firestore-debug.log*
+
+# dotenv environment variables
+.env
+
+# Secrets
+.secret/

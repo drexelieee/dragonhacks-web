@@ -1,54 +1,65 @@
-import React, { Component } from 'react'
-import firebase from 'firebase'
-import { app } from './App'
-import styles from './AuthButton.css'
-import Google from './img/google.svg'
-import GitHub from './img/github.svg'
+import React from 'react'
+import { auth } from 'firebase'
+import app from './firebaseApp'
+import classNames from 'classnames/bind'
 
-const logos = {
-  Google,
-  GitHub
-}
-export default class AuthButton extends Component {
-  constructor (props) {
+import styles from './AuthButton.module.css'
+import githubSignIn from './img/github.svg'
+import googleSignIn from './img/google.svg'
+
+const classes = classNames.bind(styles)
+
+// Authentication providers
+export const GOOGLE = 'google'
+export const GITHUB = 'github'
+
+export default class AuthButton extends React.Component {
+  constructor(props) {
     super(props)
-
-    switch (props.provider.id) {
-      case 1:
-        this.provider = new firebase.auth.GoogleAuthProvider()
-        break
-      case 2:
-        this.provider = new firebase.auth.GithubAuthProvider()
-        break
-
-      default:
-        break
-    }
-
     this.authOnClick = this.authOnClick.bind(this)
   }
 
-  authOnClick () {
-    app.auth().signInWithPopup(this.provider).then((result) => {
-      console.log(result)
-    })
+  authOnClick() {
+    var provider
+    switch (this.props.provider) {
+      case GOOGLE:
+        provider = auth.GoogleAuthProvider()
+        break
+      case GITHUB:
+        provider = auth.GithubAuthProvider()
+        break
+      default:
+      // TODO email provider
+    }
+    app
+      .auth()
+      .signInWithPopup(provider)
+      .then(result => {
+        console.log(result)
+      })
   }
 
-  render () {
+  render() {
+    var logo
+    switch (this.props.provider) {
+      case GOOGLE:
+        logo = googleSignIn
+        break
+      case GITHUB:
+        logo = githubSignIn
+        break
+      default:
+      // TODO email provider
+    }
+    const btnClasses = classes(styles.authButton, {
+      [styles.google]: this.props.provider === GOOGLE,
+      [styles.github]: this.props.provider === GITHUB
+    })
     return (
-      <button className={`${styles.authButton} ${styles[this.props.provider.name.toLowerCase()]}`} onClick={this.authOnClick}>
-        <img className={styles.logo} src={logos[this.props.provider.name]} alt='' />
-        <span className={styles.innerText}>Sign in with {this.props.provider.name}</span>
+      <button className={btnClasses} onClick={this.authOnClick}>
+        <img className={styles.logo} src={logo} alt='' />
+        <span>Sign in with {this.props.provider}</span>
       </button>
     )
   }
-}
-
-export const GoogleProvider = {
-  id: 1,
-  name: 'Google'
-}
-export const GitHubProvider = {
-  id: 2,
-  name: 'GitHub'
 }

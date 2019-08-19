@@ -2,7 +2,22 @@
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
+    "prettier.eslintIntegration": true,
     "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2
+    },
+    "[firerules]": {
         "editor.tabSize": 2
     },
     "[json]": {

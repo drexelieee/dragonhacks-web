@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+.landing {
+	height: 100vh;
+	font-size: 38px;
+	background: #FBD3E9;
+    background: -webkit-linear-gradient(to bottom, #BB377D, #FBD3E9);
+    background: linear-gradient(to bottom, #BB377D, #FBD3E9);
+	font-family: 'Lobster', cursive;
+	padding-top: 20px;
+	color: white;
+}
+
+.landingHeader {
+	font-size: 120px;
+}
+
+.lobsterFont {
+	font-family: 'Lobster', cursive;
+}
+
+.about {
+	padding-top: 16px;
+	padding-bottom: 32px;
+	background-color: #9370DB;
+	color: white;
+}
+
+.schedule {
+	padding-top: 16px;
+	padding-bottom: 32px;
+	background: #FBD3E9;
+    /*background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
+    background: linear-gradient(to bottom, #FBD3E9, #BB377D);*/
+}
+
+.faq {
+	padding-top: 16px;
+	padding-bottom: 32px;
+	background-color: #9370DB;
+	color: white;
+}
+
+.sponsors {
+	padding-top: 16px;
+	padding-bottom: 32px;
+	height: 300px;
+	background: #FBD3E9;
+    background: -webkit-linear-gradient(to bottom, #FBD3E9, #BB377D);
+    background: linear-gradient(to bottom, #FBD3E9, #BB377D);
+}
+
+.scheduleRowCell {
+	padding: 3px 40px;
+	border-bottom: 1px solid black;
+}
+
+.scheduleBlock {
+	margin: 10px 20px;
+	display: block;
+}
+
+th, td {
+	border-bottom: 1px solid black;
+}
+
+body {
+	margin: 0px;
+}

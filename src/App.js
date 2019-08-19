@@ -1,27 +1,26 @@
 import React from 'react'
-import firebase from 'firebase' // Importing the entire firebase sdk isn't recommended
-import firebaseConfig from './firebaseConfig'
-import './App.css'
-import AuthButton, { GoogleProvider, GitHubProvider } from './AuthButton'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import SponsorForm from './forms/SponsorForm'
+// import { ThemeProvider } from '@material-ui/styles'
+import { CssBaseline } from '@material-ui/core'
+import Landing from './landing/Landing'
 
-export const app = firebase.initializeApp(firebaseConfig)
-function App () {
+// const theme = {
+//   palette: {
+
+//   },
+//   fontFamily: ['Roboto', 'sans-serif']
+// }
+
+function App() {
   return (
-    <div className='App'>
-      <h1>Prod Site</h1>
-      <header className='App-header'>
-        <AuthButton provider={GoogleProvider} />
-        <AuthButton provider={GitHubProvider} />
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ThemeProvider theme={theme}>
+    <Router>
+      <CssBaseline />
+      <Route exact path='/' component={Landing} />
+      <Route exact path='/sponsor' component={SponsorForm}></Route>
+    </Router>
+    // </ThemeProvider>
   )
 }
 
