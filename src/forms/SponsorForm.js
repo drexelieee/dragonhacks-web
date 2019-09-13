@@ -56,7 +56,7 @@ export default function SponsorForm(props) {
     <form className={classes.root}>
       <TextField
         className={classes.formInput}
-        label='Organzation Name'
+        label='Organization Name'
         variant='outlined'
         value={organization}
         onChange={event => setOrganization(event.target.value)}
