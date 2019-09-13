@@ -54,6 +54,7 @@ export default function SponsorForm(props) {
 
   return (
     <form className={classes.root}>
+      <h1>Sponsor Form</h1>
       <TextField
         className={classes.formInput}
         label='Organization Name'
