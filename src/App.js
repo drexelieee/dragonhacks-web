@@ -1,26 +1,31 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import SponsorForm from './forms/SponsorForm'
-// import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { pink, lightBlue } from '@material-ui/core/colors'
+import SponsorForm from './forms/SponsorForm'
 import Landing from './landing/Landing'
 
-// const theme = {
-//   palette: {
-
-//   },
-//   fontFamily: ['Roboto', 'sans-serif']
-// }
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+    secondary: lightBlue
+  },
+  typography: {
+    fontFamily: ['Roboto', 'sans-serif']
+  }
+})
 
 function App() {
   return (
-    // <ThemeProvider theme={theme}>
-    <Router>
-      <CssBaseline />
-      <Route exact path='/' component={Landing} />
-      <Route exact path='/sponsor' component={SponsorForm}></Route>
-    </Router>
-    // </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <CssBaseline />
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/sponsor' component={SponsorForm}></Route>
+      </Router>
+    </ThemeProvider>
   )
 }
 
