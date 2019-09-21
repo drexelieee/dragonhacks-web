@@ -36,6 +36,7 @@ export default function SponsorForm(props) {
   useEffect(() => {
     setLabelWidth(packageInputLabel.current.offsetWidth)
   }, [])
+  // *****
 
   const classes = useStyles()
 
