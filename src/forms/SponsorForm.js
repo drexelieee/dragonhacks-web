@@ -14,11 +14,20 @@ import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    maxWidth: '75%',
+    margin: 'auto'
   },
   formInput: {
     margin: '1em',
     minWidth: 120
+  },
+  title: {
+    textAlign: 'center'
+  },
+  submit: {
+    margin: 'auto',
+    display: 'block'
   }
 }))
 
@@ -55,7 +64,7 @@ export default function SponsorForm(props) {
 
   return (
     <form className={classes.root}>
-      <h1>Sponsor Form</h1>
+      <h1 className={classes.title}>Sponsor Form</h1>
       <TextField
         className={classes.formInput}
         label='Organization Name'
@@ -110,7 +119,7 @@ export default function SponsorForm(props) {
         value={message}
         onChange={event => setMessage(event.target.value)}
       />
-      <Button onClick={submitForm} variant='outlined'>
+      <Button className={classes.submit} onClick={submitForm} variant='outlined'>
         Submit
       </Button>
     </form>
