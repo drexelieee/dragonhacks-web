@@ -119,7 +119,11 @@ export default function SponsorForm(props) {
         value={message}
         onChange={event => setMessage(event.target.value)}
       />
-      <Button className={classes.submit} onClick={submitForm} variant='outlined'>
+      <Button
+        className={classes.submit}
+        onClick={submitForm}
+        variant='outlined'
+      >
         Submit
       </Button>
     </form>
