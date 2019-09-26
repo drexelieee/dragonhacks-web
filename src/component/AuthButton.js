@@ -1,6 +1,6 @@
 import React from 'react'
 import { auth } from 'firebase'
-import app from './firebaseApp'
+import app from '../firebaseApp'
 import classNames from 'classnames/bind'
 
 import styles from './AuthButton.module.css'
