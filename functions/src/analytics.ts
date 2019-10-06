@@ -46,11 +46,3 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
     genderCount
   }
 });
-
-
-// fields relevant to analytics
-// interface IDragonHackEvent {
-//   attended: DocumentReference[],
-//   date: Date,
-//   registered: DocumentReference[],
-// }
