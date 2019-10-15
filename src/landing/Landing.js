@@ -17,6 +17,9 @@ export default class Landing extends React.Component {
             <h3>
               <Link to='/sponsor'>Sponsor Us</Link>
             </h3>
+            <h3>
+              <Link to='/about'>About Page</Link>
+            </h3>
           </div>
           <div className={styles.about}>
             <h1 className={styles.lobsterFont}>ABOUT</h1>
