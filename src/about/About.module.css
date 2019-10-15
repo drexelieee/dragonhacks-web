@@ -1,0 +1,5 @@
+@import '@material/image-list/mdc-image-list';
+
+.my-image-list {
+  @include mdc-image-list-standard-columns(5);
+}
