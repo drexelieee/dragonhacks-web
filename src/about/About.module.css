@@ -1,5 +1,12 @@
-@import '@material/image-list/mdc-image-list';
+.root {
+  display: 'flex';
+  flexwrap: 'wrap';
+  justifycontent: 'space-around';
+  overflow: 'hidden';
+  backgroundcolor: theme.palette.background.paper;
+}
 
-.my-image-list {
-  @include mdc-image-list-standard-columns(5);
+.gridList {
+  width: 500;
+  height: 450;
 }
