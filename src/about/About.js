@@ -13,6 +13,9 @@ export default class About extends React.Component {
   render() {
     return (
       <div className={styles.root}>
+        <h3>
+              <Link to='/'>Main page</Link>
+            </h3>
         <h3>Executive board</h3>
         <GridList cellHeight={180} className={styles.gridList}>
           <GridListTile key='Subheader' cols={2} style={{ height: 'auto' }}>
