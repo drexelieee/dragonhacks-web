@@ -1,0 +1,44 @@
+.statisticCard {
+  background-color: white;
+  padding: 50px 60px;
+  /* padding: 40px 80px; */
+  margin: 10px;
+  border-radius: 2px;
+  text-align: center;
+  align-content: center;
+
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  width: 200px;
+}
+
+.statisticCard:hover {
+  box-shadow: 0 15px 16px 8px #0000000f;
+  transform: scale(1.05);
+}
+
+.statisticContent {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.statisticDescription {
+  /* font-weight: 300; */
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.statisticIconContainer {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statisticIconContainer > * {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
