@@ -4,8 +4,8 @@ import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { pink, lightBlue } from '@material-ui/core/colors'
-import SponsorForm from './forms/SponsorForm'
 import Landing from './landing/Landing'
+import Sponsor from './sponsor/Sponsor'
 
 const theme = createMuiTheme({
   palette: {
@@ -23,7 +23,7 @@ function App() {
       <Router>
         <CssBaseline />
         <Route exact path='/' component={Landing} />
-        <Route exact path='/sponsor' component={SponsorForm}></Route>
+        <Route exact path='/sponsor' component={Sponsor}></Route>
       </Router>
     </ThemeProvider>
   )
