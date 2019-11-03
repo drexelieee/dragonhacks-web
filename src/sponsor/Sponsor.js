@@ -38,7 +38,7 @@ export default function Sponsor(props) {
           content={stats.attendedCount}
           description='Participants'
           icon={PersonIcon}
-          iconBg='#62d777'
+          iconBg='#46d760'
         />
         <StatisticCard
           content={stats.schoolCount}

@@ -7,14 +7,14 @@
   text-align: center;
   align-content: center;
 
-  transition: box-shadow .2s ease, transform .2s ease;
+  transition: box-shadow .2s cubic-bezier(0,.2,.36,.99), transform .2s cubic-bezier(0,.2,.36,.99);
 
   width: 200px;
 }
 
 .statisticCard:hover {
   box-shadow: 0 15px 16px 8px #0000000f;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .statisticContent {
@@ -35,6 +35,7 @@
 
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 }
 
 .statisticIconContainer > * {
