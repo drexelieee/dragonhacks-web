@@ -8,6 +8,8 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
   let registeredCount = 0;
   let attendedCount = 0;
   let schoolCount = 0;
+  let countryCount = 0;
+  let firstHackathonCount = 0;
   const genderCount = {
     male: 0,
     female: 0
@@ -31,6 +33,8 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
       const attended_d: IParticipant[] = <IParticipant[]>(await Promise.all(attended_refs));
 
       schoolCount = new Set(attended_d.map((a) => a.school)).size;
+      countryCount = new Set(attended_d.map((a) => a.country)).size;
+      firstHackathonCount = attended_d.filter((a) => a.hackathons_attended === 0).length; // was open text field, probably not correct
 
       genderCount.male = attended_d.reduce((prev, a) => prev + (a.gender === "Male" ? 1 : 0), 0);
       genderCount.female = attended_d.reduce((prev, a) => prev + (a.gender === "Female" ? 1 : 0), 0);
@@ -43,6 +47,8 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
     attendedCount,
     registeredCount,
     schoolCount,
-    genderCount
+    genderCount,
+    countryCount,
+    firstHackathonCount
   }
 });
