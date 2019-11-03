@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 import app from '../firebaseApp'
 import SponsorForm from '../forms/SponsorForm'
 import styles from './Sponsor.module.css'
@@ -8,7 +8,6 @@ import SchoolIcon from '@material-ui/icons/School'
 import ListAltIcon from '@material-ui/icons/ListAlt'
 import PersonIcon from '@material-ui/icons/Person'
 import PublicIcon from '@material-ui/icons/Public'
-import AddIcon from '@material-ui/icons/Add'
 import GroupAddIcon from '@material-ui/icons/GroupAdd'
 
 export default function Sponsor(props) {
