@@ -7,6 +7,9 @@ import StatisticCardRow from '../statistics/StatisticCardRow'
 import SchoolIcon from '@material-ui/icons/School'
 import ListAltIcon from '@material-ui/icons/ListAlt'
 import PersonIcon from '@material-ui/icons/Person'
+import PublicIcon from '@material-ui/icons/Public'
+import AddIcon from '@material-ui/icons/Add'
+import GroupAddIcon from '@material-ui/icons/GroupAdd'
 
 export default function Sponsor(props) {
   let [stats, setStats] = useState({})
@@ -15,15 +18,17 @@ export default function Sponsor(props) {
     setStats(app.functions().httpsCallable('getAnalytics')('2019'))
   }, [])
 
-  stats = {
-    attendedCount: 200,
-    registeredCount: 400,
-    schoolCount: 20,
-    genderCount: {
-      female: 80,
-      male: 100
-    }
-  }
+  // stats = {
+  //   attendedCount: 200,
+  //   registeredCount: 400,
+  //   schoolCount: 20,
+  //   countryCount: 5,
+  //   firstHackathonCount: 100,
+  //   genderCount: {
+  //     female: 80,
+  //     male: 100
+  //   }
+  // }
 
   return (
     <div className={styles.sponsorWrapper}>
@@ -45,6 +50,18 @@ export default function Sponsor(props) {
           description='Schools'
           icon={SchoolIcon}
           iconBg='#a782fd'
+        />
+        <StatisticCard
+          content={stats.countryCount}
+          description='Countries'
+          icon={PublicIcon}
+          iconBg='#85c7fd'
+        />
+        <StatisticCard
+          content={stats.firstHackathonCount}
+          description='First time hackers'
+          icon={GroupAddIcon}
+          iconBg='#ff8a3e'
         />
       </StatisticCardRow>
       <SponsorForm />
