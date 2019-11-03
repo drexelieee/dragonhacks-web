@@ -1,0 +1,12 @@
+.sponsorWrapper {
+  margin: 40px;
+}
+
+.statistic {
+  font-size: 20px;
+}
+
+.statistic strong {
+  color: rgb(120, 60, 148);
+  font-size: 1.2em;
+}
