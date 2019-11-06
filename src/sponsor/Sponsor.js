@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import app from '../firebaseApp'
 import SponsorForm from '../forms/SponsorForm'
 import styles from './Sponsor.module.css'
