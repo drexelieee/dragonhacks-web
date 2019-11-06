@@ -46,10 +46,10 @@ export default function Landing() {
           rewarded with swag and other goodies!
         </Typography>
         <Typography>
-          {START_DATE.toLocaleTimeString()} Hacking begins at 2 PM on Saturday,
-          April 20th right after the opening ceremony and ends at 2 PM on
-          Sunday, April 21st. You must submit your project on Devpost. In order
-          to be eligible for prizes, you also must demonstrate your project.
+          Hacking begins at {START_DATE.toLocaleString('en-US')} right after the
+          opening ceremony and ends at {END_DATE.toLocaleString('en-US')}. You must
+          submit your project on Devpost. In order to be eligible for prizes,
+          you also must demonstrate your project.
         </Typography>
       </Container>
       <Container>

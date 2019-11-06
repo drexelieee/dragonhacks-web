@@ -3,9 +3,6 @@ import { TextField, Button, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import AuthButton, { GOOGLE, GITHUB } from '../component/AuthButton'
 
-import githubSvg from '../img/github.svg'
-import googleSvg from '../img/google.svg'
-
 const useStyles = makeStyles({
   root: {
     display: 'flex',
