@@ -24,7 +24,7 @@ export default function Landing() {
           Login with Love
         </Typography>
         <Typography style={{ margin: '1em 0' }} variant='h2'>
-          Welcome to Dragon<wbr/>Hacks {START_DATE.getFullYear()}!
+          Welcome to Dragon<wbr />Hacks {START_DATE.getFullYear()}!
         </Typography>
         <LoginForm />
       </Container>
