@@ -1,4 +1,4 @@
-# dragonhacks-web [![Build Status](https://travis-ci.com/drexelieee/dragonhacks-web.svg?branch=develop)](https://travis-ci.com/drexelieee/dragonhacks-web)
+# dragonhacks-web [![Build Status](https://travis-ci.com/drexelieee/dragonhacks-web.svg?branch=master)](https://travis-ci.com/drexelieee/dragonhacks-web)
 
 Website for the DragonHacks hackathon
 
