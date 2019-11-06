@@ -14,11 +14,23 @@ import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    maxWidth: '75%',
+    margin: 'auto',
+    backgroundColor: 'white',
+    borderRadius: '3px',
+    padding: '10px'
   },
   formInput: {
     margin: '1em',
     minWidth: 120
+  },
+  title: {
+    textAlign: 'center'
+  },
+  submit: {
+    margin: 'auto',
+    display: 'block'
   }
 }))
 
@@ -36,6 +48,7 @@ export default function SponsorForm(props) {
   useEffect(() => {
     setLabelWidth(packageInputLabel.current.offsetWidth)
   }, [])
+  // *****
 
   const classes = useStyles()
 
@@ -54,9 +67,10 @@ export default function SponsorForm(props) {
 
   return (
     <form className={classes.root}>
+      <h1 className={classes.title}>Sponsor Form</h1>
       <TextField
         className={classes.formInput}
-        label='Organzation Name'
+        label='Organization Name'
         variant='outlined'
         value={organization}
         onChange={event => setOrganization(event.target.value)}
@@ -108,7 +122,11 @@ export default function SponsorForm(props) {
         value={message}
         onChange={event => setMessage(event.target.value)}
       />
-      <Button onClick={submitForm} variant='outlined'>
+      <Button
+        className={classes.submit}
+        onClick={submitForm}
+        variant='outlined'
+      >
         Submit
       </Button>
     </form>
