@@ -173,7 +173,8 @@ export default function Landing() {
             the{' '}
             <Link href='https://goo.gl/maps/SSncVEcKq53891VUA'>
               Bossone Research Center
-            </Link>.
+            </Link>
+            .
           </Typography>
         </div>
       </Container>

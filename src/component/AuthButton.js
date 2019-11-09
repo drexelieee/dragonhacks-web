@@ -3,8 +3,8 @@ import { Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import firebase from 'firebase'
 import 'firebase/auth'
-import githubSvg from '../img/github.svg'
-import googleSvg from '../img/google.svg'
+import githubLogo from '../img/github.png'
+import googleLogo from '../img/google.svg'
 
 const useStyles = makeStyles({
   root: {
@@ -28,22 +28,22 @@ export const GITHUB = 'GitHub'
 
 export default function AuthButton(props) {
   const classes = useStyles()
-  // eslint-disable-next-line
+  // eslint-disable-next-line no-unused-vars
   var provider, icon
   switch (props.provider) {
     case GOOGLE:
       provider = new firebase.auth.GoogleAuthProvider()
-      icon = googleSvg
+      icon = googleLogo
       break
     case GITHUB:
       provider = new firebase.auth.GithubAuthProvider()
-      icon = githubSvg
+      icon = githubLogo
       break
     default:
     // Email auth
   }
 
-  const node = <img src={icon} alt='' />
+  const node = <img src={icon} alt='' width='32' />
   return (
     <Button className={classes.root} startIcon={node} variant='outlined'>
       Sign in with {props.provider}
