@@ -16,7 +16,8 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
   };
 
   const db = admin.firestore();
-  const eventDoc = db.collection("events").doc(data.year);
+  console.log(data);
+  const eventDoc = db.collection("events").doc("dragonhacks2019");
 
   try {
     await db.runTransaction(async (t) => {
