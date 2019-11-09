@@ -14,7 +14,12 @@ export default function Sponsor(props) {
   let [stats, setStats] = useState({})
 
   useEffect(() => {
-    setStats(app.functions().httpsCallable('getAnalytics')('2019'))
+    async function getAnalytics() {
+      setStats(
+        (await app.functions().httpsCallable('getAnalytics')('2019')).result
+      )
+    }
+    getAnalytics()
   }, [])
 
   // stats = {
