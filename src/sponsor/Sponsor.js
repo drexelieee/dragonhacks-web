@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import app from '../firebaseApp'
 import SponsorForm from '../forms/SponsorForm'
 import styles from './Sponsor.module.css'
@@ -14,7 +14,12 @@ export default function Sponsor(props) {
   let [stats, setStats] = useState({})
 
   useEffect(() => {
-    setStats(app.functions().httpsCallable('getAnalytics')('2019'))
+    async function getAnalytics() {
+      setStats(
+        (await app.functions().httpsCallable('getAnalytics')('2019')).result
+      )
+    }
+    getAnalytics()
   }, [])
 
   // stats = {
