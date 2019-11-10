@@ -8,7 +8,6 @@ import SchoolIcon from '@material-ui/icons/School'
 import ListAltIcon from '@material-ui/icons/ListAlt'
 import PersonIcon from '@material-ui/icons/Person'
 import PublicIcon from '@material-ui/icons/Public'
-import GroupAddIcon from '@material-ui/icons/GroupAdd'
 
 export default function Sponsor(props) {
   let [stats, setStats] = useState({})
