@@ -16,23 +16,11 @@ export default function Sponsor(props) {
   useEffect(() => {
     async function getAnalytics() {
       setStats(
-        (await app.functions().httpsCallable('getAnalytics')('2019')).result
+        (await app.functions().httpsCallable('getAnalytics')('2019')).data
       )
     }
     getAnalytics()
   }, [])
-
-  // stats = {
-  //   attendedCount: 200,
-  //   registeredCount: 400,
-  //   schoolCount: 20,
-  //   countryCount: 5,
-  //   firstHackathonCount: 100,
-  //   genderCount: {
-  //     female: 80,
-  //     male: 100
-  //   }
-  // }
 
   return (
     <div className={styles.sponsorWrapper}>
@@ -61,12 +49,12 @@ export default function Sponsor(props) {
           icon={PublicIcon}
           iconBg='#85c7fd'
         />
-        <StatisticCard
+        {/* <StatisticCard
           content={stats.firstHackathonCount}
           description='First time hackers'
           icon={GroupAddIcon}
           iconBg='#ff8a3e'
-        />
+        /> */}
       </StatisticCardRow>
       <SponsorForm />
     </div>
