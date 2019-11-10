@@ -16,7 +16,10 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '75%',
-    margin: 'auto'
+    margin: 'auto',
+    backgroundColor: 'white',
+    borderRadius: '3px',
+    padding: '10px'
   },
   formInput: {
     margin: '1em',

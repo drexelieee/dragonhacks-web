@@ -4,9 +4,11 @@ import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { pink, lightBlue } from '@material-ui/core/colors'
-import SponsorForm from './forms/SponsorForm'
-import Landing from './landing/Landing'
-import About from './about/About'
+import Sponsor from './sponsor/Sponsor'
+import Landing from './component/Landing'
+import Header from './component/Header'
+import Footer from './component/Footer'
+import MLHBadge from './component/MLHBadge'
 
 const theme = createMuiTheme({
   palette: {
@@ -21,11 +23,13 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <MLHBadge />
       <Router>
         <CssBaseline />
+        <Route path='/' component={Header} />
         <Route exact path='/' component={Landing} />
-        <Route exact path='/sponsor' component={SponsorForm}></Route>
-        <Route exact path='/about' component={About}></Route>
+        <Route exact path='/sponsor' component={Sponsor} />
+        <Route path='/' component={Footer} />
       </Router>
     </ThemeProvider>
   )
