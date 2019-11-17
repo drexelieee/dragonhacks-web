@@ -30,7 +30,6 @@ function App() {
         <Route path='/' component={Header} />
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
-        <Route exact path='/test' component={Test} />
         <Route path='/' component={Footer} />
       </Router>
     </ThemeProvider>
