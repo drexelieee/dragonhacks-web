@@ -38,6 +38,22 @@ export const websiteMasterData = [
   {
     imgSrc: Daniel_Erbynm,
     name: 'Daniel Erbynm'
+  },
+  {
+    imgSrc: Daniel_Erbynm,
+    name: 'Daniel Erbynm'
+  },
+  {
+    imgSrc: Daniel_Erbynm,
+    name: 'Daniel Erbynm'
+  },
+  {
+    imgSrc: Daniel_Erbynm,
+    name: 'Daniel Erbynm'
+  },
+  {
+    imgSrc: Daniel_Erbynm,
+    name: 'Daniel Erbynm'
   }
 ]
 /*
@@ -46,7 +62,6 @@ Daniel Erbynm
 Hoang Nguyen
 Steven Kearns
 Jason R. Carrete
-Mridul Awasthi
 Shara Saketkhou
 Zach Matusen
 */
@@ -55,6 +70,7 @@ Zach Matusen
 Names to add:
 
 Anuva Atandrila
+Mridul Awasthi
 Aviroop Majumdar
 Gabby Dela Paz
 Har Patel
