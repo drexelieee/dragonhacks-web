@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import { IParticipant } from './participant';
+import { IParticipant } from './participant-form';
 
 type DocumentReference = admin.firestore.DocumentReference;
 
