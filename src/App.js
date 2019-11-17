@@ -9,7 +9,6 @@ import Landing from './component/Landing'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import MLHBadge from './component/MLHBadge'
-import Test from './Test'
 
 const theme = createMuiTheme({
   palette: {
