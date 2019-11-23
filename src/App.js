@@ -31,7 +31,7 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
         <Route path='/' component={Footer} />
-        <Route path='/attend' component={Attend} />
+        <Route exact path='/attend' component={Attend} />
       </Router>
     </ThemeProvider>
   )
