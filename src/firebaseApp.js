@@ -14,6 +14,8 @@ let app = firebase.initializeApp({
 })
 
 if (process.env.REACT_APP_ENV === 'development') {
+  console.log('DEVELOPMENT MODE ENABLED')
+  console.log('Running functions on local emulator')
   app.functions().useFunctionsEmulator('http://localhost:5001')
 }
 
