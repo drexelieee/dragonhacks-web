@@ -9,6 +9,7 @@ import Landing from './component/Landing'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import MLHBadge from './component/MLHBadge'
+import Attend from './Attend'
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +31,7 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
         <Route path='/' component={Footer} />
+        <Route path='/attend' component={Attend} />
       </Router>
     </ThemeProvider>
   )
