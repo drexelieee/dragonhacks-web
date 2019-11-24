@@ -19,9 +19,9 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper
   },
-  gridList: {
-    width: 1000
-  },
+  // gridList: {
+  //   width: 1000
+  // },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)'
   },
@@ -37,31 +37,33 @@ const About = props => {
     if (isWidthUp('xl', props.width)) {
       return 4
     }
-
     if (isWidthUp('lg', props.width)) {
-      return 3
+      return 4
     }
-
     if (isWidthUp('md', props.width)) {
+      return 4
+    }
+    if (isWidthUp('sm', props.width)) {
       return 2
     }
-
     return 1
   }
   const getGridListHeight = () => {
     if (isWidthUp('xl', props.width)) {
-      return 300
+      return 400
     }
 
     if (isWidthUp('lg', props.width)) {
-      return 300
+      return 400
     }
 
     if (isWidthUp('md', props.width)) {
-      return 200
+      return 350
     }
-
-    return 300
+    if (isWidthUp('sm', props.width)) {
+      return 400
+    }
+    return 400
   }
   const classes = useStyles()
 
@@ -77,14 +79,19 @@ const About = props => {
           spend 24 hours to hours to create ground breaking new products from
           scratch!
         </Typography>
+
         <Container>
           <Typography variant='h3'>Meet the team!</Typography>
           <br />
           <Typography variant='h4'>IEEE Executive Board</Typography>
-          <GridList cols={getGridListCols()} className={classes.gridList}>
+          <GridList
+            cols={getGridListCols()}
+            cellHeight={getGridListHeight()}
+            className={classes.gridList}
+          >
             {teamNames.execBoardData.map(tile => (
               <GridListTile key={tile.imgSrc}>
-                <img src={tile.imgSrc} alt={tile.name} layout-fill />
+                <img src={tile.imgSrc} alt={tile.name} />
                 <GridListTileBar
                   title={tile.name}
                   subtitle={<span>{tile.title}</span>}
@@ -92,9 +99,14 @@ const About = props => {
               </GridListTile>
             ))}
           </GridList>
+
           <br />
           <Typography variant='h4'>Website Developers</Typography>
-          <GridList cellHeight={300} cols={4} className={classes.gridList}>
+          <GridList
+            cols={getGridListCols()}
+            cellHeight={getGridListHeight()}
+            className={classes.gridList}
+          >
             {teamNames.websiteMasterData.map(tile => (
               <GridListTile key={tile.imgSrc}>
                 <img src={tile.imgSrc} alt={tile.name} />
@@ -105,9 +117,14 @@ const About = props => {
               </GridListTile>
             ))}
           </GridList>
+
           <br />
           <Typography variant='h4'>Committee</Typography>
-          <GridList cellHeight={300} cols={4} className={classes.gridList}>
+          <GridList
+            cols={getGridListCols()}
+            cellHeight={getGridListHeight()}
+            className={classes.gridList}
+          >
             {teamNames.committeeData.map(tile => (
               <GridListTile key={tile.imgSrc}>
                 <img src={tile.imgSrc} alt={tile.name} />
