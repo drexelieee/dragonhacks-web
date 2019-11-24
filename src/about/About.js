@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import {
   Typography,
   Container,
@@ -10,8 +10,6 @@ import {
   GridListTile
 } from '@material-ui/core'
 import * as teamNames from './teamNames.js'
-// import styles from './About.module.css'
-// import MdcImageList from '@material/image-list/mdc-image-list'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,10 +31,40 @@ const useStyles = makeStyles(theme => ({
 }))
 
 // export default class About extends React.Component {
-export default function About() {
+const About = props => {
+  // Make component responsive to screen size
+  const getGridListCols = () => {
+    if (isWidthUp('xl', props.width)) {
+      return 4
+    }
+
+    if (isWidthUp('lg', props.width)) {
+      return 3
+    }
+
+    if (isWidthUp('md', props.width)) {
+      return 2
+    }
+
+    return 1
+  }
+  const getGridListHeight = () => {
+    if (isWidthUp('xl', props.width)) {
+      return 300
+    }
+
+    if (isWidthUp('lg', props.width)) {
+      return 300
+    }
+
+    if (isWidthUp('md', props.width)) {
+      return 200
+    }
+
+    return 300
+  }
   const classes = useStyles()
-  const smallScreen = window.innerWidth < 480
-  let columns = smallScreen ? 2 : 4
+
   return (
     <div className={classes.root}>
       <Container>
@@ -53,10 +81,10 @@ export default function About() {
           <Typography variant='h3'>Meet the team!</Typography>
           <br />
           <Typography variant='h4'>IEEE Executive Board</Typography>
-          <GridList cellHeight={300} cols={4} className={classes.gridList}>
+          <GridList cols={getGridListCols()} className={classes.gridList}>
             {teamNames.execBoardData.map(tile => (
               <GridListTile key={tile.imgSrc}>
-                <img src={tile.imgSrc} alt={tile.name} />
+                <img src={tile.imgSrc} alt={tile.name} layout-fill />
                 <GridListTileBar
                   title={tile.name}
                   subtitle={<span>{tile.title}</span>}
@@ -98,3 +126,5 @@ export default function About() {
     </div>
   )
 }
+
+export default withWidth()(About)
