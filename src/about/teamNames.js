@@ -3,6 +3,7 @@ import Celine_Khoo from '../assets/headshots/Celine_Khoo.jpg'
 import Denise_Weinberger from '../assets/headshots/Denise_Weinberger.jpg'
 import Matt_Rantz from '../assets/headshots/Matt_Rantz.jpg'
 
+import Jason_Carrete from '../assets/headshots/Jason_Carrete.jpg'
 import Hoang_Nguyen from '../assets/headshots/Hoang_Nguyen.png'
 import Daniel_Erbynm from '../assets/headshots/Daniel_Erbynm.jpg'
 import Tapasya_Sharma from '../assets/headshots/Tapasya_Sharma.jpg'
@@ -14,6 +15,7 @@ import Darius_Olega from '../assets/headshots/Darius_Olega.jpg'
 import Julia_Fleming from '../assets/headshots/Julia_Fleming.jpg'
 import Mridul_Awasthi from '../assets/headshots/Mridul_Awasthi.jpg'
 import Vincent_Theodor_Go from '../assets/headshots/Vincent_Theodor_Go.jpg'
+import Avi_Majumdar from '../assets/headshots/Avi_Majumdar.png'
 
 export const execBoardData = [
   {
@@ -40,6 +42,11 @@ export const execBoardData = [
 
 export const websiteMasterData = [
   {
+    imgSrc: Jason_Carrete,
+    name: 'Jason Carrete',
+    title: 'Website Master'
+  },
+  {
     imgSrc: Hoang_Nguyen,
     name: 'Hoang Nguyen'
   },
@@ -54,7 +61,6 @@ export const websiteMasterData = [
 ]
 /*
 Steven Kearns
-Jason R. Carrete
 Shara Saketkhou
 Zach Matusen
 */
@@ -83,6 +89,10 @@ export const committeeData = [
   {
     imgSrc: Vincent_Theodor_Go,
     name: 'Vincent Theodor Go'
+  },
+  {
+    imgSrc: Avi_Majumdar,
+    name: 'Avi Majumdar'
   }
 ]
 
