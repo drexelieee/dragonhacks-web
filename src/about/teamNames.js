@@ -1,11 +1,19 @@
-import Joseph_Theoharakis from '../assets/Joseph_Theoharakis.png'
-import Celine_Khoo from '../assets/Celine_Khoo.jpg'
-import Denise_Weinberger from '../assets/Denise_Weinberger.jpg'
-import Matt_Rantz from '../assets/Matt_Rantz.jpg'
+import Joseph_Theoharakis from '../assets/headshots/Joseph_Theoharakis.png'
+import Celine_Khoo from '../assets/headshots/Celine_Khoo.jpg'
+import Denise_Weinberger from '../assets/headshots/Denise_Weinberger.jpg'
+import Matt_Rantz from '../assets/headshots/Matt_Rantz.jpg'
 
-import Hoang_Nguyen from '../assets/Hoang_Nguyen.png'
-import Daniel_Erbynm from '../assets/Daniel_Erbynm.jpg'
+import Hoang_Nguyen from '../assets/headshots/Hoang_Nguyen.png'
+import Daniel_Erbynm from '../assets/headshots/Daniel_Erbynm.jpg'
+import Tapasya_Sharma from '../assets/headshots/Tapasya_Sharma.jpg'
 // Steven Khoa
+
+import Alfredo_Flores from '../assets/headshots/Alfredo_Flores.jpg'
+import Alisha_Augustin from '../assets/headshots/Alisha_Augustin.jpg'
+import Darius_Olega from '../assets/headshots/Darius_Olega.jpg'
+import Julia_Fleming from '../assets/headshots/Julia_Fleming.jpg'
+import Mridul_Awasthi from '../assets/headshots/Mridul_Awasthi.jpg'
+import Vincent_Theodor_Go from '../assets/headshots/Vincent_Theodor_Go.jpg'
 
 export const execBoardData = [
   {
@@ -40,31 +48,43 @@ export const websiteMasterData = [
     name: 'Daniel Erbynm'
   },
   {
-    imgSrc: Daniel_Erbynm,
-    name: 'Daniel Erbynm'
-  },
-  {
-    imgSrc: Daniel_Erbynm,
-    name: 'Daniel Erbynm'
-  },
-  {
-    imgSrc: Daniel_Erbynm,
-    name: 'Daniel Erbynm'
-  },
-  {
-    imgSrc: Daniel_Erbynm,
-    name: 'Daniel Erbynm'
+    imgSrc: Tapasya_Sharma,
+    name: 'Tapasya Sharma'
   }
 ]
 /*
-Tapasya Sharma
-Daniel Erbynm
-Hoang Nguyen
 Steven Kearns
 Jason R. Carrete
 Shara Saketkhou
 Zach Matusen
 */
+
+export const committeeData = [
+  {
+    imgSrc: Alfredo_Flores,
+    name: 'Alfredo Flores'
+  },
+  {
+    imgSrc: Alisha_Augustin,
+    name: 'Alisha Augustin'
+  },
+  {
+    imgSrc: Darius_Olega,
+    name: 'Darius Olega'
+  },
+  {
+    imgSrc: Julia_Fleming,
+    name: 'Julia Fleming'
+  },
+  {
+    imgSrc: Mridul_Awasthi,
+    name: 'Mridul Awasthi'
+  },
+  {
+    imgSrc: Vincent_Theodor_Go,
+    name: 'Vincent Theodor Go'
+  }
+]
 
 /*
 Names to add:

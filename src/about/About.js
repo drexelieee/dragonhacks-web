@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 // export default class About extends React.Component {
-export default function FunkyTown() {
+export default function About() {
   const classes = useStyles()
   const smallScreen = window.innerWidth < 480
   let columns = smallScreen ? 2 : 4
@@ -50,7 +50,9 @@ export default function FunkyTown() {
           scratch!
         </Typography>
         <Container>
-          <Typography variant='h3'>IEEE Executive Board</Typography>
+          <Typography variant='h3'>Meet the team!</Typography>
+          <br />
+          <Typography variant='h4'>IEEE Executive Board</Typography>
           <GridList cellHeight={300} cols={4} className={classes.gridList}>
             {teamNames.execBoardData.map(tile => (
               <GridListTile key={tile.imgSrc}>
@@ -62,9 +64,23 @@ export default function FunkyTown() {
               </GridListTile>
             ))}
           </GridList>
-          <Typography variant='h3'>Website Developers</Typography>
+          <br />
+          <Typography variant='h4'>Website Developers</Typography>
           <GridList cellHeight={300} cols={4} className={classes.gridList}>
             {teamNames.websiteMasterData.map(tile => (
+              <GridListTile key={tile.imgSrc}>
+                <img src={tile.imgSrc} alt={tile.name} />
+                <GridListTileBar
+                  title={tile.name}
+                  subtitle={<span>{tile.title}</span>}
+                />
+              </GridListTile>
+            ))}
+          </GridList>
+          <br />
+          <Typography variant='h4'>Committee</Typography>
+          <GridList cellHeight={300} cols={4} className={classes.gridList}>
+            {teamNames.committeeData.map(tile => (
               <GridListTile key={tile.imgSrc}>
                 <img src={tile.imgSrc} alt={tile.name} />
                 <GridListTileBar
