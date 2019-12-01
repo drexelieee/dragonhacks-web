@@ -84,8 +84,12 @@ export default function Attend(props) {
       setLoading(true)
       const res = await app.functions().httpsCallable('attend')(id)
       setLoading(false)
-      if (res) {
-        setAttendSuccess('Success. You may now close the tab')
+      if (res.success) {
+        if (res.waitlisted) {
+          setAttendSuccess('Waitlisted. You may now close the tab')
+        } else {
+          setAttendSuccess('Success. You may now close the tab')
+        }
       } else {
         setAttendError(`Failed to attend user: ${id}`)
       }
