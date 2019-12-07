@@ -12,7 +12,13 @@ export default function StatisticCard(props) {
       >
         <Icon style={{ color: props.iconBg }} />
       </div>
-      <strong className={styles.statisticContent}>{props.content}</strong>
+      <strong className={styles.statisticContent}>
+        {props.content != null ? (
+          props.content
+        ) : (
+          <div className={styles.loading} />
+        )}
+      </strong>
       <div className={styles.statisticDescription}>{props.description}</div>
     </div>
   )

@@ -5,17 +5,8 @@ import AuthButton, { GOOGLE, GITHUB } from '../component/AuthButton'
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    maxWidth: '20em',
+    maxWidth: '450px',
     margin: 'auto'
-  },
-  formInput: {
-    margin: '0.5em'
-  },
-  loginActions: {
-    margin: '2em 0'
   }
 })
 
@@ -25,32 +16,39 @@ export default function LoginForm(props) {
   const [password, setPassword] = useState()
 
   return (
-    <form className={classes.root}>
-      <TextField
-        className={classes.formInput}
-        label='Username'
-        value={username}
-        onChange={event => setUsername(event.target.value)}
-      />
-      <TextField
-        className={classes.formInput}
-        label='Password'
-        type='password'
-        value={password}
-        onChange={event => setPassword(event.target.value)}
-      />
-      <Grid className={classes.loginActions}>
-        <Button
-          className={classes.formInput}
-          fullWidth={true}
-          color='primary'
-          variant='contained'
-        >
+    <Grid
+      id='login'
+      container
+      className={classes.root}
+      component='form'
+      spacing={1}
+    >
+      <Grid item xs={12}>
+        <TextField
+          label='Username'
+          value={username}
+          onChange={event => setUsername(event.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          label='Password'
+          type='password'
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <Button fullWidth={true} color='primary' variant='contained'>
           Login/Signup
         </Button>
+      </Grid>
+      <Grid item xs={6}>
         <AuthButton provider={GITHUB} />
+      </Grid>
+      <Grid item xs={6}>
         <AuthButton provider={GOOGLE} />
       </Grid>
-    </form>
+    </Grid>
   )
 }
