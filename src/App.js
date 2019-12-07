@@ -30,8 +30,8 @@ function App() {
         <Route path='/' component={Header} />
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
-        <Route path='/' component={Footer} />
         <Route exact path='/attend' component={Attend} />
+        <Route path='/' component={Footer} />
       </Router>
     </ThemeProvider>
   )
