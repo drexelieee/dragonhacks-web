@@ -70,19 +70,22 @@ const About = props => {
   return (
     <div className={classes.root}>
       <Container>
-        <Typography variant='h2'>About DragonHacks</Typography>
-        <Typography className={classes.paragraph}>
-          DragonHacks is Drexel University's 24 hour hardware-focused hackathon
-          event hosted by Drexel University IEEE on Saturday, February 22 at
-          2:00 PM (EST) in the Bossone Research Enterprise Center. DragonHacks
-          2020 is bringing the brightest minds of the world's best schools to
-          spend 24 hours to hours to create ground breaking new products from
-          scratch!
+        <Typography variant='h2'>
+          About DragonHacks <br /> <br />
         </Typography>
-
-        <Container>
-          <Typography variant='h3'>Meet the team!</Typography>
+        <Typography className={classes.paragraph}>
+          This year is our fifth annual DragonHacks ever! Organized by Drexel
+          University IEEE, we plan to bring together hackers from all around
+          Philadelphia to provide an atmosphere where you can build innovative
+          hardware and software projects!
+        </Typography>
+        <Typography variant='h3'>
           <br />
+          Meet the team!
+          <br />
+          <br />
+        </Typography>
+        <Container>
           <Typography variant='h4'>IEEE Executive Board</Typography>
           <GridList
             cols={getGridListCols()}
@@ -136,9 +139,6 @@ const About = props => {
             ))}
           </GridList>
         </Container>
-        <h3>
-          <Link to='/'>Main page</Link>
-        </h3>
       </Container>
     </div>
   )
