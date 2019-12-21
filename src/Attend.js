@@ -54,6 +54,7 @@ export default function Attend(props) {
 
   const [attendError, setAttendError] = useState()
   const [attendSuccess, setAttendSuccess] = useState()
+  const [attendShirtSize, setAttendShirtSize] = useState()
 
   async function onClick() {
     // attempt to log user in
@@ -83,12 +84,14 @@ export default function Attend(props) {
       const id = window.location.hash.substr(1) // remove #
       setLoading(true)
       const res = await app.functions().httpsCallable('attend')(id)
+      console.log(res)
       setLoading(false)
-      if (res.success) {
+      if (res.data.success) {
         if (res.waitlisted) {
-          setAttendSuccess('Waitlisted. You may now close the tab')
+          setAttendSuccess('Waitlisted')
         } else {
-          setAttendSuccess('Success. You may now close the tab')
+          setAttendSuccess('Success')
+          setAttendShirtSize(res.data.shirtSize)
         }
       } else {
         setAttendError(`Failed to attend user: ${id}`)
@@ -132,6 +135,12 @@ export default function Attend(props) {
       )}
       {attendSuccess != null && (
         <div className={classes.success}>{attendSuccess}</div>
+      )}
+      {attendShirtSize != null && (
+        <div className={classes.success}>Shirt Size: {attendShirtSize}</div>
+      )}
+      {attendSuccess != null && (
+        <div className={classes.success}>You may now close the page</div>
       )}
     </div>
   )
