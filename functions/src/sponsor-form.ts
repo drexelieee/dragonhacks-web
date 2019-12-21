@@ -2,17 +2,31 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 import * as nodemailer from 'nodemailer';
 import { MailOptions } from 'nodemailer/lib/json-transport';
+import VerifyInput from './verifyInput';
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: functions.config().nodemailer.auth
 });
 
+const refSponsorForm: ISponsorForm = {
+  contactEmail: '',
+  contactName: '',
+  donation: -1,
+  message: '',
+  organization: '',
+  package: ''
+}
+
 /**
  * Generates an email for a sponsorship request.
  * @returns {boolean} indicates success
  */
 export const submitSponsorForm = functions.https.onCall(async (data: ISponsorForm, context) => {
+  if (!VerifyInput<ISponsorForm>(data, refSponsorForm)) {
+    throw new functions.https.HttpsError("invalid-argument", "Data recieved failed to validate");
+  };
+
   let text  = data.contactName && `Contact Name: ${data.contactName}\n` || '';
       text += data.contactEmail && `Contact Email: ${data.contactEmail}\n` || '';
       text += data.organization && `Organization: ${data.organization}\n` || '';

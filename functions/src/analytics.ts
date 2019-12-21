@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import { IParticipant } from './participant';
+import { IParticipant } from './participant-form';
 
 type DocumentReference = admin.firestore.DocumentReference;
 
@@ -16,9 +16,13 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
   };
 
   const db = admin.firestore();
-  console.log(data);
-  const eventDoc = db.collection("events").doc("dragonhacks2019");
+  const cache = await db.collection("analytics-cache").doc(new Date(Date.now()).toLocaleDateString()).get();
+  // if cache exists, use it
+  if (cache.exists) {
+    return cache.data();
+  }
 
+  const eventDoc = db.collection("events").doc("dragonhacks2019");
   try {
     await db.runTransaction(async (t) => {
       const e_doc = await t.get(eventDoc);
@@ -44,12 +48,19 @@ export const getAnalytics = functions.https.onCall(async (data, context) => {
     return e.toString();
   }
 
-  return {
+  const result = {
     attendedCount,
     registeredCount,
     schoolCount,
     genderCount,
     countryCount,
     firstHackathonCount
-  }
+  };
+
+  // clear old cached results
+  ( await db.collection("analytics-cache").listDocuments() ).map((d) => d.delete());
+  // cache results
+  db.collection("analytics-cache").doc(JSON.stringify(new Date(Date.now()).toLocaleDateString())).set(result);
+
+  return result;
 });
