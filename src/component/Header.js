@@ -7,8 +7,6 @@ import logo from '../img/ICONS/Logo.svg'
 
 const useStyles = makeStyles({
   root: {
-    position: 'absolute',
-    top: 0,
     display: 'flex',
     alignItems: 'center'
   },
@@ -41,6 +39,9 @@ export default function Header() {
   const SponsorLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
+  const AboutLink = React.forwardRef((props, ref) => (
+    <RouterLink innerRef={ref} {...props} />
+  ))
   const classes = useStyles()
   return (
     <header className={classes.root}>
@@ -61,6 +62,11 @@ export default function Header() {
           <li className={classes.link}>
             <Link component={SponsorLink} to='/sponsor'>
               Sponsor
+            </Link>
+          </li>
+          <li className={classes.link}>
+            <Link component={AboutLink} to='/about'>
+              About
             </Link>
           </li>
         </ul>
