@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
 import {
-  TextField,
-  makeStyles,
   Button,
-  CircularProgress
+  CircularProgress,
+  makeStyles,
+  TextField
 } from '@material-ui/core'
+import React, { useEffect, useState } from 'react'
 import app from './firebaseApp'
 
 const useStyles = makeStyles({
