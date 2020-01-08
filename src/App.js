@@ -1,26 +1,39 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import SponsorForm from './forms/SponsorForm'
-// import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
-import Landing from './landing/Landing'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { pink, lightBlue } from '@material-ui/core/colors'
+import About from './about/About'
+import Sponsor from './sponsor/Sponsor'
+import Landing from './component/Landing'
+import Header from './component/Header'
+import Footer from './component/Footer'
+import MLHBadge from './component/MLHBadge'
 
-// const theme = {
-//   palette: {
-
-//   },
-//   fontFamily: ['Roboto', 'sans-serif']
-// }
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+    secondary: lightBlue
+  },
+  typography: {
+    fontFamily: ['Roboto', 'sans-serif']
+  }
+})
 
 function App() {
   return (
-    // <ThemeProvider theme={theme}>
-    <Router>
-      <CssBaseline />
-      <Route exact path='/' component={Landing} />
-      <Route exact path='/sponsor' component={SponsorForm}></Route>
-    </Router>
-    // </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <MLHBadge />
+      <Router>
+        <CssBaseline />
+        <Route path='/' component={Header} />
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/sponsor' component={Sponsor} />
+        <Route exact path='/about' component={About} />
+        <Route path='/' component={Footer} />
+      </Router>
+    </ThemeProvider>
   )
 }
 

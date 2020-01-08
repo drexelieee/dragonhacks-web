@@ -1,0 +1,66 @@
+.statisticCard {
+  background-color: white;
+  padding: 50px 60px;
+  /* padding: 40px 80px; */
+  margin: 10px;
+  border-radius: 2px;
+  text-align: center;
+  align-content: center;
+
+  transition: box-shadow .2s cubic-bezier(0,.2,.36,.99), transform .2s cubic-bezier(0,.2,.36,.99);
+
+  width: 200px;
+}
+
+.statisticCard:hover {
+  box-shadow: 0 15px 16px 8px #0000000f;
+  transform: scale(1.04);
+}
+
+.statisticContent {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.statisticDescription {
+  /* font-weight: 300; */
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.statisticIconContainer {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.statisticIconContainer > * {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loading {
+  background-color: rgb(223, 221, 221);
+  border-radius: 3px;
+  width: 80%;
+  height: 1em;
+  margin: 12px auto;
+  animation: load 2s ease infinite forwards;
+}
+
+@keyframes load {
+  from {
+    background-color: rgb(238, 237, 237);
+  }
+  50% {
+    background-color: rgb(212, 212, 214);
+  }
+  to {
+    background-color: rgb(238, 237, 237);
+  }
+}
