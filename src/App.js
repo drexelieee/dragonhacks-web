@@ -10,6 +10,7 @@ import Landing from './component/Landing'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import MLHBadge from './component/MLHBadge'
+import ParticipantForm from './forms/ParticipantForm'
 
 const theme = createMuiTheme({
   palette: {
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/register' component={ParticipantForm}></Route>
         <Route path='/' component={Footer} />
       </Router>
     </ThemeProvider>
