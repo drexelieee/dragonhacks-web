@@ -9,9 +9,7 @@ import {
   OutlinedInput,
   Button,
   Checkbox,
-  FormControlLabel,
-  CheckBoxOutlineBlankIcon,
-  CheckBoxIcon
+  FormControlLabel
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
@@ -25,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     minWidth: 120
   },
   button: {
+    marginTop: 20,
     marginBottom: 20,
     marginLeft: 20,
     marginRight: 20
@@ -35,8 +34,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   checkboxes: {
-    justifyContent: 'center',
-    marginBottom: 12
+    justifyContent: 'center'
   }
 }))
 
