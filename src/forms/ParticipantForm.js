@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import app from '../firebaseApp'
-import styles from './ParticipantForm.module.css'
 import {
   TextField,
   Select,
@@ -23,28 +22,73 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default class ParticipantForm extends React.Component {
-  constructor(props) {
-    super(props)
+export default function ParticipantForm(props) {
+  const [package_, setPackage] = useState('')
+
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [shirtSize, setShirtSize] = useState('')
+  const [school, setSchool] = useState('')
+  const [age, setAge] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [ethnicity, setEthnicity] = useState('')
+  const [levelOfStudy, setLevelOfStudy] = useState('')
+  const [gradYear, setGradYear] = useState('')
+  const [gender, setGender] = useState('')
+  const [resume, setResume] = useState('')
+  const [major, setMajor] = useState('')
+  const [hackathonsAttended, setHackathonsAttended] = useState('')
+  const [country, setCountry] = useState('')
+  const [state, setState] = useState('')
+
+  const [labelWidth, setLabelWidth] = useState(0)
+  const packageInputLabel = useRef(null)
+  useEffect(() => {
+    setLabelWidth(packageInputLabel.current.offsetWidth)
+  }, [])
+
+  function submitForm(event) {
+    const submitSponsorForm = app.functions().httpsCallable('submitSponsorForm')
+    const data = {
+      firstName,
+      lastName,
+      email,
+      shirtSize,
+      school,
+      age,
+      phoneNumber,
+      ethnicity,
+      levelOfStudy,
+      gradYear,
+      gender,
+      resume,
+      major,
+      hackathonsAttended,
+      country,
+      state
+    }
+    submitSponsorForm(data)
   }
 
-  render () {
-  	return(
-  	<form className={classes.root}>
+  const classes = useStyles()
+
+  return(
+    <form className={classes.root}>
       <TextField
         className={classes.formInput}
         label='First Name'
         variant='outlined'
-        value={organization}
-        onChange={event => setOrganization(event.target.value)}
+        value={firstName}
+        onChange={event => setFirstName(event.target.value)}
         required
       />
       <TextField
         className={classes.formInput}
         label='Last Name'
         variant='outlined'
-        value={contactName}
-        onChange={event => setContactName(event.target.value)}
+        value={lastName}
+        onChange={event => setLastName(event.target.value)}
         required
       />
       <TextField
@@ -52,8 +96,8 @@ export default class ParticipantForm extends React.Component {
         label='Email'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={email}
+        onChange={event => setEmail(event.target.value)}
         required
       />
       <TextField
@@ -61,8 +105,8 @@ export default class ParticipantForm extends React.Component {
         label='Shirt Size'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={shirtSize}
+        onChange={event => setShirtSize(event.target.value)}
         required
       />
       <TextField
@@ -70,8 +114,8 @@ export default class ParticipantForm extends React.Component {
         label='School'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={school}
+        onChange={event => setSchool(event.target.value)}
         required
       />
       <TextField
@@ -79,8 +123,8 @@ export default class ParticipantForm extends React.Component {
         label='Age'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={age}
+        onChange={event => setAge(event.target.value)}
         required
       />
       <TextField
@@ -88,8 +132,8 @@ export default class ParticipantForm extends React.Component {
         label='Phone Number'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={phoneNumber}
+        onChange={event => setPhoneNumber(event.target.value)}
         required
       />
       <TextField
@@ -97,8 +141,8 @@ export default class ParticipantForm extends React.Component {
         label='Race/Ethnicity'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={ethnicity}
+        onChange={event => setEthnicity(event.target.value)}
         required
       />
       <TextField
@@ -106,8 +150,8 @@ export default class ParticipantForm extends React.Component {
         label='Current Level of Study'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={levelOfStudy}
+        onChange={event => setLevelOfStudy(event.target.value)}
         required
       />
       <TextField
@@ -115,8 +159,8 @@ export default class ParticipantForm extends React.Component {
         label='Expected Graduation Year'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={gradYear}
+        onChange={event => setGradYear(event.target.value)}
         required
       />
       <TextField
@@ -124,8 +168,8 @@ export default class ParticipantForm extends React.Component {
         label='Gender'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={gender}
+        onChange={event => setGender(event.target.value)}
         required
       />
       <TextField
@@ -133,8 +177,8 @@ export default class ParticipantForm extends React.Component {
         label='Resume'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={resume}
+        onChange={event => setResume(event.target.value)}
         required
       />
       <TextField
@@ -142,8 +186,8 @@ export default class ParticipantForm extends React.Component {
         label='Major'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={major}
+        onChange={event => setMajor(event.target.value)}
         required
       />
       <TextField
@@ -151,8 +195,8 @@ export default class ParticipantForm extends React.Component {
         label='How many hackathons have you attended?'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={hackathonsAttended}
+        onChange={event => setHackathonsAttended(event.target.value)}
         required
       />
       <TextField
@@ -160,8 +204,8 @@ export default class ParticipantForm extends React.Component {
         label='Country'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={country}
+        onChange={event => setCountry(event.target.value)}
         required
       />
       <TextField
@@ -169,8 +213,8 @@ export default class ParticipantForm extends React.Component {
         label='State'
         variant='outlined'
         type='email'
-        value={contactEmail}
-        onChange={event => setContactEmail(event.target.value)}
+        value={state}
+        onChange={event => setState(event.target.value)}
         required
       />
       <FormControl variant='outlined' className={classes.formInput}>
@@ -191,6 +235,5 @@ export default class ParticipantForm extends React.Component {
         Submit
       </Button>
     </form>
-  	)
-  }
+  )
 }

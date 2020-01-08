@@ -4,6 +4,7 @@ import SponsorForm from './forms/SponsorForm'
 // import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import Landing from './landing/Landing'
+import ParticipantForm from './forms/ParticipantForm'
 
 // const theme = {
 //   palette: {
@@ -19,6 +20,7 @@ function App() {
       <CssBaseline />
       <Route exact path='/' component={Landing} />
       <Route exact path='/sponsor' component={SponsorForm}></Route>
+      <Route exact path='/form' component={ParticipantForm}></Route>
     </Router>
     // </ThemeProvider>
   )
