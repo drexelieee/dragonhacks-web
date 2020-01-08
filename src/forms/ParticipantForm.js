@@ -7,7 +7,11 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
-  Button
+  Button,
+  Checkbox,
+  FormControlLabel,
+  CheckBoxOutlineBlankIcon,
+  CheckBoxIcon
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
@@ -243,6 +247,22 @@ export default function ParticipantForm(props) {
           <MenuItem value='platinum'>Platinum</MenuItem>
         </Select>
       </FormControl>
+      <FormControlLabel control={
+        <Checkbox
+        value="checkedI"
+      />
+      } label="Code of Conduct"
+      // labelPlacement="start"
+      >
+      </FormControlLabel>
+      <FormControlLabel control={
+        <Checkbox
+        value="checkedI"
+      />
+      } label="Private Policy"
+      // labelPlacement="start"
+      >
+      </FormControlLabel>
       <Button className={classes.button} onClick={submitForm} variant='outlined'>
         Register
       </Button>
