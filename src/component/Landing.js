@@ -12,6 +12,7 @@ import React from 'react'
 import LoginForm from '../forms/LoginForm'
 
 const YEAR = 2020
+// Probably worth making these Date objects
 const START_DATE = 'Saturday, February 22'
 const START_TIME = '2:00 PM (EST)'
 const END_DATE = 'Sunday, February 23'
@@ -23,7 +24,10 @@ const useStyles = makeStyles({
     textAlign: 'center'
   },
   faq: {
-    // margin: '1em 0'
+    '& h4': {
+      margin: '0.3em 0',
+      fontSize: '14pt'
+    }
   },
   paragraph: {
     margin: '0.5em 0'
