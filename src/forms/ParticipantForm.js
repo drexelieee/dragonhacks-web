@@ -19,6 +19,16 @@ const useStyles = makeStyles(theme => ({
   formInput: {
     margin: '1em',
     minWidth: 120
+  },
+  button: {
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20
+  },
+  header: {
+    fontSize: 32,
+    display: 'flex',
+    margin: 'auto'
   }
 }))
 
@@ -74,7 +84,9 @@ export default function ParticipantForm(props) {
   const classes = useStyles()
 
   return(
-    <form className={classes.root}>
+    <div>
+      <h1 className={classes.header}>Register</h1>
+      <form className={classes.root}>
       <TextField
         className={classes.formInput}
         label='First Name'
@@ -231,9 +243,10 @@ export default function ParticipantForm(props) {
           <MenuItem value='platinum'>Platinum</MenuItem>
         </Select>
       </FormControl>
-      <Button onClick={submitForm} variant='outlined'>
-        Submit
+      <Button className={classes.button} onClick={submitForm} variant='outlined'>
+        Register
       </Button>
     </form>
+    </div>
   )
 }

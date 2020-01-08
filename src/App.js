@@ -20,7 +20,7 @@ function App() {
       <CssBaseline />
       <Route exact path='/' component={Landing} />
       <Route exact path='/sponsor' component={SponsorForm}></Route>
-      <Route exact path='/form' component={ParticipantForm}></Route>
+      <Route exact path='/register' component={ParticipantForm}></Route>
     </Router>
     // </ThemeProvider>
   )
