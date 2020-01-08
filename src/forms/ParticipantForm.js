@@ -32,7 +32,11 @@ const useStyles = makeStyles(theme => ({
   header: {
     fontSize: 32,
     display: 'flex',
-    margin: 'auto'
+    justifyContent: 'center'
+  },
+  checkboxes: {
+    justifyContent: 'center',
+    marginBottom: 12
   }
 }))
 
@@ -247,7 +251,7 @@ export default function ParticipantForm(props) {
           <MenuItem value='platinum'>Platinum</MenuItem>
         </Select>
       </FormControl>
-      <FormControlLabel control={
+      <FormControlLabel className={classes.checkboxes} control={
         <Checkbox
         value="checkedI"
       />
@@ -255,7 +259,7 @@ export default function ParticipantForm(props) {
       // labelPlacement="start"
       >
       </FormControlLabel>
-      <FormControlLabel control={
+      <FormControlLabel className={classes.checkboxes} control={
         <Checkbox
         value="checkedI"
       />
