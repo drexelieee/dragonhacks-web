@@ -8,7 +8,7 @@ import {
   GridListTileBar,
   GridListTile
 } from '@material-ui/core'
-import * as teamNames from './teamNames.js'
+import * as teamNames from '../teamNames.js'
 
 const useStyles = makeStyles(theme => ({
   root: {
