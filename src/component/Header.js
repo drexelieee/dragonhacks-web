@@ -33,7 +33,7 @@ export default function Header() {
   const HomeLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
-  const OrganizerLink = React.forwardRef((props, ref) => (
+  const RegisterLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
   const SponsorLink = React.forwardRef((props, ref) => (
@@ -55,8 +55,8 @@ export default function Header() {
             </Link>
           </li>
           <li className={classes.link}>
-            <Link component={OrganizerLink} to='/attend'>
-              Organizer
+            <Link component={RegisterLink} to='/register'>
+              Register
             </Link>
           </li>
           <li className={classes.link}>
