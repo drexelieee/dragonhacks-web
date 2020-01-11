@@ -8,7 +8,9 @@ import logo from '../img/ICONS/Logo.svg'
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    zIndex: 1
   },
   heading: {
     display: 'inline-block',
