@@ -4,7 +4,8 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Link,
-  Typography
+  Typography,
+  Button
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
@@ -27,7 +28,19 @@ const useStyles = makeStyles({
     // margin: '1em 0'
   },
   paragraph: {
-    margin: '0.5em 0'
+    // margin: '0.5em 0'
+    margin: '1em'
+  },
+  heading: {
+    marginTop: '.5em',
+    marginBottom: '.5em'
+  },
+  register: {
+    width: '30%',
+    height: '60px',
+    fontSize: '24px',
+    borderRadius: '30px',
+    marginTop: '1em'
   }
 })
 
@@ -38,7 +51,10 @@ export default function Landing() {
     <main className={classes.root}>
       <LandingBackground>
         <Container maxWidth='md' className={classes.login}>
-          <Typography style={{ margin: '1em 0' }} variant='h1'>
+          <Typography
+            style={{ margin: '1em 0', fontSize: '5rem' }}
+            variant='h1'
+          >
             Login with Love
           </Typography>
           <Typography style={{ margin: '1em 0' }} variant='h2'>
@@ -46,10 +62,19 @@ export default function Landing() {
             <wbr />
             Hacks {YEAR}!
           </Typography>
-          <LoginForm />
+          {/* <LoginForm /> */}
+          <Button
+            variant='contained'
+            color='primary'
+            className={classes.register}
+          >
+            Register
+          </Button>
         </Container>
-        <Container>
-          <Typography variant='h3'>About</Typography>
+        <Container style={{ marginTop: '200px' }}>
+          <Typography variant='h3' className={classes.heading}>
+            About
+          </Typography>
           <Typography className={classes.paragraph}>
             DragonHacks is Drexel University's 24 hour hardware-focused
             hackathon event hosted by Drexel University IEEE on {START_DATE} at{' '}
@@ -71,7 +96,7 @@ export default function Landing() {
           </Typography>
         </Container>
         <Container>
-          <Typography variant='h3' style={{ marginBottom: '15px' }}>
+          <Typography variant='h3' className={classes.heading}>
             FAQ
           </Typography>
           <ExpansionPanel className={classes.faq}>
@@ -241,7 +266,10 @@ export default function Landing() {
           </ExpansionPanel>
         </Container>
         <Container>
-          <Typography variant='h3'>Sponsors</Typography>
+          <Typography variant='h3' className={classes.heading}>
+            Sponsors
+          </Typography>
+          <Typography className={classes.paragraph}>Coming soon</Typography>
         </Container>
       </LandingBackground>
     </main>

@@ -25,22 +25,6 @@ const useStyles = makeStyles({
     '& svg g path': {
       fill: 'rgb(255, 131, 209)'
     }
-  },
-  blob3: {
-    position: 'absolute',
-    top: '0%',
-    left: '150%',
-    '& svg g path': {
-      fill: '#ed7278'
-    }
-  },
-  blob4: {
-    position: 'absolute',
-    top: '-40%',
-    left: '0%',
-    '& svg g path': {
-      fill: '#ae5eac'
-    }
   }
 })
 export default function LandingBackground(props) {
@@ -63,14 +47,12 @@ export default function LandingBackground(props) {
         <ReactSVG
           src='./blobs/blob_shape_2.svg'
           beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-50 0 400 400')
+            svg.setAttribute('viewBox', '-50 0 400 600')
             svg.setAttribute('height', null)
             svg.setAttribute('width', '100%')
           }}
           className={classes.blob2}
         />
-        {/* <ReactSVG src='./blobs/blob_shape_3.svg' className={classes.blob3} />
-        <ReactSVG src='./blobs/blob_shape_4.svg' className={classes.blob4} /> */}
       </div>
       <div style={{ position: 'relative' }}>{props.children}</div>
     </div>
