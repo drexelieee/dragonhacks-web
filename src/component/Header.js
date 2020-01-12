@@ -69,8 +69,26 @@ export default function Header() {
         open={Boolean(anchorEl)}
         onClose={closeMenu}
       >
-        <MenuItem>Test</MenuItem>
-        <MenuItem>test w</MenuItem>
+        <MenuItem>
+          <Link component={HomeLink} to='/'>
+            Home
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link component={OrganizerLink} to='/attend'>
+            Organizer
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link component={SponsorLink} to='/sponsor'>
+            Sponsor
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link component={AboutLink} to='/about'>
+            About
+          </Link>
+        </MenuItem>
       </Menu>
       <nav>
         <ul className={classes.linkContainer}>
