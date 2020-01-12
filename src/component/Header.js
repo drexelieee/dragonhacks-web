@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import { Link } from '@material-ui/core'
+import { Link, IconButton, MenuItem, Menu } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 
 import logo from '../img/ICONS/Logo.svg'
 
@@ -30,6 +31,14 @@ const useStyles = makeStyles({
 })
 
 export default function Header() {
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const openMenu = event => {
+    setAnchorEl(event.currentTarget)
+  }
+  const closeMenu = () => {
+    setAnchorEl(null)
+  }
+
   const HomeLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
@@ -47,6 +56,22 @@ export default function Header() {
     <header className={classes.root}>
       <img className={classes.logo} width={32} src={logo} alt='' />
       <h1 className={classes.heading}>DragonHacks</h1>
+      <IconButton
+        aria-controls='simple-menu'
+        aria-haspopup='true'
+        onClick={openMenu}
+      >
+        <KeyboardArrowDownIcon />
+      </IconButton>
+      <Menu
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={closeMenu}
+      >
+        <MenuItem>Test</MenuItem>
+        <MenuItem>test w</MenuItem>
+      </Menu>
       <nav>
         <ul className={classes.linkContainer}>
           <li className={classes.link}>
