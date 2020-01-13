@@ -1,3 +1,4 @@
+import Title from '../component/Title'
 import {
   Container,
   ExpansionPanel,
@@ -51,12 +52,13 @@ export default function Landing() {
     <main className={classes.root}>
       <LandingBackground>
         <Container maxWidth='md' className={classes.login}>
-          <Typography
+          {/* <Typography
             style={{ margin: '1em 0', fontSize: '5rem' }}
             variant='h1'
           >
             Login with Love
-          </Typography>
+          </Typography> */}
+          <Title />
           <Typography style={{ margin: '1em 0' }} variant='h2'>
             Welcome to Dragon
             <wbr />
