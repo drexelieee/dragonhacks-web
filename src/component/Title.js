@@ -42,7 +42,8 @@ const useStyles = makeStyles({
     left: 0,
     height: '100%',
     width: 3,
-    backgroundColor: '#d5c5cf',
+    backgroundColor: '#fca2db85',
+    // backgroundColor: '#d5c5cf',
     // backgroundColor: '#b8b6a9',
     // backgroundColor: '#89825a',
     // backgroundColor: '#e5da93',
@@ -59,7 +60,7 @@ export default function Title(props) {
   const classes = useStyles()
 
   useEffect(() => {
-    anime
+    const animation = anime
       .timeline()
       .add({
         targets: `.${classes.title} .${classes.line}`,
@@ -91,12 +92,12 @@ export default function Title(props) {
         },
         '-=775'
       )
-      .add({
+    animation.complete = () =>
+      anime.timeline({ loop: true }).add({
         targets: `.${classes.title} .${classes.line}`,
         keyframes: [{ opacity: 1 }, { opacity: 0 }, { opacity: 1 }],
         duration: 1600,
-        easing: 'easeOutExpo',
-        loop: true
+        easing: 'easeOutExpo'
       })
   }, [classes.letter, classes.letters, classes.line, classes.title])
 

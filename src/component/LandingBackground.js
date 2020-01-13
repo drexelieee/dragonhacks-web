@@ -47,11 +47,11 @@ const useStyles = makeStyles({
     // filter: 'drop-shadow(2px 4px 6px rgba(20, 20, 20, .1))',
     '& svg g path': {
       fill: 'rgb(255, 131, 209)'
-    },
-    '& svg g': {
-      transform: 'translate(300px, 300px) rotate(6deg)'
-      // transform: 'translate(300, 300) rotate(10, 0, 0)'
     }
+    // '& svg g': {
+    //   transform: 'translate(300px, 300px) rotate(6deg)'
+    //   // transform: 'translate(300, 300) rotate(10, 0, 0)'
+    // }
   },
   blob2_a: {
     filter: 'none'
@@ -124,9 +124,9 @@ export default function LandingBackground(props) {
 
       <div id='layer-2' className={classes.root}>
         <ReactSVG
-          src='./blobs/blob_shape_2.svg'
+          src='./blobs/blob_shape_10.svg'
           beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-60 20 390 590')
+            svg.setAttribute('viewBox', '-10 20 390 590')
             // svg.setAttribute('viewBox', '-50 0 400 600')
             svg.setAttribute('height', null)
             svg.setAttribute('width', '100%')
@@ -135,18 +135,18 @@ export default function LandingBackground(props) {
         />
 
         <ReactSVG
-          src='./blobs/blob_shape_2.svg'
+          src='./blobs/blob_shape_10.svg'
           beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-100 -10 430 630')
+            svg.setAttribute('viewBox', '-40 -5 420 610')
             svg.setAttribute('height', null)
             svg.setAttribute('width', '100%')
           }}
           className={`${classes.blob2} ${classes.blob2_b}`}
         />
         <ReactSVG
-          src='./blobs/blob_shape_2.svg'
+          src='./blobs/blob_shape_10.svg'
           beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-135 -50 460 660')
+            svg.setAttribute('viewBox', '-90 -35 460 680')
             // svg.setAttribute('viewBox', '-130 -40 460 660')
             svg.setAttribute('height', null)
             svg.setAttribute('width', '100%')
@@ -154,9 +154,9 @@ export default function LandingBackground(props) {
           className={`${classes.blob2} ${classes.blob2_c}`}
         />
         <ReactSVG
-          src='./blobs/blob_shape_2.svg'
+          src='./blobs/blob_shape_10.svg'
           beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-170 -90 490 740')
+            svg.setAttribute('viewBox', '-160 -80 520 720')
             // svg.setAttribute('viewBox', '-150 -70 480 700')
             svg.setAttribute('height', null)
             svg.setAttribute('width', '100%')
