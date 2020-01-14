@@ -48,7 +48,9 @@ export default function Landing() {
           <wbr />
           Hacks {YEAR}!
         </Typography>
-        <LoginForm />
+        <Typography variant='h3'>
+          <Link href='/register'>Register</Link>
+        </Typography>
       </Container>
       <Container>
         <Typography variant='h3'>About</Typography>
