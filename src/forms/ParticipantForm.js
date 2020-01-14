@@ -18,7 +18,8 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
   formContent: {
-    margin: '2em auto'
+    margin: '2em auto',
+    maxWidth: 'fit-content'
   },
   registerButton: {
     margin: 'auto',
@@ -74,8 +75,8 @@ export default function ParticipantForm(props) {
     <Container maxWidth='lg'>
       <Typography variant='h2'>Registration</Typography>
       <form>
-        <Grid container spacing={2} wrap='wrap' className={classes.formContent}>
-          <Grid item xs={6}>
+        <Grid container spacing={2} className={classes.formContent}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label='First Name'
               variant='outlined'
@@ -85,7 +86,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label='Last Name'
               variant='outlined'
@@ -95,7 +96,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Email'
               variant='outlined'
@@ -106,7 +107,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <FormControl fullWidth required>
               <InputLabel htmlFor='shirt-size-select'>Shirt Size</InputLabel>
               <Select
@@ -124,7 +125,7 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='School'
               variant='outlined'
@@ -134,7 +135,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Age'
               variant='outlined'
@@ -148,7 +149,7 @@ export default function ParticipantForm(props) {
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Phone Number'
               variant='outlined'
@@ -159,7 +160,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <FormControl required fullWidth>
               <InputLabel>Ethnicity</InputLabel>
               <Select
@@ -174,7 +175,7 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <FormControl required fullWidth>
               <InputLabel>Level of Study</InputLabel>
               <Select
@@ -189,7 +190,7 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Expected Graduation Year'
               variant='outlined'
@@ -203,7 +204,7 @@ export default function ParticipantForm(props) {
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <FormControl required fullWidth>
               <InputLabel>Gender</InputLabel>
               <Select
@@ -218,7 +219,7 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Major'
               variant='outlined'
@@ -228,7 +229,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Hackathons attended'
               variant='outlined'
@@ -242,7 +243,7 @@ export default function ParticipantForm(props) {
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Country'
               variant='outlined'
@@ -252,7 +253,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} sm={8}>
             <FormControlLabel
               control={
                 <Checkbox
@@ -280,7 +281,7 @@ export default function ParticipantForm(props) {
               }
             />
           </Grid>
-          <Grid container item xs={4}>
+          <Grid container item xs={12} sm={4}>
             <Button
               className={classes.registerButton}
               onClick={submitForm}
