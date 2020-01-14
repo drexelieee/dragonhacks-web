@@ -4,22 +4,11 @@ import VerifyInput from './verifyInput';
 import * as admin from 'firebase-admin';
 
 const refParticipant: IParticipant = {
-  age: -1,
-  country: '',
-  email: '',
-  expected_graduation: new Date(),
   first_name: '',
   last_name: '',
-  gender: '',
-  hackathons_attended: -1,
-  level_of_study: '',
-  major: '',
+  email: '',
   phone_number: '',
-  race: '',
-  resume: '',
-  school: '',
-  shirt_size: '',
-  state: ''
+  uid: '',
 }
 
 export const saveParticipant = functions.https.onCall(async (participant, context) => {
@@ -42,20 +31,22 @@ export const saveParticipant = functions.https.onCall(async (participant, contex
 });
 
 export type IParticipant = {
-  age: number,
-  country: string,
-  email: string,
-  expected_graduation: Date,
   first_name: string,
   last_name: string,
-  gender: string,
-  hackathons_attended: number,
-  level_of_study: string,
-  major: string,
+  email: string,
   phone_number: string,
-  race: string,
-  resume: string,
-  school: string,
-  shirt_size: string,
-  state: string
+  uid: string,
+
+  age?: number,
+  country?: string,
+  expected_graduation?: Date,
+  gender?: string,
+  hackathons_attended?: number,
+  level_of_study?: string,
+  major?: string,
+  race?: string,
+  // resume: string,
+  school?: string,
+  shirt_size?: string,
+  // state: string
 }
