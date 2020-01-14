@@ -19,6 +19,11 @@ import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(theme => ({
   formContent: {
     margin: '2em auto'
+  },
+  registerButton: {
+    margin: 'auto',
+    height: '4em',
+    borderRadius: '40px'
   }
 }))
 
@@ -69,7 +74,7 @@ export default function ParticipantForm(props) {
     <Container maxWidth='lg'>
       <Typography variant='h2'>Registration</Typography>
       <form>
-        <Grid container spacing={2} className={classes.formContent}>
+        <Grid container spacing={2} wrap='wrap' className={classes.formContent}>
           <Grid item xs={6}>
             <TextField
               label='First Name'
@@ -255,26 +260,34 @@ export default function ParticipantForm(props) {
                 />
               }
               label={
-                <Typography variant='p'>
+                <Typography variant='body1'>
                   I have read and agree to the{' '}
                   <Link href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>
                     MLH Code of Conduct
                   </Link>
-                  . I authorize you to share my application/registration information for event
-                  administration, ranking, MLH administration, pre- and post-event
-                  informational e-mails, and occasional messages about hackathons in-line with
-                  the <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>. I further
-                  agree to the terms of both the{' '}
+                  . I authorize you to share my application/registration
+                  information for event administration, ranking, MLH
+                  administration, pre- and post-event informational e-mails, and
+                  occasional messages about hackathons in-line with the the{' '}
+                  <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+                  I further agree to the terms of both the{' '}
                   <Link href='https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions'>
                     MLH Contest Terms and Conditions{' '}
                   </Link>
-                  and the <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+                  and the{' '}
+                  <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
                 </Typography>
               }
             />
           </Grid>
-          <Grid item xs={4}>
-            <Button onClick={submitForm} variant='contained' fullWidth>
+          <Grid container item xs={4}>
+            <Button
+              className={classes.registerButton}
+              onClick={submitForm}
+              variant='contained'
+              fullWidth
+              color='primary'
+            >
               Register
             </Button>
           </Grid>
