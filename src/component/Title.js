@@ -19,7 +19,8 @@ const useStyles = makeStyles({
     fontSize: '4rem',
 
     backgroundColor: '#292931',
-    color: '#fca2db',
+    color: '#ffccec',
+    // color: '#fca2db',
     // color: '#e5da93',
     // color: 'white',
     borderRadius: 4,
