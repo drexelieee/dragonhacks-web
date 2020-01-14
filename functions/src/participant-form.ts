@@ -8,7 +8,6 @@ const refParticipant: IParticipant = {
   last_name: '',
   email: '',
   phone_number: '',
-  uid: '',
 }
 
 export const saveParticipant = functions.https.onCall(async (participant, context) => {
@@ -16,10 +15,14 @@ export const saveParticipant = functions.https.onCall(async (participant, contex
     throw new functions.https.HttpsError("invalid-argument", "Data recieved failed to validate");
   };
 
+  if (!context.auth) {
+    throw new functions.https.HttpsError("unauthenticated", "User must be authenticated");
+  }
+
   const db = admin.firestore();
   // add participant to full participant collection
   const participantCollection = db.collection("participants");
-  const participantDoc = await participantCollection.add(participant);
+  const participantDoc = await participantCollection.add({ ...participant, uid: context.auth.uid });
 
   // add participant to registered table
   const eventDoc = db.collection("events").doc("dragonhacks2020");
@@ -35,7 +38,7 @@ export type IParticipant = {
   last_name: string,
   email: string,
   phone_number: string,
-  uid: string,
+  uid?: string,
 
   age?: number,
   country?: string,
