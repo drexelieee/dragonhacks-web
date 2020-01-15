@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import app from '../firebaseApp'
 import {
   TextField,
@@ -18,7 +19,8 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
   formContent: {
-    margin: '2em auto'
+    margin: '2em auto',
+    maxWidth: 'fit-content'
   },
   registerButton: {
     margin: 'auto',
@@ -43,6 +45,7 @@ export default function ParticipantForm(props) {
   const [hackathonsAttended, setHackathonsAttended] = useState('')
   const [country, setCountry] = useState('')
   const [consent, setConsent] = useState(false)
+  const history = useHistory()
 
   function submitForm(event) {
     const saveParticipant = app.functions().httpsCallable('saveParticipant')
@@ -64,6 +67,8 @@ export default function ParticipantForm(props) {
     }
     if (consent) {
       saveParticipant(data)
+      history.push('/')
+      alert('Registration successful')
     } else {
       alert('Consent to the MLH Code of Conduct is required')
     }
@@ -74,8 +79,8 @@ export default function ParticipantForm(props) {
     <Container maxWidth='lg'>
       <Typography variant='h2'>Registration</Typography>
       <form>
-        <Grid container spacing={2} wrap='wrap' className={classes.formContent}>
-          <Grid item xs={6}>
+        <Grid container spacing={2} className={classes.formContent}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label='First Name'
               variant='outlined'
@@ -85,7 +90,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label='Last Name'
               variant='outlined'
@@ -95,7 +100,7 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Email'
               variant='outlined'
@@ -106,8 +111,8 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
-            <FormControl fullWidth required>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
               <InputLabel htmlFor='shirt-size-select'>Shirt Size</InputLabel>
               <Select
                 variant='outlined'
@@ -124,7 +129,7 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='School'
               variant='outlined'
@@ -134,21 +139,20 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Age'
               variant='outlined'
               type='number'
               value={age}
               onChange={event => setAge(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 18
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Phone Number'
               variant='outlined'
@@ -159,8 +163,8 @@ export default function ParticipantForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
-            <FormControl required fullWidth>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
               <InputLabel>Ethnicity</InputLabel>
               <Select
                 variant='outlined'
@@ -174,8 +178,8 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
-            <FormControl required fullWidth>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
               <InputLabel>Level of Study</InputLabel>
               <Select
                 variant='outlined'
@@ -189,22 +193,21 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Expected Graduation Year'
               variant='outlined'
               type='number'
               value={gradYear}
               onChange={event => setGradYear(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 2020
               }}
             />
           </Grid>
-          <Grid item xs={3}>
-            <FormControl required fullWidth>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
               <InputLabel>Gender</InputLabel>
               <Select
                 variant='outlined'
@@ -218,41 +221,38 @@ export default function ParticipantForm(props) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Major'
               variant='outlined'
               value={major}
               onChange={event => setMajor(event.target.value)}
-              required
               fullWidth
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Hackathons attended'
               variant='outlined'
               type='number'
               value={hackathonsAttended}
               onChange={event => setHackathonsAttended(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 0
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <TextField
               label='Country'
               variant='outlined'
               value={country}
               onChange={event => setCountry(event.target.value)}
-              required
               fullWidth
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} sm={8}>
             <FormControlLabel
               control={
                 <Checkbox
@@ -280,7 +280,7 @@ export default function ParticipantForm(props) {
               }
             />
           </Grid>
-          <Grid container item xs={4}>
+          <Grid container item xs={12} sm={4}>
             <Button
               className={classes.registerButton}
               onClick={submitForm}
