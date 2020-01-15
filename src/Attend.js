@@ -59,11 +59,11 @@ export default function Attend(props) {
   async function onClick() {
     // attempt to log user in
     try {
-      await app
+      const creds = await app
         .auth()
         .signInWithEmailAndPassword('teamdragonhacks@gmail.com', pass)
 
-      setAuth(true)
+      setAuth(creds.user.email === 'teamdragonhacks@gmail.com')
     } catch (e) {
       console.error(e)
       setError(e.message)
