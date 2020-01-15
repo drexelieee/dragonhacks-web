@@ -108,7 +108,7 @@ export default function ParticipantForm(props) {
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <FormControl fullWidth required>
+            <FormControl fullWidth>
               <InputLabel htmlFor='shirt-size-select'>Shirt Size</InputLabel>
               <Select
                 variant='outlined'
@@ -142,7 +142,6 @@ export default function ParticipantForm(props) {
               type='number'
               value={age}
               onChange={event => setAge(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 18
@@ -161,7 +160,7 @@ export default function ParticipantForm(props) {
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <FormControl required fullWidth>
+            <FormControl fullWidth>
               <InputLabel>Ethnicity</InputLabel>
               <Select
                 variant='outlined'
@@ -176,7 +175,7 @@ export default function ParticipantForm(props) {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <FormControl required fullWidth>
+            <FormControl fullWidth>
               <InputLabel>Level of Study</InputLabel>
               <Select
                 variant='outlined'
@@ -197,7 +196,6 @@ export default function ParticipantForm(props) {
               type='number'
               value={gradYear}
               onChange={event => setGradYear(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 2020
@@ -205,7 +203,7 @@ export default function ParticipantForm(props) {
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <FormControl required fullWidth>
+            <FormControl fullWidth>
               <InputLabel>Gender</InputLabel>
               <Select
                 variant='outlined'
@@ -225,7 +223,6 @@ export default function ParticipantForm(props) {
               variant='outlined'
               value={major}
               onChange={event => setMajor(event.target.value)}
-              required
               fullWidth
             />
           </Grid>
@@ -236,7 +233,6 @@ export default function ParticipantForm(props) {
               type='number'
               value={hackathonsAttended}
               onChange={event => setHackathonsAttended(event.target.value)}
-              required
               fullWidth
               inputProps={{
                 min: 0
@@ -249,7 +245,6 @@ export default function ParticipantForm(props) {
               variant='outlined'
               value={country}
               onChange={event => setCountry(event.target.value)}
-              required
               fullWidth
             />
           </Grid>
