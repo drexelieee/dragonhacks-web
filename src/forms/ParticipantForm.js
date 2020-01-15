@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import app from '../firebaseApp'
 import {
   TextField,
@@ -44,6 +45,7 @@ export default function ParticipantForm(props) {
   const [hackathonsAttended, setHackathonsAttended] = useState('')
   const [country, setCountry] = useState('')
   const [consent, setConsent] = useState(false)
+  const history = useHistory()
 
   function submitForm(event) {
     const saveParticipant = app.functions().httpsCallable('saveParticipant')
@@ -65,6 +67,8 @@ export default function ParticipantForm(props) {
     }
     if (consent) {
       saveParticipant(data)
+      history.push('/')
+      alert('Registration successful')
     } else {
       alert('Consent to the MLH Code of Conduct is required')
     }
