@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import anime from 'animejs'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   prefix: {
     color: '#ffffff63'
   },
@@ -17,7 +17,9 @@ const useStyles = makeStyles({
     fontWeight: 'lighter',
     margin: '.5em 0',
     fontSize: '4rem',
-
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.8rem'
+    },
     backgroundColor: '#292931',
     color: '#ffccec',
     // color: '#fca2db',
@@ -55,7 +57,7 @@ const useStyles = makeStyles({
     top: 0,
     left: 0
   }
-})
+}))
 
 export default function Title(props) {
   const classes = useStyles()
@@ -88,10 +90,10 @@ export default function Title(props) {
           targets: `.${classes.title} .${classes.letter}`,
           opacity: [0, 1],
           easing: 'easeOutExpo',
-          duration: 600,
-          delay: (el, i) => 34 * (i + 1)
+          duration: 700,
+          delay: (el, i) => 22 * (i + 1)
         },
-        '-=775'
+        '-=755'
       )
     animation.complete = () =>
       anime.timeline({ loop: true }).add({

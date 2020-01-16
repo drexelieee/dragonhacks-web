@@ -2,10 +2,18 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { ReactSVG } from 'react-svg'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     position: 'absolute',
     width: '100%'
+    // overflow: 'hidden'
+  },
+  root_2: {
+    position: 'absolute',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
     // overflow: 'hidden'
   },
   blob1: {
@@ -78,7 +86,7 @@ const useStyles = makeStyles({
       // fill: 'rgb(225, 94, 177)'
     }
   }
-})
+}))
 export default function LandingBackground(props) {
   const classes = useStyles()
   return (
@@ -122,7 +130,7 @@ export default function LandingBackground(props) {
         />
       </div>
 
-      <div id='layer-2' className={classes.root}>
+      <div id='layer-2' className={classes.root_2}>
         <ReactSVG
           src='./blobs/blob_shape_10.svg'
           beforeInjection={svg => {
@@ -132,6 +140,7 @@ export default function LandingBackground(props) {
             svg.setAttribute('width', '100%')
           }}
           className={`${classes.blob2} ${classes.blob2_a}`}
+          id='blob_wrapper'
         />
 
         <ReactSVG
