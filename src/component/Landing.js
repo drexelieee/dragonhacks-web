@@ -20,7 +20,7 @@ const START_TIME = '2:00 PM (EST)'
 const END_DATE = 'Sunday, February 23'
 const END_TIME = '2:00 PM (EST)'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {},
   login: {
     textAlign: 'center'
@@ -37,13 +37,37 @@ const useStyles = makeStyles({
     marginBottom: '.5em'
   },
   register: {
-    width: '30%',
+    width: '12em',
     height: '60px',
     fontSize: '24px',
     borderRadius: '30px',
     marginTop: '1em'
+  },
+  svgWrap: {
+    float: 'right',
+    // background: 'red',
+    shapeOutside:
+      'polygon(0 73px, 223px 73px, 383px 418px, 167px 208px, 0px 100px)',
+    height: '400px',
+    width: '420px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
+  container: {
+    padding: '0 80px',
+    maxWidth: 'unset',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 40px'
+    }
+  },
+  about: {
+    marginTop: '200px',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '100px'
+    }
   }
-})
+}))
 
 export default function Landing() {
   const classes = useStyles()
@@ -69,11 +93,13 @@ export default function Landing() {
             variant='contained'
             color='primary'
             className={classes.register}
+            href='/register'
           >
             Register
           </Button>
         </Container>
-        <Container style={{ marginTop: '200px' }}>
+        <Container className={`${classes.container} ${classes.about}`}>
+          <div className={classes.svgWrap}></div>
           <Typography variant='h3' className={classes.heading}>
             About
           </Typography>
@@ -97,7 +123,7 @@ export default function Landing() {
             you also must demonstrate your project.
           </Typography>
         </Container>
-        <Container>
+        <Container className={classes.container}>
           <Typography variant='h3' className={classes.heading}>
             FAQ
           </Typography>
