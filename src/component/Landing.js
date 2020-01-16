@@ -48,7 +48,9 @@ export default function Landing() {
           Hacks {YEAR}!
         </Typography>
         <Typography variant='h3'>
-          <Link href='/register'>Register</Link>
+          <Link href='https://dragonhacks.typeform.com/to/Zmm58D'>
+            Register
+          </Link>
         </Typography>
       </Container>
       <Container>
