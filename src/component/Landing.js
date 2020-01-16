@@ -11,10 +11,10 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
 import React from 'react'
-import LoginForm from '../forms/LoginForm'
 import LandingBackground from './LandingBackground'
 
 const YEAR = 2020
+// Probably worth making these Date objects
 const START_DATE = 'Saturday, February 22'
 const START_TIME = '2:00 PM (EST)'
 const END_DATE = 'Sunday, February 23'
@@ -26,7 +26,10 @@ const useStyles = makeStyles({
     textAlign: 'center'
   },
   faq: {
-    // margin: '1em 0'
+    '& h4': {
+      margin: '0.3em 0',
+      fontSize: '14pt'
+    }
   },
   paragraph: {
     // margin: '0.5em 0'
@@ -52,23 +55,17 @@ export default function Landing() {
     <main className={classes.root}>
       <LandingBackground>
         <Container maxWidth='md' className={classes.login}>
-          {/* <Typography
-            style={{ margin: '1em 0', fontSize: '5rem' }}
-            variant='h1'
-          >
-            Login with Love
-          </Typography> */}
           <Title />
           <Typography style={{ margin: '1em 0' }} variant='h2'>
             Welcome to Dragon
             <wbr />
             Hacks {YEAR}!
           </Typography>
-          {/* <LoginForm /> */}
           <Button
             variant='contained'
             color='primary'
             className={classes.register}
+            href='https://dragonhacks.typeform.com/to/Zmm58D'
           >
             Register
           </Button>
