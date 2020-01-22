@@ -8,7 +8,7 @@ import Hoang_Nguyen from '../img/headshots/Hoang_Nguyen.png'
 import Steven_Kearns from '../img/headshots/Steven_Kearns.png'
 
 import Alisha_Augustin from '../img/headshots/Alisha_Augustin.jpg'
-import Anuva_Atandrila from '../img/headshots/Anuva_Atandrila.jpg'
+import Atandrila_Anuva from '../img/headshots/Atandrila_Anuva.jpg'
 import Julia_Fleming from '../img/headshots/Julia_Fleming.jpg'
 import Mridul_Awasthi from '../img/headshots/Mridul_Awasthi.jpg'
 import Daniel_Erbynn from '../img/headshots/Daniel_Erbynn.jpg'
@@ -68,8 +68,8 @@ export const committeeData = [
     title: 'DragonHacks Coordinator'
   },
   {
-    imgSrc: Anuva_Atandrila,
-    name: 'Anuva Atandrila',
+    imgSrc: Atandrila_Anuva,
+    name: 'Atandrila Anuva',
     title: 'DragonHacks Coordinator'
   },
   {
