@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import { Link, IconButton, MenuItem, Menu } from '@material-ui/core'
+// import { Link, IconButton, MenuItem, Menu } from '@material-ui/core'
+import { Link } from '@material-ui/core'
+
 import { makeStyles } from '@material-ui/styles'
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
+// import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
+// import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 
 import logo from '../img/ICONS/Logo.svg'
 
@@ -31,22 +33,22 @@ const useStyles = makeStyles({
   }
 })
 
-// export default function Header() {
-const Header = props => {
+export default function Header() {
+  // const Header = props => {
   // Make component responsive to screen size
-  const displayDropdown = () => {
-    if (isWidthUp('sm', props.width)) {
-      return true
-    }
-    return false
-  }
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const openMenu = event => {
-    setAnchorEl(event.currentTarget)
-  }
-  const closeMenu = () => {
-    setAnchorEl(null)
-  }
+  // const displayDropdown = () => {
+  //   if (isWidthUp('sm', props.width)) {
+  //     return true
+  //   }
+  //   return false
+  // }
+  // const [anchorEl, setAnchorEl] = React.useState(null)
+  // const openMenu = event => {
+  //   setAnchorEl(event.currentTarget)
+  // }
+  // const closeMenu = () => {
+  //   setAnchorEl(null)
+  // }
 
   const HomeLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
@@ -65,7 +67,7 @@ const Header = props => {
     <header className={classes.root}>
       <img className={classes.logo} width={32} src={logo} alt='' />
       <h1 className={classes.heading}>DragonHacks</h1>
-      <IconButton
+      {/* <IconButton
         aria-controls='simple-menu'
         aria-haspopup='true'
         onClick={openMenu}
@@ -98,7 +100,7 @@ const Header = props => {
             About
           </Link>
         </MenuItem>
-      </Menu>
+      </Menu> */}
       <nav>
         <ul className={classes.linkContainer}>
           <li className={classes.link}>
@@ -127,4 +129,4 @@ const Header = props => {
   )
 }
 
-export default withWidth()(Header)
+// export default withWidth()(Header)
