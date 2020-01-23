@@ -12,7 +12,9 @@ import logo from '../img/ICONS/Logo.svg'
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    zIndex: 1
   },
   heading: {
     display: 'inline-block',
@@ -51,9 +53,6 @@ export default function Header() {
   // }
 
   const HomeLink = React.forwardRef((props, ref) => (
-    <RouterLink innerRef={ref} {...props} />
-  ))
-  const OrganizerLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
   const SponsorLink = React.forwardRef((props, ref) => (
@@ -106,11 +105,6 @@ export default function Header() {
           <li className={classes.link}>
             <Link component={HomeLink} to='/'>
               Home
-            </Link>
-          </li>
-          <li className={classes.link}>
-            <Link component={OrganizerLink} to='/attend'>
-              Organizer
             </Link>
           </li>
           <li className={classes.link}>
