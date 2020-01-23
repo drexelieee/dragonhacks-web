@@ -2,6 +2,7 @@ import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Link, IconButton, MenuItem, Menu } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 
 import logo from '../img/ICONS/Logo.svg'
@@ -30,7 +31,15 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Header() {
+// export default function Header() {
+const Header = props => {
+  // Make component responsive to screen size
+  const displayDropdown = () => {
+    if (isWidthUp('sm', props.width)) {
+      return true
+    }
+    return false
+  }
   const [anchorEl, setAnchorEl] = React.useState(null)
   const openMenu = event => {
     setAnchorEl(event.currentTarget)
@@ -117,3 +126,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default withWidth()(Header)

@@ -26,7 +26,6 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-// export default class About extends React.Component {
 const About = props => {
   // Make component responsive to screen size
   const getGridListCols = () => {

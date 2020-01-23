@@ -4,6 +4,7 @@ import Denise_Weinberger from '../img/headshots/Denise_Weinberger.jpg'
 import Matt_Rantz from '../img/headshots/Matt_Rantz.jpg'
 
 import Jason_Carrete from '../img/headshots/Jason_Carrete.jpg'
+import Zach_Matuson from '../img/headshots/Zach_Matuson.jpg'
 import Hoang_Nguyen from '../img/headshots/Hoang_Nguyen.png'
 import Steven_Kearns from '../img/headshots/Steven_Kearns.png'
 
@@ -45,6 +46,10 @@ export const websiteMasterData = [
     imgSrc: Jason_Carrete,
     name: 'Jason Carrete',
     title: 'Website Master'
+  },
+  {
+    imgSrc: Zach_Matuson,
+    name: 'Zach Matuson'
   },
   {
     imgSrc: Hoang_Nguyen,
