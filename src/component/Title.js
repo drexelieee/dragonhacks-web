@@ -77,9 +77,11 @@ export default function Title(props) {
         targets: `.${classes.title} .${classes.line}`,
         translateX: [
           0,
-          document
-            .querySelector(`.${classes.title} .${classes.letters}`)
-            .getBoundingClientRect().width + 10
+          document.querySelector(`.${classes.title} .${classes.letters}`)
+            ? document
+                .querySelector(`.${classes.title} .${classes.letters}`)
+                .getBoundingClientRect().width + 10
+            : 0
         ],
         easing: 'easeOutExpo',
         duration: 700,
