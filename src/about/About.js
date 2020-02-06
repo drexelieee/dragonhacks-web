@@ -60,6 +60,29 @@ const About = props => {
     }
     return 400
   }
+
+  const TeamSection = (title, members) => (
+    <div>
+      <Typography variant='h4'>{title}</Typography>
+      <GridList
+        cols={getGridListCols()}
+        cellHeight={getGridListHeight()}
+        className={classes.gridList}
+      >
+        {members.map(tile => (
+          <GridListTile key={tile.imgSrc}>
+            <img src={tile.imgSrc} alt={tile.name} />
+            <GridListTileBar
+              title={tile.name}
+              subtitle={<span>{tile.title}</span>}
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+      <br />
+    </div>
+  )
+
   const classes = useStyles()
 
   return (
@@ -81,58 +104,12 @@ const About = props => {
           <br />
         </Typography>
         <Container>
-          <Typography variant='h4'>IEEE Executive Board</Typography>
-          <GridList
-            cols={getGridListCols()}
-            cellHeight={getGridListHeight()}
-            className={classes.gridList}
-          >
-            {teamNames.execBoardData.map(tile => (
-              <GridListTile key={tile.imgSrc}>
-                <img src={tile.imgSrc} alt={tile.name} />
-                <GridListTileBar
-                  title={tile.name}
-                  subtitle={<span>{tile.title}</span>}
-                />
-              </GridListTile>
-            ))}
-          </GridList>
-
-          <br />
-          <Typography variant='h4'>Website Developers</Typography>
-          <GridList
-            cols={getGridListCols()}
-            cellHeight={getGridListHeight()}
-            className={classes.gridList}
-          >
-            {teamNames.websiteMasterData.map(tile => (
-              <GridListTile key={tile.imgSrc}>
-                <img src={tile.imgSrc} alt={tile.name} />
-                <GridListTileBar
-                  title={tile.name}
-                  subtitle={<span>{tile.title}</span>}
-                />
-              </GridListTile>
-            ))}
-          </GridList>
-
-          <br />
-          <Typography variant='h4'>Committee</Typography>
-          <GridList
-            cols={getGridListCols()}
-            cellHeight={getGridListHeight()}
-            className={classes.gridList}
-          >
-            {teamNames.committeeData.map(tile => (
-              <GridListTile key={tile.imgSrc}>
-                <img src={tile.imgSrc} alt={tile.name} />
-                <GridListTileBar
-                  title={tile.name}
-                  subtitle={<span>{tile.title}</span>}
-                />
-              </GridListTile>
-            ))}
-          </GridList>
+          {TeamSection('IEEE Executive Board', teamNames.execBoard)}
+          {TeamSection('DragonHacks Coordinators', teamNames.coordinators)}
+          {TeamSection('Website Developers', teamNames.websiteDevelopers)}
+          {TeamSection('Sponsorship Team', teamNames.sponsorshipTeam)}
+          {TeamSection('Marketing Team', teamNames.marketingTeam)}
+          {TeamSection('Design Team', teamNames.designTeam)}
         </Container>
       </Container>
     </div>
