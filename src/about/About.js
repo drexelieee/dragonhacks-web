@@ -108,8 +108,8 @@ const About = props => {
           {TeamSection('DragonHacks Coordinators', teamNames.coordinators)}
           {TeamSection('Website Developers', teamNames.websiteDevelopers)}
           {TeamSection('Sponsorship Team', teamNames.sponsorshipTeam)}
-          {TeamSection('Marketing Team', teamNames.marketingTeam)}
           {TeamSection('Design Team', teamNames.designTeam)}
+          {TeamSection('Marketing Team', teamNames.marketingTeam)}
         </Container>
       </Container>
     </div>

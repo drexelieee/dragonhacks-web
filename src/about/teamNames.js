@@ -17,11 +17,11 @@ import Har_Patel from '../img/headshots/Har_Patel.png'
 import Madeline_Harmes from '../img/headshots/Madeline_Harmes.jpg'
 import Tapasya_Sharma from '../img/headshots/Tapasya_Sharma.jpg'
 
+import Alisha_Augustin from '../img/headshots/Alisha_Augustin.jpg'
+
 import Avi_Majumdar from '../img/headshots/Avi_Majumdar.png'
 import Julia_Fleming from '../img/headshots/Julia_Fleming.jpg'
 import Vincent_Theodor_Go from '../img/headshots/Vincent_Theodor_Go.jpg'
-
-import Alisha_Augustin from '../img/headshots/Alisha_Augustin.jpg'
 
 export const execBoard = [
   {
@@ -100,6 +100,15 @@ export const sponsorshipTeam = [
   }
 ]
 
+export const designTeam = [
+  // Shara
+  // Kaley Nhu
+  {
+    imgSrc: Alisha_Augustin,
+    name: 'Alisha Augustin'
+  }
+]
+
 export const marketingTeam = [
   {
     imgSrc: Avi_Majumdar,
@@ -112,14 +121,5 @@ export const marketingTeam = [
   {
     imgSrc: Vincent_Theodor_Go,
     name: 'Vincent Theodor Go'
-  }
-]
-
-export const designTeam = [
-  // Shara
-  // Kaley Nhu
-  {
-    imgSrc: Alisha_Augustin,
-    name: 'Alisha Augustin'
   }
 ]
