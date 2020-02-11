@@ -1,35 +1,31 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import app from '../firebaseApp'
 import {
   TextField,
   Button,
   Checkbox,
-  FormControlLabel
+  FormControlLabel,
+  Container,
+  Typography,
+  Grid,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Link
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column'
+  formContent: {
+    margin: '2em auto',
+    maxWidth: 'fit-content'
   },
-  formInput: {
-    margin: '1em',
-    minWidth: 120
-  },
-  button: {
-    marginTop: 20,
-    marginBottom: 20,
-    marginLeft: 20,
-    marginRight: 20
-  },
-  header: {
-    fontSize: 32,
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  checkboxes: {
-    justifyContent: 'center'
+  registerButton: {
+    margin: 'auto',
+    height: '4em',
+    borderRadius: '40px'
   }
 }))
 
@@ -45,203 +41,258 @@ export default function ParticipantForm(props) {
   const [levelOfStudy, setLevelOfStudy] = useState('')
   const [gradYear, setGradYear] = useState('')
   const [gender, setGender] = useState('')
-  const [resume, setResume] = useState('')
   const [major, setMajor] = useState('')
   const [hackathonsAttended, setHackathonsAttended] = useState('')
   const [country, setCountry] = useState('')
-  const [state, setState] = useState('')
+  const [consent, setConsent] = useState(false)
+  const history = useHistory()
 
   function submitForm(event) {
-    const submitSponsorForm = app.functions().httpsCallable('submitSponsorForm')
+    const saveParticipant = app.functions().httpsCallable('saveParticipant')
     const data = {
-      firstName,
-      lastName,
-      email,
-      shirtSize,
-      school,
       age,
-      phoneNumber,
-      ethnicity,
-      levelOfStudy,
-      gradYear,
-      gender,
-      resume,
-      major,
-      hackathonsAttended,
       country,
-      state
+      email,
+      expected_graduation: gradYear,
+      first_name: firstName,
+      last_name: lastName,
+      gender,
+      hackathons_attended: hackathonsAttended,
+      level_of_study: levelOfStudy,
+      major,
+      phone_number: phoneNumber,
+      race: ethnicity,
+      school,
+      shirt_size: shirtSize
     }
-    submitSponsorForm(data)
+    if (consent) {
+      saveParticipant(data)
+      history.push('/')
+      alert('Registration successful')
+    } else {
+      alert('Consent to the MLH Code of Conduct is required')
+    }
   }
-
   const classes = useStyles()
 
   return (
-    <div>
-      <h1 className={classes.header}>Register</h1>
-      <form className={classes.root}>
-        <TextField
-          className={classes.formInput}
-          label='First Name'
-          variant='outlined'
-          value={firstName}
-          onChange={event => setFirstName(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Last Name'
-          variant='outlined'
-          value={lastName}
-          onChange={event => setLastName(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Email'
-          variant='outlined'
-          type='email'
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Shirt Size'
-          variant='outlined'
-          type='email'
-          value={shirtSize}
-          onChange={event => setShirtSize(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='School'
-          variant='outlined'
-          type='email'
-          value={school}
-          onChange={event => setSchool(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Age'
-          variant='outlined'
-          type='email'
-          value={age}
-          onChange={event => setAge(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Phone Number'
-          variant='outlined'
-          type='email'
-          value={phoneNumber}
-          onChange={event => setPhoneNumber(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Race/Ethnicity'
-          variant='outlined'
-          type='email'
-          value={ethnicity}
-          onChange={event => setEthnicity(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Current Level of Study'
-          variant='outlined'
-          type='email'
-          value={levelOfStudy}
-          onChange={event => setLevelOfStudy(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Expected Graduation Year'
-          variant='outlined'
-          type='email'
-          value={gradYear}
-          onChange={event => setGradYear(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Gender'
-          variant='outlined'
-          type='email'
-          value={gender}
-          onChange={event => setGender(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Resume'
-          variant='outlined'
-          type='email'
-          value={resume}
-          onChange={event => setResume(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Major'
-          variant='outlined'
-          type='email'
-          value={major}
-          onChange={event => setMajor(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='How many hackathons have you attended?'
-          variant='outlined'
-          type='email'
-          value={hackathonsAttended}
-          onChange={event => setHackathonsAttended(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='Country'
-          variant='outlined'
-          type='email'
-          value={country}
-          onChange={event => setCountry(event.target.value)}
-          required
-        />
-        <TextField
-          className={classes.formInput}
-          label='State'
-          variant='outlined'
-          type='email'
-          value={state}
-          onChange={event => setState(event.target.value)}
-          required
-        />
-        <FormControlLabel
-          className={classes.checkboxes}
-          control={<Checkbox value='checkedI' />}
-          label='Code of Conduct'
-          // labelPlacement="start"
-        ></FormControlLabel>
-        <FormControlLabel
-          className={classes.checkboxes}
-          control={<Checkbox value='checkedI' />}
-          label='Private Policy'
-          // labelPlacement="start"
-        ></FormControlLabel>
-        <Button
-          className={classes.button}
-          onClick={submitForm}
-          variant='outlined'
-        >
-          Register
-        </Button>
+    <Container maxWidth='lg'>
+      <Typography variant='h2'>Registration</Typography>
+      <form>
+        <Grid container spacing={2} className={classes.formContent}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label='First Name'
+              variant='outlined'
+              value={firstName}
+              onChange={event => setFirstName(event.target.value)}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label='Last Name'
+              variant='outlined'
+              value={lastName}
+              onChange={event => setLastName(event.target.value)}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Email'
+              variant='outlined'
+              type='email'
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
+              <InputLabel htmlFor='shirt-size-select'>Shirt Size</InputLabel>
+              <Select
+                variant='outlined'
+                value={shirtSize}
+                onChange={event => setShirtSize(event.target.value)}
+                inputProps={{
+                  name: 'shirt-size',
+                  id: 'shirt-size-select'
+                }}
+              >
+                <MenuItem value='S'>Small</MenuItem>
+                <MenuItem value='M'>Medium</MenuItem>
+                <MenuItem value='L'>Large</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='School'
+              variant='outlined'
+              value={school}
+              onChange={event => setSchool(event.target.value)}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Age'
+              variant='outlined'
+              type='number'
+              value={age}
+              onChange={event => setAge(event.target.value)}
+              fullWidth
+              inputProps={{
+                min: 18
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Phone Number'
+              variant='outlined'
+              type='tel'
+              value={phoneNumber}
+              onChange={event => setPhoneNumber(event.target.value)}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
+              <InputLabel>Ethnicity</InputLabel>
+              <Select
+                variant='outlined'
+                value={ethnicity}
+                onChange={event => setEthnicity(event.target.value)}
+              >
+                <MenuItem value='white'>White</MenuItem>
+                <MenuItem value='black'>Black</MenuItem>
+                <MenuItem value='asian'>Asian</MenuItem>
+                <MenuItem value='other'>Other</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
+              <InputLabel>Level of Study</InputLabel>
+              <Select
+                variant='outlined'
+                value={levelOfStudy}
+                onChange={event => setLevelOfStudy(event.target.value)}
+              >
+                <MenuItem value='freshman'>Freshman</MenuItem>
+                <MenuItem value='sophomore'>Sophomore</MenuItem>
+                <MenuItem value='junior'>Junior</MenuItem>
+                <MenuItem value='senior'>Senior</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Expected Graduation Year'
+              variant='outlined'
+              type='number'
+              value={gradYear}
+              onChange={event => setGradYear(event.target.value)}
+              fullWidth
+              inputProps={{
+                min: 2020
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <FormControl fullWidth>
+              <InputLabel>Gender</InputLabel>
+              <Select
+                variant='outlined'
+                value={gender}
+                onChange={event => setGender(event.target.value)}
+              >
+                <MenuItem value='male'>Male</MenuItem>
+                <MenuItem value='female'>Female</MenuItem>
+                <MenuItem value='other'>Other</MenuItem>
+                <MenuItem value='no_answer'>Prefer not to answer</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Major'
+              variant='outlined'
+              value={major}
+              onChange={event => setMajor(event.target.value)}
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Hackathons attended'
+              variant='outlined'
+              type='number'
+              value={hackathonsAttended}
+              onChange={event => setHackathonsAttended(event.target.value)}
+              fullWidth
+              inputProps={{
+                min: 0
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              label='Country'
+              variant='outlined'
+              value={country}
+              onChange={event => setCountry(event.target.value)}
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={8}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  onChange={event => setConsent(event.target.checked)}
+                />
+              }
+              label={
+                <Typography variant='body1'>
+                  I have read and agree to the{' '}
+                  <Link href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>
+                    MLH Code of Conduct
+                  </Link>
+                  . I authorize you to share my application/registration
+                  information for event administration, ranking, MLH
+                  administration, pre- and post-event informational e-mails, and
+                  occasional messages about hackathons in-line with the the{' '}
+                  <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+                  I further agree to the terms of both the{' '}
+                  <Link href='https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions'>
+                    MLH Contest Terms and Conditions{' '}
+                  </Link>
+                  and the{' '}
+                  <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+                </Typography>
+              }
+            />
+          </Grid>
+          <Grid container item xs={12} sm={4}>
+            <Button
+              className={classes.registerButton}
+              onClick={submitForm}
+              variant='contained'
+              fullWidth
+              color='primary'
+            >
+              Register
+            </Button>
+          </Grid>
+        </Grid>
       </form>
-    </div>
+    </Container>
   )
 }

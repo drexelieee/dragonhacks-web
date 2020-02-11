@@ -11,7 +11,9 @@ import logo from '../img/ICONS/Logo.svg'
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    zIndex: 1
   },
   heading: {
     display: 'inline-block',
@@ -44,9 +46,6 @@ const Header = props => {
   }
 
   const HomeLink = React.forwardRef((props, ref) => (
-    <RouterLink innerRef={ref} {...props} />
-  ))
-  const OrganizerLink = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
   const SponsorLink = React.forwardRef((props, ref) => (
