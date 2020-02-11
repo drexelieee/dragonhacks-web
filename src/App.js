@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { pink, lightBlue } from '@material-ui/core/colors'
-import About from './component/About'
+import Organizers from './component/Organizers'
 import Sponsor from './sponsor/Sponsor'
 import Landing from './component/Landing'
 import Header from './component/Header'
@@ -44,7 +44,7 @@ function App() {
         <Route path='/' component={Header} />
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
-        <Route exact path='/about' component={About} />
+        <Route exact path='/organizers' component={Organizers} />
         <Route
           exact
           path='/register'

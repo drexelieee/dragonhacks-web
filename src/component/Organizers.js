@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const About = props => {
+const Organizers = props => {
   // Make component responsive to screen size
   const getGridListCols = () => {
     if (isWidthUp('xl', props.width)) {
@@ -116,4 +116,4 @@ const About = props => {
   )
 }
 
-export default withWidth()(About)
+export default withWidth()(Organizers)

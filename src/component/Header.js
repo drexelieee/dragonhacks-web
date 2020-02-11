@@ -45,13 +45,7 @@ const Header = props => {
     setAnchorEl(null)
   }
 
-  const HomeLink = React.forwardRef((props, ref) => (
-    <RouterLink innerRef={ref} {...props} />
-  ))
-  const SponsorLink = React.forwardRef((props, ref) => (
-    <RouterLink innerRef={ref} {...props} />
-  ))
-  const AboutLink = React.forwardRef((props, ref) => (
+  const link = React.forwardRef((props, ref) => (
     <RouterLink innerRef={ref} {...props} />
   ))
 
@@ -64,23 +58,18 @@ const Header = props => {
           <nav>
             <ul className={classes.linkContainer}>
               <li className={classes.link}>
-                <Link component={HomeLink} to='/'>
+                <Link component={link} to='/'>
                   Home
                 </Link>
               </li>
               <li className={classes.link}>
-                <Link component={OrganizerLink} to='/attend'>
-                  Organizer
-                </Link>
-              </li>
-              <li className={classes.link}>
-                <Link component={SponsorLink} to='/sponsor'>
+                <Link component={link} to='/sponsor'>
                   Sponsor
                 </Link>
               </li>
               <li className={classes.link}>
-                <Link component={AboutLink} to='/about'>
-                  About
+                <Link component={link} to='/organizers'>
+                  Organizers
                 </Link>
               </li>
             </ul>
@@ -103,17 +92,14 @@ const Header = props => {
           open={Boolean(anchorEl)}
           onClose={closeMenu}
         >
-          <Link component={HomeLink} to='/'>
+          <Link component={link} to='/'>
             <MenuItem>Home</MenuItem>
           </Link>
-          <Link component={OrganizerLink} to='/attend'>
-            <MenuItem>Organizer</MenuItem>
-          </Link>
-          <Link component={SponsorLink} to='/sponsor'>
+          <Link component={link} to='/sponsor'>
             <MenuItem>Sponsor</MenuItem>
           </Link>
-          <Link component={AboutLink} to='/about'>
-            <MenuItem>About</MenuItem>
+          <Link component={link} to='/organizers'>
+            <MenuItem>Organizers</MenuItem>
           </Link>
         </Menu>
       </div>
