@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/styles'
 import React from 'react'
 import LandingBackground from './LandingBackground'
 import SponsorLogos from './SponsorLogos'
+import Schedule from './Schedule'
 
 const YEAR = 2020
 // Probably worth making these Date objects
@@ -289,6 +290,10 @@ export default function Landing() {
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+        </Container>
+        <Container>
+          <Typography variant='h3'>Schedule</Typography>
+          <Schedule />
         </Container>
         <Container>
           <Typography variant='h3' className={classes.heading}>
