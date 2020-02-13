@@ -20,6 +20,10 @@ import ballinger_logo from '../img/sponsor_logos/2_8_ballinger.jpg'
 import monster_logo from '../img/sponsor_logos/3_1_monster.png'
 import wolfram_logo from '../img/sponsor_logos/3_2_wolfram.png'
 import stickermule_logo from '../img/sponsor_logos/3_3_stickermule.png'
+import msp_logo from '../img/sponsor_logos/MSP.png'
+import insomnio_logo from '../img/sponsor_logos/1200px-Insomnia_Cookies_logo.svg.png'
+import ece_logo from '../img/sponsor_logos/drexel_ece.png'
+import ripple_logo from '../img/sponsor_logos/RippleMatchLogo.png'
 
 const tier1 = [
   { src: tgif_logo, alt: 'TGIF' },
@@ -35,6 +39,7 @@ const tier2 = [
   { src: drexel_admissions_logo, alt: 'Drexel Admissions' },
   { src: drexel_honors_logo, alt: 'Drexel Honors College' },
   { src: duov_logo, alt: 'DUOV' },
+  { src: msp_logo, alt: 'Microsoft Student Partner' },
   { src: dig_logo, alt: 'DIG' },
   { src: promptworks_logo, alt: 'Promptworks' },
   { src: ballinger_logo, alt: 'Ballinger' }

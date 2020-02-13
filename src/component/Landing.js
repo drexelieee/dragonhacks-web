@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/styles'
 import React from 'react'
 import LandingBackground from './LandingBackground'
 import SponsorLogos from './SponsorLogos'
+import logos from '../img/logos.png'
 
 const YEAR = 2020
 // Probably worth making these Date objects
@@ -291,10 +292,8 @@ export default function Landing() {
           </ExpansionPanel>
         </Container>
         <Container>
-          <Typography variant='h3' className={classes.heading}>
-            Sponsors
-          </Typography>
-          <SponsorLogos />
+          <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
+          {/* <SponsorLogos /> */}
         </Container>
       </LandingBackground>
     </main>
