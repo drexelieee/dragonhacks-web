@@ -12,7 +12,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
 import React from 'react'
 import LandingBackground from './LandingBackground'
-import SponsorLogos from './SponsorLogos'
 import logos from '../img/logos.png'
 
 const YEAR = 2020
