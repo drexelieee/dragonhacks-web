@@ -12,6 +12,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
 import React from 'react'
 import LandingBackground from './LandingBackground'
+
+import Schedule from './Schedule'
 import logos from '../img/logos.png'
 
 const YEAR = 2020
@@ -292,7 +294,6 @@ export default function Landing() {
         </Container>
         <Container>
           <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
-          {/* <SponsorLogos /> */}
         </Container>
       </LandingBackground>
     </main>
