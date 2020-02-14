@@ -184,7 +184,7 @@ export default function LandingBackground(props) {
                 in2='offset-blur'
                 result='inverse'
               />
-              <feFlood flood-color='black' flood-opacity='.5' result='color' />
+              <feFlood floodColor='black' floodOpacity='.5' result='color' />
               <feComposite
                 operator='in'
                 in='color'

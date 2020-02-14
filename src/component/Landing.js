@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     // background: 'red',
     shapeOutside:
       'polygon(0 73px, 223px 73px, 383px 418px, 167px 208px, 0px 100px)',
-    height: '400px',
+    height: '370px',
     width: '420px',
     [theme.breakpoints.down('sm')]: {
       display: 'none'
