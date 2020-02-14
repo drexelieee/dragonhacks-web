@@ -293,6 +293,10 @@ export default function Landing() {
           </ExpansionPanel>
         </Container>
         <Container>
+          <Typography variant='h3'>Schedule</Typography>
+          <Schedule />
+        </Container>
+        <Container>
           <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
         </Container>
       </LandingBackground>
