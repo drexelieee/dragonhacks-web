@@ -6,122 +6,133 @@ import {
   TableRow,
   TableCell
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+
+const useStyles = makeStyles({
+  root: {
+    textAlign: 'center'
+  }
+})
 
 export default function Schedule(props) {
+  const classes = useStyles()
+
+  const CenterTableCell = props => (<TableCell align='center'>{props.children}</TableCell>)
+
   return (
-    <Table>
+    <Table align='center'>
       <TableHead>
         <TableRow>
-          <TableCell>Event</TableCell>
-          <TableCell>Time</TableCell>
-          <TableCell>Location</TableCell>
+          <CenterTableCell>Event</CenterTableCell>
+          <CenterTableCell>Time</CenterTableCell>
+          <CenterTableCell>Location</CenterTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell>Registration Opens</TableCell>
-          <TableCell>Saturday 9:00 AM</TableCell>
-          <TableCell>1st Floor Lobby</TableCell>
+          <CenterTableCell>Registration Opens</CenterTableCell>
+          <CenterTableCell>Saturday 9:00 AM</CenterTableCell>
+          <CenterTableCell>1st Floor Lobby</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Team Building</TableCell>
-          <TableCell>Saturday 11:00 AM</TableCell>
-          <TableCell>Atrium</TableCell>
+          <CenterTableCell>Team Building</CenterTableCell>
+          <CenterTableCell>Saturday 11:00 AM</CenterTableCell>
+          <CenterTableCell>Atrium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Lunch</TableCell>
-          <TableCell>Saturday 12:00 PM</TableCell>
-          <TableCell>Atrium</TableCell>
+          <CenterTableCell>Lunch</CenterTableCell>
+          <CenterTableCell>Saturday 12:00 PM</CenterTableCell>
+          <CenterTableCell>Atrium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Opening Ceremony</TableCell>
-          <TableCell>Saturday 1:00 PM</TableCell>
-          <TableCell>Bossone Auditorium</TableCell>
+          <CenterTableCell>Opening Ceremony</CenterTableCell>
+          <CenterTableCell>Saturday 1:00 PM</CenterTableCell>
+          <CenterTableCell>Bossone Auditorium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Hardware Opens</TableCell>
-          <TableCell>Saturday 2:00 PM</TableCell>
-          <TableCell>Parts Window</TableCell>
+          <CenterTableCell>Hardware Opens</CenterTableCell>
+          <CenterTableCell>Saturday 2:00 PM</CenterTableCell>
+          <CenterTableCell>Parts Window</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Hacking Starts</TableCell>
-          <TableCell>Saturday 2:00 PM</TableCell>
-          <TableCell>Atrium</TableCell>
+          <CenterTableCell>Hacking Starts</CenterTableCell>
+          <CenterTableCell>Saturday 2:00 PM</CenterTableCell>
+          <CenterTableCell>Atrium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Workshop 1</TableCell>
-          <TableCell>Saturday 3:00 PM</TableCell>
-          <TableCell>Room 302</TableCell>
+          <CenterTableCell>Workshop 1</CenterTableCell>
+          <CenterTableCell>Saturday 3:00 PM</CenterTableCell>
+          <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Workshop 2</TableCell>
-          <TableCell>Saturday 5:00 PM</TableCell>
-          <TableCell>Room 302</TableCell>
+          <CenterTableCell>Workshop 2</CenterTableCell>
+          <CenterTableCell>Saturday 5:00 PM</CenterTableCell>
+          <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Dinner</TableCell>
-          <TableCell>Saturday 6:00 PM</TableCell>
-          <TableCell>1st Floor</TableCell>
+          <CenterTableCell>Dinner</CenterTableCell>
+          <CenterTableCell>Saturday 6:00 PM</CenterTableCell>
+          <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Fun Event 1</TableCell>
-          <TableCell>Saturday 7:00 PM</TableCell>
-          <TableCell>1st Floor Lobby</TableCell>
+          <CenterTableCell>Fun Event 1</CenterTableCell>
+          <CenterTableCell>Saturday 7:00 PM</CenterTableCell>
+          <CenterTableCell>1st Floor Lobby</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Workshop 3</TableCell>
-          <TableCell>Saturday 8:00 PM</TableCell>
-          <TableCell>Room 302</TableCell>
+          <CenterTableCell>Workshop 3</CenterTableCell>
+          <CenterTableCell>Saturday 8:00 PM</CenterTableCell>
+          <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Fun Event 2</TableCell>
-          <TableCell>Saturday 9:00 PM</TableCell>
-          <TableCell>1st Floor Lobby</TableCell>
+          <CenterTableCell>Fun Event 2</CenterTableCell>
+          <CenterTableCell>Saturday 9:00 PM</CenterTableCell>
+          <CenterTableCell>1st Floor Lobby</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Devpost Registration Ends</TableCell>
-          <TableCell>Saturday 10:00 PM</TableCell>
-          <TableCell>N/A</TableCell>
+          <CenterTableCell>Devpost Registration Ends</CenterTableCell>
+          <CenterTableCell>Saturday 10:00 PM</CenterTableCell>
+          <CenterTableCell>N/A</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Midnight Snack</TableCell>
-          <TableCell>Sunday 12:00 AM</TableCell>
-          <TableCell>1st Floor</TableCell>
+          <CenterTableCell>Midnight Snack</CenterTableCell>
+          <CenterTableCell>Sunday 12:00 AM</CenterTableCell>
+          <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Workshop 4</TableCell>
-          <TableCell>Sunday 1:00 AM</TableCell>
-          <TableCell>Room 302</TableCell>
+          <CenterTableCell>Workshop 4</CenterTableCell>
+          <CenterTableCell>Sunday 1:00 AM</CenterTableCell>
+          <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Fun Event 3</TableCell>
-          <TableCell>Sunday 2:00 AM</TableCell>
-          <TableCell>N/A</TableCell>
+          <CenterTableCell>Fun Event 3</CenterTableCell>
+          <CenterTableCell>Sunday 2:00 AM</CenterTableCell>
+          <CenterTableCell>N/A</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Breakfast</TableCell>
-          <TableCell>Sunday 8:00 AM</TableCell>
-          <TableCell>1st Floor</TableCell>
+          <CenterTableCell>Breakfast</CenterTableCell>
+          <CenterTableCell>Sunday 8:00 AM</CenterTableCell>
+          <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Lunch</TableCell>
-          <TableCell>Sunday 12:00 PM</TableCell>
-          <TableCell>1st Floor</TableCell>
+          <CenterTableCell>Lunch</CenterTableCell>
+          <CenterTableCell>Sunday 12:00 PM</CenterTableCell>
+          <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Hacking Ends</TableCell>
-          <TableCell>Sunday 2:00 PM</TableCell>
-          <TableCell>N/A</TableCell>
+          <CenterTableCell>Hacking Ends</CenterTableCell>
+          <CenterTableCell>Sunday 2:00 PM</CenterTableCell>
+          <CenterTableCell>N/A</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Judging Starts</TableCell>
-          <TableCell>Sunday 2:00 PM</TableCell>
-          <TableCell>Atrium</TableCell>
+          <CenterTableCell>Judging Starts</CenterTableCell>
+          <CenterTableCell>Sunday 2:00 PM</CenterTableCell>
+          <CenterTableCell>Atrium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Closing Ceremony</TableCell>
-          <TableCell>Sunday 4:00 PM</TableCell>
-          <TableCell>Bossone Auditorium</TableCell>
+          <CenterTableCell>Closing Ceremony</CenterTableCell>
+          <CenterTableCell>Sunday 4:00 PM</CenterTableCell>
+          <CenterTableCell>Bossone Auditorium</CenterTableCell>
         </TableRow>
       </TableBody>
     </Table>
