@@ -297,13 +297,13 @@ export default function Landing() {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </Container>
-        <Container>
+        <Container className={classes.container}>
           <Typography variant='h3' className={classes.heading}>
             Schedule
           </Typography>
           <Schedule />
         </Container>
-        <Container>
+        <Container className={classes.container}>
           <Typography variant='h3' className={classes.heading}>
             Sponsors
           </Typography>
