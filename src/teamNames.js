@@ -17,6 +17,8 @@ import Har_Patel from './img/headshots/Har_Patel.png'
 import Madeline_Harmes from './img/headshots/Madeline_Harmes.jpg'
 import Tapasya_Sharma from './img/headshots/Tapasya_Sharma.jpg'
 
+import Shara_Saketkhou from './img/headshots/Shara_Saketkhou.jpg'
+import Kaley_Nhu from './img/headshots/Kaley_Nhu.jpg'
 import Alisha_Augustin from './img/headshots/Alisha_Augustin.jpg'
 
 import Avi_Majumdar from './img/headshots/Avi_Majumdar.png'
@@ -101,8 +103,14 @@ export const sponsorshipTeam = [
 ]
 
 export const designTeam = [
-  // Shara
-  // Kaley Nhu
+  {
+    imgSrc: Shara_Saketkhou,
+    name: 'Shara Saketkhou'
+  },
+  {
+    imgSrc: Kaley_Nhu,
+    name: 'Kaley Nhu'
+  },
   {
     imgSrc: Alisha_Augustin,
     name: 'Alisha Augustin'
