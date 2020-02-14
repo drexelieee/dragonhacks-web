@@ -6,18 +6,11 @@ import {
   TableRow,
   TableCell
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
-
-const useStyles = makeStyles({
-  root: {
-    textAlign: 'center'
-  }
-})
 
 export default function Schedule(props) {
-  const classes = useStyles()
-
-  const CenterTableCell = props => (<TableCell align='center'>{props.children}</TableCell>)
+  const CenterTableCell = props => (
+    <TableCell align='center'>{props.children}</TableCell>
+  )
 
   return (
     <Table align='center'>
