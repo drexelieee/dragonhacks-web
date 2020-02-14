@@ -298,11 +298,15 @@ export default function Landing() {
           </ExpansionPanel>
         </Container>
         <Container>
-          <Typography variant='h3'>Schedule</Typography>
+          <Typography variant='h3' className={classes.heading}>
+            Schedule
+          </Typography>
           <Schedule />
         </Container>
         <Container>
-          <Typography variant='h3'>Sponsors</Typography>
+          <Typography variant='h3' className={classes.heading}>
+            Sponsors
+          </Typography>
           <img
             src={logos}
             style={{ width: '100%' }}
