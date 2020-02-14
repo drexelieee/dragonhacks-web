@@ -8,9 +8,10 @@ import {
   Typography,
   Button
 } from '@material-ui/core'
+import imageMapResize from 'image-map-resizer'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
-import React from 'react'
+import React, { useEffect } from 'react'
 import LandingBackground from './LandingBackground'
 
 import Schedule from './Schedule'
@@ -77,6 +78,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function Landing() {
   const classes = useStyles()
+
+  useEffect(() => {
+    imageMapResize()
+  }, [])
 
   return (
     <main className={classes.root}>
@@ -297,7 +302,23 @@ export default function Landing() {
           <Schedule />
         </Container>
         <Container>
-          <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
+          <Typography variant='h3'>Sponsors</Typography>
+          <img
+            src={logos}
+            style={{ width: '100%' }}
+            alt='Sponsors'
+            useMap='#image-map'
+          />
+          <map name='image-map'>
+            <area
+              tabIndex={1}
+              alt='Stickermule'
+              title='Stickermule'
+              href='http://hackp.ac/mlh-stickermule-hackathons'
+              coords='4392,4121,5577,4449'
+              shape='rect'
+            />
+          </map>
         </Container>
       </LandingBackground>
     </main>
