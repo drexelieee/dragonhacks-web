@@ -45,7 +45,7 @@ export default function Schedule(props) {
         <TableRow>
           <CenterTableCell>Hardware Opens</CenterTableCell>
           <CenterTableCell>Saturday 2:00 PM</CenterTableCell>
-          <CenterTableCell>Parts Window</CenterTableCell>
+          <CenterTableCell>2nd Floor Parts Window</CenterTableCell>
         </TableRow>
         <TableRow>
           <CenterTableCell>Hacking Starts</CenterTableCell>
@@ -88,7 +88,7 @@ export default function Schedule(props) {
           <CenterTableCell>N/A</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Midnight Snack</CenterTableCell>
+          <CenterTableCell>Midnight pizza</CenterTableCell>
           <CenterTableCell>Sunday 12:00 AM</CenterTableCell>
           <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
