@@ -121,6 +121,7 @@ export default function Landing() {
               variant='outlined'
               color='primary'
               className={classes.aboutButton}
+              href='http://dragonhacks2020.devpost.com/'
             >
               Devpost
             </Button>
