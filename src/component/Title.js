@@ -98,7 +98,7 @@ export default function Title(props) {
         '-=755'
       )
     animation.complete = () =>
-      anime.timeline({ loop: true }).add({
+      anime.timeline({ loop: 4 }).add({
         targets: `.${classes.title} .${classes.line}`,
         keyframes: [{ opacity: 1 }, { opacity: 0 }, { opacity: 1 }],
         duration: 1600,

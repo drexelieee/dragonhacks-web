@@ -8,9 +8,10 @@ import {
   Typography,
   Button
 } from '@material-ui/core'
+import imageMapResize from 'image-map-resizer'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
-import React from 'react'
+import React, { useEffect } from 'react'
 import LandingBackground from './LandingBackground'
 
 import Schedule from './Schedule'
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     // background: 'red',
     shapeOutside:
       'polygon(0 73px, 223px 73px, 383px 418px, 167px 208px, 0px 100px)',
-    height: '400px',
+    height: '370px',
     width: '420px',
     [theme.breakpoints.down('sm')]: {
       display: 'none'
@@ -77,6 +78,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function Landing() {
   const classes = useStyles()
+
+  useEffect(() => {
+    imageMapResize()
+  }, [])
 
   return (
     <main className={classes.root}>
@@ -292,12 +297,32 @@ export default function Landing() {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </Container>
-        <Container>
-          <Typography variant='h3'>Schedule</Typography>
+        <Container className={classes.container}>
+          <Typography variant='h3' className={classes.heading}>
+            Schedule
+          </Typography>
           <Schedule />
         </Container>
-        <Container>
-          <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
+        <Container className={classes.container}>
+          <Typography variant='h3' className={classes.heading}>
+            Sponsors
+          </Typography>
+          <img
+            src={logos}
+            style={{ width: '100%' }}
+            alt='Sponsors'
+            useMap='#image-map'
+          />
+          <map name='image-map'>
+            <area
+              tabIndex={1}
+              alt='Stickermule'
+              title='Stickermule'
+              href='http://hackp.ac/mlh-stickermule-hackathons'
+              coords='4392,4121,5577,4449'
+              shape='rect'
+            />
+          </map>
         </Container>
       </LandingBackground>
     </main>
