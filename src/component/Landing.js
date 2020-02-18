@@ -8,9 +8,10 @@ import {
   Typography,
   Button
 } from '@material-ui/core'
+import imageMapResize from 'image-map-resizer'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/styles'
-import React from 'react'
+import React, { useEffect } from 'react'
 import LandingBackground from './LandingBackground'
 
 import Schedule from './Schedule'
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     margin: '1em'
   },
   heading: {
-    marginTop: '.5em',
+    marginTop: '2em',
     marginBottom: '.5em'
   },
   register: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     // background: 'red',
     shapeOutside:
       'polygon(0 73px, 223px 73px, 383px 418px, 167px 208px, 0px 100px)',
-    height: '400px',
+    height: '370px',
     width: '420px',
     [theme.breakpoints.down('sm')]: {
       display: 'none'
@@ -72,11 +73,22 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       marginTop: '100px'
     }
+  },
+  aboutButton: {
+    fontSize: '20px',
+    width: '6em',
+    height: '60px',
+    margin: 'auto 0.7em',
+    borderRadius: '30px'
   }
 }))
 
 export default function Landing() {
   const classes = useStyles()
+
+  useEffect(() => {
+    imageMapResize()
+  }, [])
 
   return (
     <main className={classes.root}>
@@ -96,6 +108,24 @@ export default function Landing() {
           >
             Register
           </Button>
+          <div style={{ marginTop: '1em' }}>
+            <Button
+              variant='outlined'
+              color='primary'
+              className={classes.aboutButton}
+              href='https://bit.ly/3bDluN6'
+            >
+              Slack
+            </Button>
+            <Button
+              variant='outlined'
+              color='primary'
+              className={classes.aboutButton}
+              href='http://dragonhacks2020.devpost.com/'
+            >
+              Devpost
+            </Button>
+          </div>
         </Container>
         <Container className={`${classes.container} ${classes.about}`}>
           <div className={classes.svgWrap}></div>
@@ -103,12 +133,15 @@ export default function Landing() {
             About
           </Typography>
           <Typography className={classes.paragraph}>
-            DragonHacks is Drexel University's 24 hour hardware-focused
-            hackathon event hosted by Drexel University IEEE on {START_DATE} at{' '}
-            {START_TIME} in the Bossone Research Enterprise Center. DragonHacks{' '}
-            {YEAR} is bringing the brightest minds of the world's best schools
-            to spend 24 hours to hours to create ground breaking new products
-            from scratch!
+            DragonHacks is Drexel University's official 24-hour student-run
+            hackathon organized by Drexel IEEE on Saturday, February 22 at 2:00
+            PM (EST) in the{' '}
+            <Link href='https://goo.gl/maps/fbyGaxVvUMCDfvtj9'>
+              Bossone Research Enterprise Center
+            </Link>
+            . DragonHacks {YEAR} is bringing the brightest minds of the world's
+            best schools to spend 24 hours to hours to create ground breaking
+            new products from scratch!
           </Typography>
           <Typography className={classes.paragraph}>
             We will have more than enough East coast exclusive food and caffeine
@@ -161,9 +194,14 @@ export default function Landing() {
             <ExpansionPanelDetails>
               <Typography>
                 Yes! Here is the list of hardware MLH will be providing during
-                DragonHacks {YEAR}: MLH Hardware. We will also be providing our
-                own hardware which can be found on the DragonHacks Hardware
-                List.
+                DragonHacks {YEAR}:{' '}
+                <Link href='https://docs.google.com/document/d/1jnuLgOYjwneg6YhNhrKi8zuCtAbDc34a4NaWcPqJ7R0/edit?usp=sharing'>
+                  MLH Hardware{' '}
+                </Link>
+                and{' '}
+                <Link href='https://hack.mlh.io/software/'>MLH Software</Link>.
+                We will also be providing our own hardware which can be found on
+                the <Link href='#'>DragonHacks Hardware</Link>. List.
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -175,12 +213,12 @@ export default function Landing() {
               <Typography>
                 There are plenty of prizes to be won at DragonHacks {YEAR}! You
                 will have the opportunity to compete in plenty of challenges for
-                a chance to win: Xbox Ones, PS4s, GoPros, Apple Watches, Samsung
-                LED TVs, Nintendo Switches, iPad Airs, and way more! First place
-                gets first choice of prizes with each member in the winning team
-                choosing one prize from the list, down to the last DragonHacks
-                challenge winners. All projects must be submitted on Devpost in
-                order to be eligible for judging.
+                a chance to win: Amazon Echos, Raspberry Pi 4s, Fitbits,
+                AirPods, and way more! First place gets first choice of prizes
+                with each member in the winning team choosing one prize from the
+                list, down to the last DragonHacks challenge winners. All
+                projects must be submitted on Devpost in order to be eligible
+                for judging.
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -211,12 +249,13 @@ export default function Landing() {
                 If you do not currently have a team or idea, do not fear! Many
                 hackers come in without teams or ideas. There are two methods to
                 find teammates, and trust us, hacking with a team is a lot more
-                fun! Team sizes have to be 2–5 people. You should be invited to
-                the official DragonHacks {YEAR} Slack Group where we have a
-                #teamformation channel dedicated to team formations. We will
-                also be holding a team formation event before the kickoff and
-                opening ceremony. Also check out the DragonHacks {YEAR} Devpost
-                challenges for inspiration on what problems to tackle.
+                fun! Team sizes have to be 2–4 people. You should be invited to
+                the official DragonHacks {YEAR}{' '}
+                <Link href='https://bit.ly/3bDluN6'>Slack Group </Link>where we
+                have a #team-building channel dedicated to team formations. We
+                will also be holding a team formation event before the kickoff
+                and opening ceremony. Also check out the DragonHacks {YEAR}{' '}
+                Devpost challenges for inspiration on what problems to tackle.
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -227,12 +266,11 @@ export default function Landing() {
             <ExpansionPanelDetails>
               <Typography>
                 On top of the usual first, second, and third places, we also
-                have challenges like best healthcare hack, funniest hack, hack
-                with the best design or name — not everything is fully
-                technical! We also have sponsor challenges from JetBrains,
-                .tech, Wolfram, Lockheed Martin, Close School of
-                Entrepreneurship, GLOBO, and more! The full list of challenges
-                are listed in the Official DragonHacks {YEAR} Devpost.
+                have a number of other categories which would be announced
+                closer to the event — not everything is fully technical! We also
+                have sponsor challenges from MLH, Vanguard, Microsoft, Drexel
+                Onyx Valley and more! The full list of challenges will be listed
+                in the Official DragonHacks 2020 Devpost.
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -292,12 +330,32 @@ export default function Landing() {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </Container>
-        <Container>
-          <Typography variant='h3'>Schedule</Typography>
+        <Container className={classes.container}>
+          <Typography variant='h3' className={classes.heading}>
+            Schedule
+          </Typography>
           <Schedule />
         </Container>
-        <Container>
-          <img src={logos} style={{ width: '100%' }} alt='Sponsors' />
+        <Container className={classes.container}>
+          <Typography variant='h3' className={classes.heading}>
+            Sponsors
+          </Typography>
+          <img
+            src={logos}
+            style={{ width: '100%' }}
+            alt='Sponsors'
+            useMap='#image-map'
+          />
+          <map name='image-map'>
+            <area
+              tabIndex={1}
+              alt='Stickermule'
+              title='Stickermule'
+              href='http://hackp.ac/mlh-stickermule-hackathons'
+              coords='4392,4121,5577,4449'
+              shape='rect'
+            />
+          </map>
         </Container>
       </LandingBackground>
     </main>
