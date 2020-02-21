@@ -124,7 +124,7 @@ export default function Schedule(props) {
         </TableRow>
         <TableRow>
           <CenterTableCell>Closing Ceremony</CenterTableCell>
-          <CenterTableCell>Sunday 4:00 PM</CenterTableCell>
+          <CenterTableCell>Sunday 4:30 PM</CenterTableCell>
           <CenterTableCell>Bossone Auditorium</CenterTableCell>
         </TableRow>
       </TableBody>
