@@ -53,12 +53,12 @@ export default function Schedule(props) {
           <CenterTableCell>Atrium</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Workshop 1</CenterTableCell>
+          <CenterTableCell>Microsoft Azure Workshop w/ MSP</CenterTableCell>
           <CenterTableCell>Saturday 3:00 PM</CenterTableCell>
           <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Workshop 2</CenterTableCell>
+          <CenterTableCell>Portfolio Website in an Hour</CenterTableCell>
           <CenterTableCell>Saturday 5:00 PM</CenterTableCell>
           <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
@@ -68,19 +68,19 @@ export default function Schedule(props) {
           <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Fun Event 1</CenterTableCell>
+          <CenterTableCell>Cup Stacking</CenterTableCell>
           <CenterTableCell>Saturday 7:00 PM</CenterTableCell>
           <CenterTableCell>1st Floor Lobby</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Workshop 3</CenterTableCell>
+          <CenterTableCell>Android Studio 101</CenterTableCell>
           <CenterTableCell>Saturday 8:00 PM</CenterTableCell>
           <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Fun Event 2</CenterTableCell>
+          <CenterTableCell>Air Force Challenge: Capture the Flag</CenterTableCell>
           <CenterTableCell>Saturday 9:00 PM</CenterTableCell>
-          <CenterTableCell>1st Floor Lobby</CenterTableCell>
+          <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
         <TableRow>
           <CenterTableCell>Devpost Registration Ends</CenterTableCell>
@@ -93,7 +93,7 @@ export default function Schedule(props) {
           <CenterTableCell>1st Floor</CenterTableCell>
         </TableRow>
         <TableRow>
-          <CenterTableCell>Workshop 4</CenterTableCell>
+          <CenterTableCell>How to Start-Up</CenterTableCell>
           <CenterTableCell>Sunday 1:00 AM</CenterTableCell>
           <CenterTableCell>Room 302</CenterTableCell>
         </TableRow>
