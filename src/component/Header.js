@@ -72,6 +72,16 @@ const Header = props => {
                   Organizers
                 </Link>
               </li>
+              <li className={classes.link}>
+                <Link component={link} to='/FAQ'>
+                  FAQ
+                </Link>
+              </li>
+              <li className={classes.link}>
+                <Link component={link} to='/schedule'>
+                  Schedule
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -100,6 +110,12 @@ const Header = props => {
           </Link>
           <Link component={link} to='/organizers'>
             <MenuItem>Organizers</MenuItem>
+          </Link>
+           <Link component={link} to='/FAQ'>
+            <MenuItem>FAQ</MenuItem>
+          </Link>
+           <Link component={link} to='/schedule'>
+            <MenuItem>Schedule</MenuItem>
           </Link>
         </Menu>
       </div>

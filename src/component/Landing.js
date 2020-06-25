@@ -94,7 +94,7 @@ export default function Landing() {
     <main className={classes.root}>
       <LandingBackground>
         <Container maxWidth='md' className={classes.login}>
-          <Title />
+         
           <Typography style={{ margin: '1em 0' }} variant='h2'>
             Welcome to Dragon
             <wbr />
