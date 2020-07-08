@@ -89,116 +89,17 @@ const useStyles = makeStyles(theme => ({
 }))
 export default function LandingBackground(props) {
   const classes = useStyles()
+  const backgroundStyle={
+background:"url(/images/hero-background.jpg",
+backgroundRepeat:"no-repeat",
+backgroundSize:"contain",
+color:"white"
+
+  }
+
+
   return (
-    <div>
-      <div id='layer-1' className={classes.root}>
-        <ReactSVG
-          className={`${classes.blob1} ${classes.blob1_a}`}
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '50 50 400 400')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          src='./blobs/blob_shape_1.svg'
-        />
-        <ReactSVG
-          className={`${classes.blob1} ${classes.blob1_b}`}
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '50 50 410 410')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          src='./blobs/blob_shape_1.svg'
-        />
-        <ReactSVG
-          className={`${classes.blob1} ${classes.blob1_c}`}
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '50 50 430 430')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          src='./blobs/blob_shape_1.svg'
-        />
-        <ReactSVG
-          className={`${classes.blob1} ${classes.blob1_d}`}
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '50 50 460 460')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          src='./blobs/blob_shape_1.svg'
-        />
-      </div>
-
-      <div id='layer-2' className={classes.root_2}>
-        <ReactSVG
-          src='./blobs/blob_shape_10.svg'
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-10 20 390 590')
-            // svg.setAttribute('viewBox', '-50 0 400 600')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          className={`${classes.blob2} ${classes.blob2_a}`}
-          id='blob_wrapper'
-        />
-
-        <ReactSVG
-          src='./blobs/blob_shape_10.svg'
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-40 -5 420 610')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          className={`${classes.blob2} ${classes.blob2_b}`}
-        />
-        <ReactSVG
-          src='./blobs/blob_shape_10.svg'
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-90 -35 460 680')
-            // svg.setAttribute('viewBox', '-130 -40 460 660')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          className={`${classes.blob2} ${classes.blob2_c}`}
-        />
-        <ReactSVG
-          src='./blobs/blob_shape_10.svg'
-          beforeInjection={svg => {
-            svg.setAttribute('viewBox', '-160 -80 520 720')
-            // svg.setAttribute('viewBox', '-150 -70 480 700')
-            svg.setAttribute('height', null)
-            svg.setAttribute('width', '100%')
-          }}
-          className={`${classes.blob2} ${classes.blob2_d}`}
-        />
-
-        <svg>
-          <defs>
-            <filter id='inset-shadow'>
-              <feOffset dx='5' dy='-5' />
-              <feGaussianBlur stdDeviation='15' result='offset-blur' />
-              <feComposite
-                operator='out'
-                in='SourceGraphic'
-                in2='offset-blur'
-                result='inverse'
-              />
-              <feFlood floodColor='black' floodOpacity='.5' result='color' />
-              <feComposite
-                operator='in'
-                in='color'
-                in2='inverse'
-                result='shadow'
-              />
-              <feComponentTransfer in='shadow' result='shadow'>
-                <feFuncA type='linear' slope='.55' />
-              </feComponentTransfer>
-              <feComposite operator='over' in='shadow' in2='SourceGraphic' />
-            </filter>
-          </defs>
-        </svg>
-      </div>
+    <div style={backgroundStyle} >
       <div style={{ position: 'relative' }}>{props.children}</div>
     </div>
   )

@@ -63,6 +63,11 @@ const Header = props => {
                 </Link>
               </li>
               <li className={classes.link}>
+                <Link component={link} to='/about'>
+                  About
+                </Link>
+              </li>
+              <li className={classes.link}>
                 <Link component={link} to='/sponsor'>
                   Sponsor
                 </Link>

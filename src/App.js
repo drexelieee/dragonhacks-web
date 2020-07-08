@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import { createMuiTheme } from '@material-ui/core/styles'
-import { pink, lightBlue, deepOrange, lightGreen } from '@material-ui/core/colors'
+import { pink, lightBlue, deepOrange, lightGreen, blueGrey, } from '@material-ui/core/colors'
 import Organizers from './component/Organizers'
 import Sponsor from './sponsor/Sponsor'
 import Landing from './component/Landing'
@@ -14,10 +14,11 @@ import Footer from './component/Footer'
 import MLHBadge from './component/MLHBadge'
 import ParticipantForm from './forms/ParticipantForm'
 import LoginForm from './forms/LoginForm'
+import About from './component/About'
 
 const theme = createMuiTheme({
   palette: {
-    primary: lightGreen,
+    primary: deepOrange,
     secondary: lightGreen
   },
   typography: {
@@ -45,6 +46,7 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/sponsor' component={Sponsor} />
         <Route exact path='/organizers' component={Organizers} />
+        <Route path= '/about' component={About} />
         <Route
           exact
           path='/register'
